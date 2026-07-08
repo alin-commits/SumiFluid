@@ -517,3 +517,11 @@ footer{background:var(--panel); color:rgba(255,255,255,.7); padding:4rem 0 2rem;
   .fab svg{ width:23px; height:23px; }
   .fab-label{ display:none; }
 }
+
+/* FAQ por categoría */
+.faq-categoria{padding:4rem 0;}
+.faq-categoria h2{font-size:clamp(1.6rem,3vw,2.2rem); margin-bottom:2rem;}
+.faq-categoria .faq-item{border-top:1px solid var(--line); padding:1.5rem 0;}
+.faq-categoria .faq-item:last-child{border-bottom:1px solid var(--line);}
+.faq-categoria .faq-item h3{font-size:1.05rem; font-weight:600; margin-bottom:.6rem; color:var(--ink);}
+.faq-categoria .faq-item p{font-size:.95rem; line-height:1.6; color:var(--ink-soft);}
