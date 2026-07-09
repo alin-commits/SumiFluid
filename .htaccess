@@ -1,0 +1,6 @@
+Redirect 301 /hidraulica.html /hidraulica/
+Redirect 301 /neumatica.html /neumatica/
+Redirect 301 /estanqueidad.html /estanqueidad/
+Redirect 301 /vacio.html /vacio/
+Redirect 301 /marcas.html /marcas/
+Redirect 301 /contacto.html /contacto/

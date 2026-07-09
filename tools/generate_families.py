@@ -136,14 +136,14 @@ HEADER = """<header class="nav">
   <div class="wrap">
     <a href="../index.html" class="nav-brand"><picture><source srcset="../assets/img/logo-sumifluid.webp" type="image/webp"><img src="../assets/img/logo-sumifluid.png" alt="Sumifluid" class="nav-logo"></picture></a>
     <nav data-nav-links class="nav-links">
-      <a href="../hidraulica.html" data-key="hidraulica">Hidráulica</a>
-      <a href="../neumatica.html" data-key="neumatica">Neumática</a>
-      <a href="../estanqueidad.html" data-key="estanqueidad">Estanqueidad</a>
-      <a href="../vacio.html" data-key="vacio">Vacío</a>
-      <a href="../marcas.html" data-key="marcas">Marcas</a>
-      <a href="../contacto.html" data-key="contacto">Contacto</a>
+      <a href="../hidraulica/" data-key="hidraulica">Hidráulica</a>
+      <a href="../neumatica/" data-key="neumatica">Neumática</a>
+      <a href="../estanqueidad/" data-key="estanqueidad">Estanqueidad</a>
+      <a href="../vacio/" data-key="vacio">Vacío</a>
+      <a href="../marcas/" data-key="marcas">Marcas</a>
+      <a href="../contacto/" data-key="contacto">Contacto</a>
     </nav>
-    <a href="../contacto.html#presupuesto" class="nav-cta"><span>Pedir presupuesto</span></a>
+    <a href="../contacto/#presupuesto" class="nav-cta"><span>Pedir presupuesto</span></a>
     <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-label="Abrir menú">☰</button>
   </div>
 </header>"""
@@ -157,16 +157,16 @@ FOOTER = """<footer>
       </div>
       <div class="foot-col">
         <h4>Catálogo</h4>
-        <a href="../hidraulica.html">Hidráulica</a>
-        <a href="../neumatica.html">Neumática</a>
-        <a href="../estanqueidad.html">Estanqueidad</a>
-        <a href="../vacio.html">Vacío</a>
-        <a href="../marcas.html">Marcas</a>
+        <a href="../hidraulica/">Hidráulica</a>
+        <a href="../neumatica/">Neumática</a>
+        <a href="../estanqueidad/">Estanqueidad</a>
+        <a href="../vacio/">Vacío</a>
+        <a href="../marcas/">Marcas</a>
       </div>
       <div class="foot-col">
         <h4>Empresa</h4>
-        <a href="../contacto.html">Contacto</a>
-        <a href="../contacto.html#presupuesto">Pedir presupuesto</a>
+        <a href="../contacto/">Contacto</a>
+        <a href="../contacto/#presupuesto">Pedir presupuesto</a>
       </div>
       <div class="foot-col">
         <h4>Contacto</h4>
@@ -195,10 +195,10 @@ FOOTER = """<footer>
   </a>
 </div>
 
-<script defer src="../lib/gsap.min.js"></script>
-<script defer src="../lib/ScrollTrigger.min.js"></script>
-<script defer src="../lib/manifest.js"></script>
-<script defer src="../main.js?v=20260707"></script>
+<script defer src="../assets/js/vendor/gsap.min.js"></script>
+<script defer src="../assets/js/vendor/ScrollTrigger.min.js"></script>
+<script defer src="../assets/js/vendor/manifest.js"></script>
+<script defer src="../assets/js/main.js?v=20260707"></script>
 </body>
 </html>"""
 
@@ -257,14 +257,14 @@ def page(cat, slug, name, img):
 <title>{name} | {info['label']} — Sumifluid®</title>
 <meta name="description" content="{name} en stock permanente. {info['lead']}">
 <link rel="icon" href="data:,">
-<link rel="stylesheet" href="../styles.css?v=20260707">
+<link rel="stylesheet" href="../assets/css/styles.css?v=20260707">
 </head>
 <body>
 <a href="#main" class="skip-link">Ir al contenido</a>
 {HEADER}
 
 <main id="main">
-  <p class="wrap breadcrumb"><a href="../index.html">Inicio</a> / <a href="../{cat}.html">{info['label']}</a> / {name}</p>
+  <p class="wrap breadcrumb"><a href="../index.html">Inicio</a> / <a href="../{cat}/">{info['label']}</a> / {name}</p>
 
   <section class="page-hero">
     <div class="wrap">
@@ -272,8 +272,8 @@ def page(cat, slug, name, img):
       <h1>{name}</h1>
       <p>{info['lead']}</p>
       <div class="hero-ctas" style="margin-top:2rem;">
-        <a href="../contacto.html#presupuesto" class="btn btn-primary">Pedir presupuesto →</a>
-        <a href="../{cat}.html" class="btn btn-ghost">← Volver a {info['label']}</a>
+        <a href="../contacto/#presupuesto" class="btn btn-primary">Pedir presupuesto →</a>
+        <a href="../{cat}/" class="btn btn-ghost">← Volver a {info['label']}</a>
       </div>
     </div>
   </section>
@@ -314,8 +314,8 @@ def page(cat, slug, name, img):
       <h2>¿Necesita {name.lower()}?</h2>
       <p>Consúltenos disponibilidad, plazos y precio sin compromiso. Le respondemos en horario laboral.</p>
       <div class="hero-ctas" style="justify-content:center;">
-        <a href="../contacto.html#presupuesto" class="btn btn-primary">Pedir presupuesto →</a>
-        <a href="../marcas.html" class="btn btn-ghost">Ver todas las marcas</a>
+        <a href="../contacto/#presupuesto" class="btn btn-primary">Pedir presupuesto →</a>
+        <a href="../marcas/" class="btn btn-ghost">Ver todas las marcas</a>
       </div>
     </div>
   </section>

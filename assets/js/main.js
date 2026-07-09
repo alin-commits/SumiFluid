@@ -29,7 +29,10 @@
 
   /* ---------- active nav link ---------- */
   function initActiveLink() {
-    var file = (location.pathname.split("/").pop() || "index.html").replace(".html", "") || "index";
+    var segs = location.pathname.split("/").filter(Boolean);
+    var last = segs.length ? segs[segs.length - 1] : "index.html";
+    var file = last.replace(".html", "") || "index";
+    if (file === "index" && segs.length > 1) file = segs[segs.length - 2];
     document.querySelectorAll("[data-nav-links] a[data-key]").forEach(function (a) {
       if (a.getAttribute("data-key") === file) a.classList.add("active");
     });
