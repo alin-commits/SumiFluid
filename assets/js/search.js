@@ -9,7 +9,13 @@
       .replace(/[̀-ͯ]/g, "");
   }
 
-  function pathPrefix() {
+  function pathPrefix(panel) {
+    // el prefijo real (segun la carpeta de cada pagina) se escribe en el HTML al generar
+    // la pagina -- ver data-prefix en el div .search-panel. Esto evita tener que adivinarlo
+    // a partir de location.pathname, que falla si la pagina se abre con file:// (doble clic)
+    // en vez de sobre un servidor.
+    var attr = panel.getAttribute("data-prefix");
+    if (attr !== null) return attr;
     var segs = window.location.pathname.split("/").filter(Boolean);
     var isFile = segs.length > 0 && /\.[a-z0-9]+$/i.test(segs[segs.length - 1]);
     var depth = isFile ? segs.length - 1 : segs.length;
@@ -35,7 +41,7 @@
       };
     });
 
-    var prefix = pathPrefix();
+    var prefix = pathPrefix(panel);
     var open = false;
 
     function openPanel() {
