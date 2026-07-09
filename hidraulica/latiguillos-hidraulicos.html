@@ -36,9 +36,17 @@
       <a href="../contacto/" data-key="contacto">Contacto</a>
     </nav>
     <a href="../contacto/#presupuesto" class="nav-cta"><span>Pedir presupuesto</span></a>
+    <button class="search-toggle" data-search-toggle aria-expanded="false" aria-label="Buscar"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.35-4.35"></path></svg></button>
     <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-label="Abrir menú">☰</button>
   </div>
 </header>
+
+<div class="search-panel" data-search-panel>
+  <div class="wrap">
+    <input type="text" class="search-input" data-search-input placeholder="Buscar productos, categorías..." autocomplete="off">
+    <div class="search-results" data-search-results></div>
+  </div>
+</div>
 
 <main id="main">
   <p class="wrap breadcrumb"><a href="../index.html">Inicio</a> / <a href="../hidraulica/">Hidráulica</a> / Latiguillos Hidráulicos</p>
@@ -92,6 +100,57 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="section section-tight">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="kicker">Guía técnica</p>
+        <h2>Todo sobre los Latiguillos Hidráulicos</h2>
+      </div>
+      <div class="prod-guide reveal">
+        <p>Un latiguillo hidráulico es un tramo de manguera flexible con los racores ya montados y engatillados en sus extremos, listo para conectar directamente en el circuito. Se emplea para unir componentes que se mueven entre sí, como cilindros, motores o elementos articulados, y para absorber las vibraciones que un tubo rígido no podría soportar. Está formado por un tubo interior de caucho sintético, uno o varios trenzados o espirales de acero como refuerzo, y una cubierta exterior que lo protege de la abrasión y de los agentes ambientales.</p>
+
+        <div class="prod-guide-columns">
+        <div class="prod-guide-block">
+          <h3>Especialistas en latiguillos hidráulicos de todo tipo</h3>
+          <p>Somos especialistas en todo tipo de componentes hidráulicos, entre ellos los latiguillos. Fabricamos y montamos latiguillos a medida en nuestro propio taller de Elche, con el racor, la longitud y la curvatura exactas que necesita su instalación.</p>
+        </div>
+
+        <div class="prod-guide-block">
+          <h3>Tipos de latiguillos hidráulicos para cualquier solución</h3>
+          <p>En Sumifluid contamos con todo tipo de suministro industrial y los latiguillos no son menos, ya que disponemos de diferentes tipos de alta calidad, fabricados según normas como SAE 100R o DIN 2ST:</p>
+          <ul class="prod-guide-list">
+            <li>Latiguillos de una trenza de acero, para presión media</li>
+            <li>Latiguillos de doble trenza de acero, para alta presión</li>
+            <li>Latiguillos multiespiral, para las presiones más exigentes</li>
+            <li>Latiguillos termoplásticos, más ligeros y con radios de curvatura estrechos</li>
+            <li>Latiguillos de PTFE (teflón), para fluidos agresivos o poco compatibles con el caucho</li>
+            <li>Latiguillos metálicos trenzados, para altas temperaturas</li>
+          </ul>
+        </div>
+
+        <div class="prod-guide-block">
+          <h3>Características de los latiguillos hidráulicos de Sumifluid</h3>
+          <p>Dentro de nuestro catálogo contamos con latiguillos con características diferenciadoras respecto a lo que puede encontrar en el mercado. Estas son las características principales y algunos consejos para nuestros productos:</p>
+          <ul class="prod-guide-list">
+            <li>Se fabrican a medida con el racor que necesite en cada extremo: BSP, JIC, métrico o NPT</li>
+            <li>La elección del diámetro interior debe hacerse según el caudal que circula, no solo según el racor del equipo</li>
+            <li>Respete siempre el radio de curvatura mínimo indicado por el fabricante para no reducir la vida útil del latiguillo</li>
+            <li>Compruebe la compatibilidad del tubo interior con el tipo de aceite o fluido de su instalación</li>
+            <li>La presión de trabajo debe ser siempre inferior a la presión de rotura indicada, dejando un margen de seguridad</li>
+            <li>Revise periódicamente el estado de la cubierta exterior: grietas, abrasión o abombamientos son señal de que hay que sustituirlo</li>
+          </ul>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="prod-guide-cta-band reveal">
+    <div class="wrap">
+      <p>En Sumifluid le ofrecemos todo tipo de latiguillos hidráulicos, fabricados a medida en nuestro propio taller, sin necesidad de desplazarse, con la máxima calidad y los precios más competitivos. Operamos en toda España, gestionando su pedido en 24/48 horas. Contacte con nuestro técnico profesional y encuentre la mejor respuesta para su aplicación: rellene el <a href="../contacto/#presupuesto">formulario de presupuesto</a> o llámenos al <a href="tel:+34662264778">662 26 47 78</a> o al <a href="tel:+34966673618">966 673 618</a>.</p>
     </div>
   </section>
 
@@ -376,6 +435,8 @@
 <script defer src="../assets/js/vendor/gsap.min.js"></script>
 <script defer src="../assets/js/vendor/ScrollTrigger.min.js"></script>
 <script defer src="../assets/js/vendor/manifest.js"></script>
+<script src="../assets/js/search-index.js"></script>
+<script defer src="../assets/js/search.js"></script>
 <script defer src="../assets/js/main.js?v=20260707"></script>
 <script type="application/ld+json">
 {

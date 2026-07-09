@@ -36,9 +36,17 @@
       <a href="../contacto/" data-key="contacto">Contacto</a>
     </nav>
     <a href="../contacto/#presupuesto" class="nav-cta"><span>Pedir presupuesto</span></a>
+    <button class="search-toggle" data-search-toggle aria-expanded="false" aria-label="Buscar"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.35-4.35"></path></svg></button>
     <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-label="Abrir menú">☰</button>
   </div>
 </header>
+
+<div class="search-panel" data-search-panel>
+  <div class="wrap">
+    <input type="text" class="search-input" data-search-input placeholder="Buscar productos, categorías..." autocomplete="off">
+    <div class="search-results" data-search-results></div>
+  </div>
+</div>
 
 <main id="main">
   <p class="wrap breadcrumb"><a href="../index.html">Inicio</a> / <a href="../estanqueidad/">Estanqueidad</a> / T-DUO</p>
@@ -92,6 +100,57 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="section section-tight">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="kicker">Guía técnica</p>
+        <h2>Todo sobre las juntas T-DUO</h2>
+      </div>
+      <div class="prod-guide reveal">
+        <p>La junta T-DUO es una junta de pistón de doble efecto, formada por un elemento de sellado de PTFE con perfil simétrico y una junta tórica interior que lo precarga contra la camisa del cilindro. Al ser simétrica, sella en ambos sentidos de la carrera, por lo que se monta en cilindros de doble efecto donde la presión actúa alternativamente a los dos lados del pistón. La combinación de un material de bajo rozamiento como el PTFE con el elemento elastomérico de precarga le da un comportamiento estático excelente y un arranque suave en movimiento. Es una solución habitual como alternativa a las juntas Shamban en pistones de una sola pieza.</p>
+
+        <div class="prod-guide-columns">
+        <div class="prod-guide-block">
+          <h3>Especialistas en juntas T-DUO de todo tipo</h3>
+          <p>Somos especialistas en estanqueidad para cilindros hidráulicos de doble efecto, y las juntas T-DUO forman parte de las soluciones que recomendamos cuando se necesita un sellado bidireccional de alto rendimiento. Le asesoramos sobre la combinación de materiales más adecuada para el elemento de PTFE y la junta tórica de precarga según su aplicación.</p>
+        </div>
+
+        <div class="prod-guide-block">
+          <h3>Tipos de juntas T-DUO para cualquier solución</h3>
+          <p>La junta T-DUO se puede configurar combinando distintos materiales en el elemento de PTFE y en la junta tórica de precarga, según la aplicación:</p>
+          <ul class="prod-guide-list">
+            <li>Elemento de sellado en PTFE-bronce, la combinación estándar para uso general</li>
+            <li>Elemento de sellado en PTFE con carga de vidrio, para mayor resistencia mecánica</li>
+            <li>Elemento de sellado en PTFE con grafito o carbono, para menor fricción y mejor comportamiento en seco</li>
+            <li>Junta tórica de precarga en NBR 70, la opción estándar para aceites minerales</li>
+            <li>Junta tórica de precarga en EPDM, FKM o VMQ, según el fluido y la temperatura de trabajo</li>
+            <li>Perfil simétrico apto tanto para pistón como, en algunas versiones, para vástago</li>
+          </ul>
+        </div>
+
+        <div class="prod-guide-block">
+          <h3>Características de las juntas T-DUO de Sumifluid</h3>
+          <p>Estas son las características principales que hacen de la junta T-DUO una solución de referencia en cilindros de doble efecto:</p>
+          <ul class="prod-guide-list">
+            <li>Sellado bidireccional, apto para cilindros de doble efecto con presión en ambos lados del pistón</li>
+            <li>Excelente comportamiento estático y buena estanqueidad incluso bajo cargas elevadas</li>
+            <li>Bajo coeficiente de fricción gracias al elemento de PTFE, con arranque suave y movimiento uniforme</li>
+            <li>Montaje en pistones de una sola pieza, sin necesidad de mecanizados adicionales</li>
+            <li>El material del elemento de PTFE y el de la junta tórica de precarga pueden combinarse según la aplicación</li>
+            <li>Buena resistencia a la extrusión en aplicaciones de presión elevada</li>
+          </ul>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="prod-guide-cta-band reveal">
+    <div class="wrap">
+      <p>En Sumifluid le ofrecemos todo tipo de juntas T-DUO sin necesidad de desplazarse, con la máxima calidad y los precios más competitivos. Operamos en toda España, gestionando su pedido en 24/48 horas. Contacte con nuestro técnico profesional y encuentre la mejor respuesta para su aplicación: rellene el <a href="../contacto/#presupuesto">formulario de presupuesto</a> o llámenos al <a href="tel:+34662264778">662 26 47 78</a> o al <a href="tel:+34966673618">966 673 618</a>.</p>
     </div>
   </section>
 
@@ -281,6 +340,8 @@
 <script defer src="../assets/js/vendor/gsap.min.js"></script>
 <script defer src="../assets/js/vendor/ScrollTrigger.min.js"></script>
 <script defer src="../assets/js/vendor/manifest.js"></script>
+<script src="../assets/js/search-index.js"></script>
+<script defer src="../assets/js/search.js"></script>
 <script defer src="../assets/js/main.js?v=20260707"></script>
 <script type="application/ld+json">
 {

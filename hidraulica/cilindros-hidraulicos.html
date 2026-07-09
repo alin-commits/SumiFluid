@@ -36,9 +36,17 @@
       <a href="../contacto/" data-key="contacto">Contacto</a>
     </nav>
     <a href="../contacto/#presupuesto" class="nav-cta"><span>Pedir presupuesto</span></a>
+    <button class="search-toggle" data-search-toggle aria-expanded="false" aria-label="Buscar"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.35-4.35"></path></svg></button>
     <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-label="Abrir menú">☰</button>
   </div>
 </header>
+
+<div class="search-panel" data-search-panel>
+  <div class="wrap">
+    <input type="text" class="search-input" data-search-input placeholder="Buscar productos, categorías..." autocomplete="off">
+    <div class="search-results" data-search-results></div>
+  </div>
+</div>
 
 <main id="main">
   <p class="wrap breadcrumb"><a href="../index.html">Inicio</a> / <a href="../hidraulica/">Hidráulica</a> / Cilindros Hidráulicos</p>
@@ -92,6 +100,57 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="section section-tight">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="kicker">Guía técnica</p>
+        <h2>Todo sobre los Cilindros Hidráulicos</h2>
+      </div>
+      <div class="prod-guide reveal">
+        <p>Un cilindro hidráulico es el actuador que transforma la energía hidráulica, caudal y presión, en fuerza y movimiento lineal. Está formado por un cuerpo o camisa, un pistón interior unido a un vástago que sale al exterior, y las juntas de estanqueidad que separan las dos cámaras y evitan fugas. Según el número de entradas de aceite que tienen, se dividen en dos grandes familias: los cilindros de simple efecto, que solo empujan en un sentido y se recuperan por gravedad, muelle o carga externa, y los cilindros de doble efecto, que empujan y recuperan de forma activa mediante presión hidráulica en ambos sentidos.</p>
+
+        <div class="prod-guide-columns">
+        <div class="prod-guide-block">
+          <h3>Especialistas en cilindros hidráulicos de todo tipo</h3>
+          <p>Somos especialistas en todo tipo de componentes hidráulicos, entre ellos los cilindros hidráulicos. Con amplia experiencia en el sector, le ayudamos a definir la carrera, el diámetro y el tipo de fijación que necesita, y si no encuentra la medida exacta en catálogo, se la fabricamos a medida en nuestro propio taller.</p>
+        </div>
+
+        <div class="prod-guide-block">
+          <h3>Tipos de cilindros hidráulicos para cualquier solución</h3>
+          <p>En Sumifluid contamos con todo tipo de suministro industrial y los cilindros hidráulicos no son menos, ya que disponemos de diferentes tipos de cilindros de alta calidad:</p>
+          <ul class="prod-guide-list">
+            <li>Cilindros de simple efecto, con una sola entrada de aceite y retorno por gravedad, muelle o carga externa</li>
+            <li>Cilindros de doble efecto, con dos entradas de aceite que permiten empujar y recuperar de forma activa</li>
+            <li>Cilindros telescópicos, con el vástago fragmentado en varias etapas que se recogen unas dentro de otras para reducir el espacio en posición contraída</li>
+            <li>Cilindros de doble vástago, con salida a ambos lados del pistón para un empuje simétrico</li>
+            <li>Cilindros tándem, formados por dos cilindros acoplados en serie para desarrollar mayor fuerza sin aumentar el diámetro</li>
+            <li>Cilindros a medida, fabricados según la carrera, el diámetro y la fijación concretos de cada aplicación</li>
+          </ul>
+        </div>
+
+        <div class="prod-guide-block">
+          <h3>Características de los cilindros hidráulicos de Sumifluid</h3>
+          <p>Dentro de nuestro catálogo contamos con cilindros hidráulicos con características diferenciadoras respecto a lo que puede encontrar en el mercado. Estas son las características principales y algunos consejos para nuestros productos:</p>
+          <ul class="prod-guide-list">
+            <li>El diámetro del pistón y la presión de trabajo del circuito determinan la fuerza que puede desarrollar el cilindro</li>
+            <li>La carrera debe ajustarse al recorrido real necesario, dejando margen suficiente sin sobredimensionar el cilindro</li>
+            <li>Las juntas de estanqueidad deben ser compatibles con el tipo de aceite y la temperatura de trabajo de la instalación</li>
+            <li>Un vástago cromado y bien protegido frente a golpes y partículas prolonga la vida útil de las juntas</li>
+            <li>Conviene revisar periódicamente la aparición de fugas en las juntas y el estado del vástago, ya que las rayas o picaduras aceleran su desgaste</li>
+            <li>El tipo de fijación (bridas, muñones, rótulas) debe elegirse según los esfuerzos y el movimiento que va a soportar el cilindro en su aplicación</li>
+          </ul>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="prod-guide-cta-band reveal">
+    <div class="wrap">
+      <p>En Sumifluid le ofrecemos todo tipo de cilindros hidráulicos sin necesidad de desplazarse, con la máxima calidad y los precios más competitivos. Operamos en toda España, gestionando su pedido en 24/48 horas. Contacte con nuestro técnico profesional y encuentre la mejor respuesta para su aplicación: rellene el <a href="../contacto/#presupuesto">formulario de presupuesto</a> o llámenos al <a href="tel:+34662264778">662 26 47 78</a> o al <a href="tel:+34966673618">966 673 618</a>.</p>
     </div>
   </section>
 
@@ -376,6 +435,8 @@
 <script defer src="../assets/js/vendor/gsap.min.js"></script>
 <script defer src="../assets/js/vendor/ScrollTrigger.min.js"></script>
 <script defer src="../assets/js/vendor/manifest.js"></script>
+<script src="../assets/js/search-index.js"></script>
+<script defer src="../assets/js/search.js"></script>
 <script defer src="../assets/js/main.js?v=20260707"></script>
 <script type="application/ld+json">
 {

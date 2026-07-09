@@ -24,11 +24,14 @@ assets/js/main.js          JS propio del sitio
 assets/js/vendor/          Librerías de terceros (gsap, ScrollTrigger, manifest)
 assets/img/                Imágenes, organizadas por categoría
 assets/img/favicon-32x32.png, favicon-16x16.png, apple-touch-icon.png   Favicon (generado a partir de la "S" del logo)
+assets/js/search.js        Buscador del sitio (sin dependencias, filtra en el cliente)
+assets/js/search-index.js  Índice de búsqueda generado — NO editar a mano, ver tools/gen_search_index.ps1
 
-tools/                     Scripts Python de generación/mantenimiento (dev-time only, no se sube al hosting)
-  generate_families.py     Genera las páginas de familia de producto
-  inject_faq.py            Inyecta bloques de FAQ en páginas existentes
+tools/                     Scripts de generación/mantenimiento (dev-time only, no se sube al hosting)
+  generate_families.py     Genera las páginas de familia de producto (Python 3)
+  inject_faq.py            Inyecta bloques de FAQ en páginas existentes (Python 3)
   faq_data_completo.py     Datos de FAQ por familia
+  gen_search_index.ps1     Regenera assets/js/search-index.js (PowerShell)
 
 *.html (raíz, hidraulica.html, neumatica.html, etc.)  Redirecciones a las nuevas URLs con carpeta
   (mantienen vivos los enlaces/índices antiguos; ver también .htaccess y _redirects)
@@ -62,3 +65,17 @@ No hay CMS: cada post es un archivo HTML dentro de `blog/`.
 5. Añade la URL del post a `sitemap.xml`.
 
 El post NO se enlaza en el header — solo aparece en `blog/index.html` y en el footer de todo el sitio.
+
+## Buscador
+
+Botón de lupa en el header (todas las páginas) que abre un panel con un cuadro de búsqueda. Filtra en el cliente,
+sin backend ni dependencias, contra `assets/js/search-index.js` — un array con título, categoría, descripción y
+URL de cada página, generado a partir de sus propios `<title>`/`<meta description>`/`<h1>`.
+
+**Tras añadir, borrar o renombrar cualquier página (o cambiar su título/descripción), hay que regenerar el índice:**
+
+```
+powershell -File tools/gen_search_index.ps1
+```
+
+Esto sobrescribe `assets/js/search-index.js` por completo — no se edita a mano.

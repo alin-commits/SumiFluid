@@ -36,9 +36,17 @@
       <a href="../contacto/" data-key="contacto">Contacto</a>
     </nav>
     <a href="../contacto/#presupuesto" class="nav-cta"><span>Pedir presupuesto</span></a>
+    <button class="search-toggle" data-search-toggle aria-expanded="false" aria-label="Buscar"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.35-4.35"></path></svg></button>
     <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-label="Abrir menú">☰</button>
   </div>
 </header>
+
+<div class="search-panel" data-search-panel>
+  <div class="wrap">
+    <input type="text" class="search-input" data-search-input placeholder="Buscar productos, categorías..." autocomplete="off">
+    <div class="search-results" data-search-results></div>
+  </div>
+</div>
 
 <main id="main">
   <p class="wrap breadcrumb"><a href="../index.html">Inicio</a> / <a href="../neumatica/">Neumática</a> / Reguladores de Presión</p>
@@ -98,6 +106,58 @@
   <section class="section section-tight">
     <div class="wrap">
       <div class="section-head reveal">
+        <p class="kicker">Guía técnica</p>
+        <h2>Todo sobre los Reguladores de Presión</h2>
+      </div>
+      <div class="prod-guide reveal">
+        <p>Un regulador de presión neumático es el componente que reduce y estabiliza la presión de la red de aire comprimido a la presión de trabajo que necesita cada equipo, manteniéndola constante aunque la presión de entrada varíe. Su elemento principal es un diafragma o pistón que se equilibra entre la presión de salida y la fuerza de un muelle regulable mediante un pomo o tornillo. Se instala habitualmente después del filtro, formando parte del grupo de tratamiento de aire (FRL), y es imprescindible para proteger cilindros, válvulas y herramientas de sobrepresiones que podrían dañarlos o hacerlos trabajar de forma imprecisa. Existen versiones de regulación manual, para ajuste directo en el punto de instalación, y versiones piloteadas, cuya presión de salida se controla a distancia con una señal neumática externa.</p>
+
+        <div class="prod-guide-columns">
+        <div class="prod-guide-block">
+          <h3>Especialistas en reguladores de presión de todo tipo</h3>
+          <p>En Sumifluid disponemos de reguladores de presión neumática con stock permanente en nuestro almacén de Elche, en distintos tamaños de rosca y rangos de regulación. Nuestro equipo técnico le ayuda a elegir el regulador adecuado según el caudal, la presión de entrada de su instalación y la precisión que necesite su aplicación.</p>
+        </div>
+
+        <div class="prod-guide-block">
+          <h3>Tipos de reguladores de presión para cualquier solución</h3>
+          <p>En Sumifluid disponemos de distintos tipos de reguladores de presión:</p>
+          <ul class="prod-guide-list">
+            <li>Reguladores manuales, con pomo giratorio para ajustar la presión de salida</li>
+            <li>Reguladores con alivio (escape), que purgan el exceso de presión de salida automáticamente</li>
+            <li>Reguladores sin alivio, para aplicaciones donde no se desea liberar aire a la atmósfera</li>
+            <li>Reguladores piloteados, controlados a distancia mediante una señal neumática externa</li>
+            <li>Reguladores bloqueables, con pomo que se fija tras el ajuste para evitar manipulaciones no autorizadas</li>
+            <li>Reguladores de precisión, para aplicaciones que exigen una regulación muy estable</li>
+            <li>Reguladores combinados con filtro (FR) o integrados en un grupo FRL completo</li>
+          </ul>
+        </div>
+
+        <div class="prod-guide-block">
+          <h3>Características de los reguladores de presión de Sumifluid</h3>
+          <p>Estas son algunas características y consejos técnicos a tener en cuenta al elegir un regulador de presión:</p>
+          <ul class="prod-guide-list">
+            <li>El caudal máximo del regulador debe ser adecuado al consumo de aire de la instalación, ya que un regulador subdimensionado provoca caída de presión en el equipo</li>
+            <li>La presión de salida debe leerse siempre con un manómetro, integrado o instalado justo después del regulador</li>
+            <li>Los reguladores con alivio permiten bajar rápidamente la presión de salida al reducir el ajuste; los que no tienen alivio requieren purgar la línea manualmente</li>
+            <li>En aplicaciones críticas de seguridad, es recomendable un modelo bloqueable, para evitar que se modifique el ajuste sin autorización</li>
+            <li>Un regulador piloteado permite ajustar la presión de varios puntos de la instalación desde un único mando centralizado</li>
+            <li>Revise periódicamente el estado del diafragma interno, ya que su desgaste provoca oscilaciones en la presión de salida</li>
+          </ul>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="prod-guide-cta-band reveal">
+    <div class="wrap">
+      <p>En Sumifluid le ofrecemos todo tipo de reguladores de presión sin necesidad de desplazarse, con la máxima calidad y los precios más competitivos. Operamos en toda España, gestionando su pedido en 24/48 horas. Contacte con nuestro técnico profesional y encuentre la mejor respuesta para su aplicación: rellene el <a href="../contacto/#presupuesto">formulario de presupuesto</a> o llámenos al <a href="tel:+34662264778">662 26 47 78</a> o al <a href="tel:+34966673618">966 673 618</a>.</p>
+    </div>
+  </section>
+
+  <section class="section section-tight">
+    <div class="wrap">
+      <div class="section-head reveal">
         <p class="kicker">Otras familias</p>
         <h2>Más categorías de Neumática</h2>
       </div>
@@ -109,7 +169,7 @@
         </a>
         <a class="fam-row" href="valvulas-neumaticas.html">
           <span class="fam-row-arrow">→</span>
-          <span class="fam-row-thumb is-mono"><span>NE</span></span>
+          <span class="fam-row-thumb"><img src="../assets/img/neumatica/valvulas-y-electrovalvulas.png" alt="Válvulas y Electroválvulas" loading="lazy"></span>
           <span class="fam-row-name">Válvulas y Electroválvulas</span>
         </a>
         <a class="fam-row" href="bombas-neumaticas.html">
@@ -287,6 +347,8 @@
 <script defer src="../assets/js/vendor/gsap.min.js"></script>
 <script defer src="../assets/js/vendor/ScrollTrigger.min.js"></script>
 <script defer src="../assets/js/vendor/manifest.js"></script>
+<script src="../assets/js/search-index.js"></script>
+<script defer src="../assets/js/search.js"></script>
 <script defer src="../assets/js/main.js?v=20260707"></script>
 <script type="application/ld+json">
 {

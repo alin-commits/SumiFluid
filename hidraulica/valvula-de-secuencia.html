@@ -36,9 +36,17 @@
       <a href="../contacto/" data-key="contacto">Contacto</a>
     </nav>
     <a href="../contacto/#presupuesto" class="nav-cta"><span>Pedir presupuesto</span></a>
+    <button class="search-toggle" data-search-toggle aria-expanded="false" aria-label="Buscar"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.35-4.35"></path></svg></button>
     <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-label="Abrir menú">☰</button>
   </div>
 </header>
+
+<div class="search-panel" data-search-panel>
+  <div class="wrap">
+    <input type="text" class="search-input" data-search-input placeholder="Buscar productos, categorías..." autocomplete="off">
+    <div class="search-results" data-search-results></div>
+  </div>
+</div>
 
 <main id="main">
   <p class="wrap breadcrumb"><a href="../index.html">Inicio</a> / <a href="../hidraulica/">Hidráulica</a> / Válvula de Secuencia</p>
@@ -92,6 +100,57 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="section section-tight">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="kicker">Guía técnica</p>
+        <h2>Todo sobre las Válvulas de Secuencia</h2>
+      </div>
+      <div class="prod-guide reveal">
+        <p>La válvula de secuencia es la válvula de control de presión que permite automatizar el orden de trabajo de dos o más actuadores dentro de un mismo circuito. Deja pasar el caudal hacia el segundo actuador únicamente cuando el primer circuito ha alcanzado la presión de tarado establecida, de modo que un movimiento no comienza hasta que el anterior se ha completado. Es muy habitual en prensas, estaciones transfer y aplicaciones de sujeción-mecanizado, donde primero hay que fijar la pieza y solo después iniciar el trabajo. En Sumifluid disponemos de válvulas de secuencia de acción directa y pilotadas.</p>
+
+        <div class="prod-guide-columns">
+        <div class="prod-guide-block">
+          <h3>Especialistas en válvulas de secuencia de todo tipo</h3>
+          <p>Somos especialistas en todo tipo de componentes hidráulicos, entre ellos las válvulas de secuencia. Le ayudamos a definir el orden y la presión de cada etapa de su circuito para automatizarlo sin necesidad de temporizadores eléctricos.</p>
+        </div>
+
+        <div class="prod-guide-block">
+          <h3>Tipos de válvulas de secuencia para cualquier solución</h3>
+          <p>En Sumifluid contamos con todo tipo de suministro industrial y las válvulas de secuencia no son menos, ya que disponemos de diferentes tipos de alta calidad:</p>
+          <ul class="prod-guide-list">
+            <li>Válvulas de secuencia de acción directa, para cambios de etapa más simples</li>
+            <li>Válvulas de secuencia pilotadas, para instalaciones con mayor caudal</li>
+            <li>Válvulas de secuencia de control interno de la presión</li>
+            <li>Válvulas de secuencia de control externo de la presión</li>
+            <li>Válvulas de secuencia roscadas en línea</li>
+            <li>Válvulas de secuencia integradas en bloque o subplaca</li>
+          </ul>
+        </div>
+
+        <div class="prod-guide-block">
+          <h3>Características de las válvulas de secuencia de Sumifluid</h3>
+          <p>Dentro de nuestro catálogo contamos con válvulas de secuencia con características diferenciadoras respecto a lo que puede encontrar en el mercado. Estas son las características principales y algunos consejos para nuestros productos:</p>
+          <ul class="prod-guide-list">
+            <li>Permiten encadenar movimientos, por ejemplo sujeción y después mecanizado, sin depender de sensores ni de un autómata</li>
+            <li>El punto de tarado de cada válvula debe ajustarse por encima de la presión de trabajo normal del primer actuador, para que no se dispare antes de tiempo</li>
+            <li>Muchas versiones necesitan una línea de drenaje externa para evacuar el aceite de pilotaje sin interferir en el circuito de retorno</li>
+            <li>El control externo de presión permite independizar el disparo de la válvula de las variaciones del propio circuito que gobierna</li>
+            <li>Se utilizan mucho en aplicaciones de sujeción de pieza antes de mecanizar, y en general en cualquier secuencia de movimientos que deba respetar un orden fijo</li>
+            <li>Si su aplicación requiere varias etapas encadenadas, podemos ayudarle a dimensionar cada válvula de la secuencia</li>
+          </ul>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="prod-guide-cta-band reveal">
+    <div class="wrap">
+      <p>En Sumifluid le ofrecemos todo tipo de válvulas de secuencia sin necesidad de desplazarse, con la máxima calidad y los precios más competitivos. Operamos en toda España, gestionando su pedido en 24/48 horas. Contacte con nuestro técnico profesional y encuentre la mejor respuesta para su aplicación: rellene el <a href="../contacto/#presupuesto">formulario de presupuesto</a> o llámenos al <a href="tel:+34662264778">662 26 47 78</a> o al <a href="tel:+34966673618">966 673 618</a>.</p>
     </div>
   </section>
 
@@ -364,6 +423,8 @@
 <script defer src="../assets/js/vendor/gsap.min.js"></script>
 <script defer src="../assets/js/vendor/ScrollTrigger.min.js"></script>
 <script defer src="../assets/js/vendor/manifest.js"></script>
+<script src="../assets/js/search-index.js"></script>
+<script defer src="../assets/js/search.js"></script>
 <script defer src="../assets/js/main.js?v=20260707"></script>
 <script type="application/ld+json">
 {

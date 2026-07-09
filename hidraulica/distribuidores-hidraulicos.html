@@ -36,9 +36,17 @@
       <a href="../contacto/" data-key="contacto">Contacto</a>
     </nav>
     <a href="../contacto/#presupuesto" class="nav-cta"><span>Pedir presupuesto</span></a>
+    <button class="search-toggle" data-search-toggle aria-expanded="false" aria-label="Buscar"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.35-4.35"></path></svg></button>
     <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-label="Abrir menú">☰</button>
   </div>
 </header>
+
+<div class="search-panel" data-search-panel>
+  <div class="wrap">
+    <input type="text" class="search-input" data-search-input placeholder="Buscar productos, categorías..." autocomplete="off">
+    <div class="search-results" data-search-results></div>
+  </div>
+</div>
 
 <main id="main">
   <p class="wrap breadcrumb"><a href="../index.html">Inicio</a> / <a href="../hidraulica/">Hidráulica</a> / Distribuidores Hidráulicos</p>
@@ -92,6 +100,57 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="section section-tight">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="kicker">Guía técnica</p>
+        <h2>Todo sobre los Distribuidores Hidráulicos</h2>
+      </div>
+      <div class="prod-guide reveal">
+        <p>Un distribuidor hidráulico, también llamado válvula direccional, es el componente que dirige el caudal de aceite hacia una u otra cámara de un cilindro o motor hidráulico, controlando así el sentido y el paro del movimiento de los actuadores. Internamente está formado por un cuerpo con varias vías y un carrete, o corredera, que se desplaza para abrir o cerrar el paso del aceite entre ellas. Según su construcción pueden ser distribuidores monobloque, con todas las secciones de control integradas en una única pieza fundida, o distribuidores modulares, formados por varias secciones independientes que se apilan y combinan según el número de actuadores a controlar.</p>
+
+        <div class="prod-guide-columns">
+        <div class="prod-guide-block">
+          <h3>Especialistas en distribuidores hidráulicos de todo tipo</h3>
+          <p>Somos especialistas en todo tipo de componentes hidráulicos, entre ellos los distribuidores hidráulicos. Con amplia experiencia en el sector, le ayudamos a elegir el número de vías, el tipo de centro y el sistema de accionamiento que mejor se adapta a su instalación.</p>
+        </div>
+
+        <div class="prod-guide-block">
+          <h3>Tipos de distribuidores hidráulicos para cualquier solución</h3>
+          <p>En Sumifluid contamos con todo tipo de suministro industrial y los distribuidores hidráulicos no son menos, ya que disponemos de diferentes tipos de distribuidores de alta calidad:</p>
+          <ul class="prod-guide-list">
+            <li>Distribuidores monobloque, con varias secciones de control integradas en una única pieza fundida</li>
+            <li>Distribuidores modulares, formados por secciones independientes que se apilan según el número de actuadores a controlar</li>
+            <li>Distribuidores de accionamiento manual por palanca, para un control directo del operario</li>
+            <li>Distribuidores de accionamiento electro-hidráulico por solenoide, para automatizar el control desde un PLC o cuadro eléctrico</li>
+            <li>Distribuidores de centro abierto, que dejan pasar el caudal de la bomba al depósito en posición neutra</li>
+            <li>Distribuidores de centro cerrado, que bloquean el paso de caudal en posición neutra</li>
+          </ul>
+        </div>
+
+        <div class="prod-guide-block">
+          <h3>Características de los distribuidores hidráulicos de Sumifluid</h3>
+          <p>Dentro de nuestro catálogo contamos con distribuidores hidráulicos con características diferenciadoras respecto a lo que puede encontrar en el mercado. Estas son las características principales y algunos consejos para nuestros productos:</p>
+          <ul class="prod-guide-list">
+            <li>El número de vías y de posiciones del carrete determina cuántos actuadores puede controlar y en qué sentidos</li>
+            <li>Los carretes suelen ir rectificados y cromados para asegurar un ajuste preciso y una larga vida útil</li>
+            <li>El caudal máximo admisible del distribuidor debe ser igual o superior al caudal de la bomba de la instalación, para no generar pérdidas de carga excesivas</li>
+            <li>El tipo de centro, abierto o cerrado, condiciona el comportamiento del circuito cuando el distribuidor está en posición neutra</li>
+            <li>Conviene revisar periódicamente el estado de las juntas y del carrete, ya que el desgaste interno provoca fugas internas y pérdida de fuerza en el actuador</li>
+            <li>La elección del sistema de accionamiento, manual, hidráulico piloto o electro-hidráulico, depende del grado de automatización que requiera la instalación</li>
+          </ul>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="prod-guide-cta-band reveal">
+    <div class="wrap">
+      <p>En Sumifluid le ofrecemos todo tipo de distribuidores hidráulicos sin necesidad de desplazarse, con la máxima calidad y los precios más competitivos. Operamos en toda España, gestionando su pedido en 24/48 horas. Contacte con nuestro técnico profesional y encuentre la mejor respuesta para su aplicación: rellene el <a href="../contacto/#presupuesto">formulario de presupuesto</a> o llámenos al <a href="tel:+34662264778">662 26 47 78</a> o al <a href="tel:+34966673618">966 673 618</a>.</p>
     </div>
   </section>
 
@@ -364,6 +423,8 @@
 <script defer src="../assets/js/vendor/gsap.min.js"></script>
 <script defer src="../assets/js/vendor/ScrollTrigger.min.js"></script>
 <script defer src="../assets/js/vendor/manifest.js"></script>
+<script src="../assets/js/search-index.js"></script>
+<script defer src="../assets/js/search.js"></script>
 <script defer src="../assets/js/main.js?v=20260707"></script>
 <script type="application/ld+json">
 {

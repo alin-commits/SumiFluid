@@ -36,9 +36,17 @@
       <a href="../contacto/" data-key="contacto">Contacto</a>
     </nav>
     <a href="../contacto/#presupuesto" class="nav-cta"><span>Pedir presupuesto</span></a>
+    <button class="search-toggle" data-search-toggle aria-expanded="false" aria-label="Buscar"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.35-4.35"></path></svg></button>
     <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-label="Abrir menú">☰</button>
   </div>
 </header>
+
+<div class="search-panel" data-search-panel>
+  <div class="wrap">
+    <input type="text" class="search-input" data-search-input placeholder="Buscar productos, categorías..." autocomplete="off">
+    <div class="search-results" data-search-results></div>
+  </div>
+</div>
 
 <main id="main">
   <p class="wrap breadcrumb"><a href="../index.html">Inicio</a> / <a href="../estanqueidad/">Estanqueidad</a> / Variseal</p>
@@ -92,6 +100,57 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="section section-tight">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="kicker">Guía técnica</p>
+        <h2>Todo sobre las juntas Variseal</h2>
+      </div>
+      <div class="prod-guide reveal">
+        <p>El Variseal es una junta activada por muelle: un perfil en forma de U, habitualmente de PTFE, que aloja en su interior un muelle metálico que empuja los labios de sellado contra las superficies, sumando la fuerza del muelle a la presión propia del sistema. Puede emplearse tanto en sellado estático como dinámico, y es especialmente adecuado en condiciones extremas de temperatura, alto vacío o contacto con productos químicos agresivos, donde un elastómero convencional no sería inerte ni duradero. El muelle interior compensa pequeñas excentricidades de la superficie de sellado y el desgaste del labio a lo largo de su vida útil, algo que una junta tórica sencilla no puede hacer. Se utiliza en cilindros hidráulicos y neumáticos, pero también en equipos de proceso y aplicaciones de vacío.</p>
+
+        <div class="prod-guide-columns">
+        <div class="prod-guide-block">
+          <h3>Especialistas en juntas Variseal de todo tipo</h3>
+          <p>Somos especialistas en estanqueidad para aplicaciones exigentes, y las juntas Variseal son la solución que recomendamos cuando la temperatura, el vacío o la agresividad química descartan un elastómero convencional. Le asesoramos sobre el tipo de muelle y el perfil de PTFE más adecuados para su instalación.</p>
+        </div>
+
+        <div class="prod-guide-block">
+          <h3>Tipos de juntas Variseal para cualquier solución</h3>
+          <p>El Variseal se puede configurar combinando distintos tipos de muelle y perfiles de PTFE, según la aplicación y el entorno de trabajo:</p>
+          <ul class="prod-guide-list">
+            <li>Muelle en espiral cerrado (canted coil), el más habitual en aplicaciones dinámicas</li>
+            <li>Muelle en V u onda, para necesidades de carga de sellado más ligeras</li>
+            <li>Perfil en PTFE virgen, para máxima inercia química</li>
+            <li>Perfil en PTFE cargado con carbono o vidrio, para mayor resistencia mecánica y menor desgaste</li>
+            <li>Versión de sellado estático, sin necesidad de movimiento entre superficies</li>
+            <li>Versión de sellado dinámico, para vástagos, pistones o ejes con movimiento rotativo o alternativo</li>
+          </ul>
+        </div>
+
+        <div class="prod-guide-block">
+          <h3>Características de las juntas Variseal de Sumifluid</h3>
+          <p>Estas son las características principales que hacen del Variseal una solución de referencia en aplicaciones extremas:</p>
+          <ul class="prod-guide-list">
+            <li>El muelle interior mantiene la fuerza de sellado incluso cuando la presión del sistema es baja o nula</li>
+            <li>El PTFE del perfil es prácticamente inerte frente a la mayoría de productos químicos y disolventes</li>
+            <li>Apto para rangos de temperatura muy amplios, muy por encima de lo que soporta un elastómero convencional</li>
+            <li>Buen comportamiento en aplicaciones de alto vacío, gracias a la baja tasa de desgasificación del PTFE</li>
+            <li>Compensa la excentricidad y el desgaste del labio a lo largo de su vida útil, algo que una junta tórica no puede hacer</li>
+            <li>Es una solución habitual cuando fallan repetidamente juntas convencionales por temperatura o ataque químico</li>
+          </ul>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="prod-guide-cta-band reveal">
+    <div class="wrap">
+      <p>En Sumifluid le ofrecemos todo tipo de juntas Variseal sin necesidad de desplazarse, con la máxima calidad y los precios más competitivos. Operamos en toda España, gestionando su pedido en 24/48 horas. Contacte con nuestro técnico profesional y encuentre la mejor respuesta para su aplicación: rellene el <a href="../contacto/#presupuesto">formulario de presupuesto</a> o llámenos al <a href="tel:+34662264778">662 26 47 78</a> o al <a href="tel:+34966673618">966 673 618</a>.</p>
     </div>
   </section>
 
@@ -281,6 +340,8 @@
 <script defer src="../assets/js/vendor/gsap.min.js"></script>
 <script defer src="../assets/js/vendor/ScrollTrigger.min.js"></script>
 <script defer src="../assets/js/vendor/manifest.js"></script>
+<script src="../assets/js/search-index.js"></script>
+<script defer src="../assets/js/search.js"></script>
 <script defer src="../assets/js/main.js?v=20260707"></script>
 <script type="application/ld+json">
 {

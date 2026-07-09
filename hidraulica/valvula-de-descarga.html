@@ -36,9 +36,17 @@
       <a href="../contacto/" data-key="contacto">Contacto</a>
     </nav>
     <a href="../contacto/#presupuesto" class="nav-cta"><span>Pedir presupuesto</span></a>
+    <button class="search-toggle" data-search-toggle aria-expanded="false" aria-label="Buscar"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.35-4.35"></path></svg></button>
     <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-label="Abrir menú">☰</button>
   </div>
 </header>
+
+<div class="search-panel" data-search-panel>
+  <div class="wrap">
+    <input type="text" class="search-input" data-search-input placeholder="Buscar productos, categorías..." autocomplete="off">
+    <div class="search-results" data-search-results></div>
+  </div>
+</div>
 
 <main id="main">
   <p class="wrap breadcrumb"><a href="../index.html">Inicio</a> / <a href="../hidraulica/">Hidráulica</a> / Válvula de Descarga</p>
@@ -92,6 +100,57 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="section section-tight">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="kicker">Guía técnica</p>
+        <h2>Todo sobre las Válvulas de Descarga</h2>
+      </div>
+      <div class="prod-guide reveal">
+        <p>La válvula de descarga es la válvula de control de presión que deriva el caudal de la bomba directamente al depósito, sin presión, en cuanto detecta que un circuito secundario ha alcanzado la presión de mando establecida. Se utiliza sobre todo en circuitos con acumulador, donde permite que la bomba deje de trabajar contra presión una vez el acumulador está cargado, reduciendo el consumo energético y el calentamiento del aceite. En Sumifluid disponemos de válvulas de descarga de acción directa y pilotadas.</p>
+
+        <div class="prod-guide-columns">
+        <div class="prod-guide-block">
+          <h3>Especialistas en válvulas de descarga de todo tipo</h3>
+          <p>Somos especialistas en todo tipo de componentes hidráulicos, entre ellos las válvulas de descarga. Le ayudamos a integrarlas correctamente en su circuito de acumulador o en su bloque de válvulas.</p>
+        </div>
+
+        <div class="prod-guide-block">
+          <h3>Tipos de válvulas de descarga para cualquier solución</h3>
+          <p>En Sumifluid contamos con todo tipo de suministro industrial y las válvulas de descarga no son menos, ya que disponemos de diferentes tipos de alta calidad:</p>
+          <ul class="prod-guide-list">
+            <li>Válvulas de descarga de acción directa, con tarado por muelle ajustable</li>
+            <li>Válvulas de descarga pilotadas, para caudales más elevados</li>
+            <li>Válvulas de descarga para circuitos de acumulador, con señal de mando externa</li>
+            <li>Válvulas de descarga roscadas en línea</li>
+            <li>Válvulas de descarga integradas en bloque o subplaca</li>
+            <li>Válvulas de descarga con control interno o externo de la presión de mando</li>
+          </ul>
+        </div>
+
+        <div class="prod-guide-block">
+          <h3>Características de las válvulas de descarga de Sumifluid</h3>
+          <p>Dentro de nuestro catálogo contamos con válvulas de descarga con características diferenciadoras respecto a lo que puede encontrar en el mercado. Estas son las características principales y algunos consejos para nuestros productos:</p>
+          <ul class="prod-guide-list">
+            <li>En circuitos con acumulador, la válvula de descarga evita que la bomba trabaje contra presión de forma continua, ahorrando energía y reduciendo el calentamiento del aceite</li>
+            <li>El punto de tarado debe ajustarse ligeramente por debajo de la presión máxima del circuito principal</li>
+            <li>Las versiones pilotadas admiten mayores caudales con una pérdida de carga menor que las de acción directa</li>
+            <li>Compruebe que la línea de pilotaje o mando esté libre de obstrucciones, ya que de ella depende la apertura de la válvula</li>
+            <li>Un buen dimensionado de esta válvula prolonga la vida de la bomba al reducir su tiempo de trabajo contra presión</li>
+            <li>Si su bloque de válvulas requiere una configuración especial, la desarrollamos en nuestro taller de Elche</li>
+          </ul>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="prod-guide-cta-band reveal">
+    <div class="wrap">
+      <p>En Sumifluid le ofrecemos todo tipo de válvulas de descarga sin necesidad de desplazarse, con la máxima calidad y los precios más competitivos. Operamos en toda España, gestionando su pedido en 24/48 horas. Contacte con nuestro técnico profesional y encuentre la mejor respuesta para su aplicación: rellene el <a href="../contacto/#presupuesto">formulario de presupuesto</a> o llámenos al <a href="tel:+34662264778">662 26 47 78</a> o al <a href="tel:+34966673618">966 673 618</a>.</p>
     </div>
   </section>
 
@@ -364,6 +423,8 @@
 <script defer src="../assets/js/vendor/gsap.min.js"></script>
 <script defer src="../assets/js/vendor/ScrollTrigger.min.js"></script>
 <script defer src="../assets/js/vendor/manifest.js"></script>
+<script src="../assets/js/search-index.js"></script>
+<script defer src="../assets/js/search.js"></script>
 <script defer src="../assets/js/main.js?v=20260707"></script>
 <script type="application/ld+json">
 {

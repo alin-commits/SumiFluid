@@ -36,9 +36,17 @@
       <a href="../contacto/" data-key="contacto">Contacto</a>
     </nav>
     <a href="../contacto/#presupuesto" class="nav-cta"><span>Pedir presupuesto</span></a>
+    <button class="search-toggle" data-search-toggle aria-expanded="false" aria-label="Buscar"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.35-4.35"></path></svg></button>
     <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-label="Abrir menú">☰</button>
   </div>
 </header>
+
+<div class="search-panel" data-search-panel>
+  <div class="wrap">
+    <input type="text" class="search-input" data-search-input placeholder="Buscar productos, categorías..." autocomplete="off">
+    <div class="search-results" data-search-results></div>
+  </div>
+</div>
 
 <main id="main">
   <p class="wrap breadcrumb"><a href="../index.html">Inicio</a> / <a href="../neumatica/">Neumática</a> / Tubería Neumática</p>
@@ -98,6 +106,57 @@
   <section class="section section-tight">
     <div class="wrap">
       <div class="section-head reveal">
+        <p class="kicker">Guía técnica</p>
+        <h2>Todo sobre la Tubería Neumática</h2>
+      </div>
+      <div class="prod-guide reveal">
+        <p>La tubería neumática es el conducto que transporta el aire comprimido desde el compresor o la red general hasta cada punto de consumo: cilindros, válvulas, herramientas o grupos de filtraje. La elección del material y del diámetro condiciona directamente el rendimiento del circuito, ya que a mayor diámetro interior, mayor caudal de aire puede circular con menor pérdida de carga. Los materiales más habituales son el poliuretano, flexible y muy resistente a la abrasión, y la poliamida (nylon), más rígida y estable dimensionalmente en aplicaciones de mayor presión o temperatura. Junto a la tubería recta se emplean también versiones en espiral, que permiten alimentar equipos móviles sin que el tubo se enganche o se arrastre por el suelo.</p>
+
+        <div class="prod-guide-columns">
+        <div class="prod-guide-block">
+          <h3>Especialistas en tubería neumática de todo tipo</h3>
+          <p>En Sumifluid disponemos de tubería neumática en poliuretano y poliamida, en distintos diámetros, con stock permanente en nuestro almacén de Elche. Nuestro equipo técnico le ayuda a elegir el material, el diámetro y el tipo de tubo, recto o en espiral, más adecuados para su aplicación y su presión de trabajo.</p>
+        </div>
+
+        <div class="prod-guide-block">
+          <h3>Tipos de tubería neumática para cualquier solución</h3>
+          <p>En Sumifluid disponemos de distintos tipos de tubería neumática:</p>
+          <ul class="prod-guide-list">
+            <li>Tubo de poliuretano (PU), flexible, con buena resistencia a la abrasión y a las bajas temperaturas</li>
+            <li>Tubo de poliamida (nylon, PA), más rígido, con mayor estabilidad dimensional para presiones y temperaturas más exigentes</li>
+            <li>Tubo en espiral, para alimentar equipos móviles sin que el conducto se arrastre por el suelo</li>
+            <li>Tubo bicolor o multicanal, para identificar circuitos o agrupar varias líneas en un solo conducto</li>
+            <li>Tubería rígida (aluminio o PVC), para redes de distribución fijas de aire comprimido</li>
+            <li>Tubo antiestático, para aplicaciones especiales con riesgo de descarga eléctrica</li>
+          </ul>
+        </div>
+
+        <div class="prod-guide-block">
+          <h3>Características de la tubería neumática de Sumifluid</h3>
+          <p>Estas son algunas características y consejos técnicos a tener en cuenta al elegir tubería neumática:</p>
+          <ul class="prod-guide-list">
+            <li>El diámetro interior determina el caudal de aire que puede transportar el tubo sin pérdidas de carga excesivas</li>
+            <li>El radio de curvatura mínimo es menor en el poliuretano que en la poliamida, por lo que el PU se adapta mejor a trazados con curvas cerradas</li>
+            <li>La poliamida ofrece mayor resistencia a temperatura y presión, mientras que el poliuretano destaca en flexibilidad y resistencia a la abrasión</li>
+            <li>Verifique la compatibilidad química del tubo con aceites, disolventes u otros agentes presentes en el ambiente de trabajo</li>
+            <li>Un diámetro exterior mal elegido impide el correcto acople con los racores instantáneos de la instalación</li>
+            <li>Proteja la tubería de rozaduras, aristas vivas y fuentes de calor cercanas para evitar fugas prematuras</li>
+          </ul>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="prod-guide-cta-band reveal">
+    <div class="wrap">
+      <p>En Sumifluid le ofrecemos todo tipo de tubería neumática sin necesidad de desplazarse, con la máxima calidad y los precios más competitivos. Operamos en toda España, gestionando su pedido en 24/48 horas. Contacte con nuestro técnico profesional y encuentre la mejor respuesta para su aplicación: rellene el <a href="../contacto/#presupuesto">formulario de presupuesto</a> o llámenos al <a href="tel:+34662264778">662 26 47 78</a> o al <a href="tel:+34966673618">966 673 618</a>.</p>
+    </div>
+  </section>
+
+  <section class="section section-tight">
+    <div class="wrap">
+      <div class="section-head reveal">
         <p class="kicker">Otras familias</p>
         <h2>Más categorías de Neumática</h2>
       </div>
@@ -109,7 +168,7 @@
         </a>
         <a class="fam-row" href="valvulas-neumaticas.html">
           <span class="fam-row-arrow">→</span>
-          <span class="fam-row-thumb is-mono"><span>NE</span></span>
+          <span class="fam-row-thumb"><img src="../assets/img/neumatica/valvulas-y-electrovalvulas.png" alt="Válvulas y Electroválvulas" loading="lazy"></span>
           <span class="fam-row-name">Válvulas y Electroválvulas</span>
         </a>
         <a class="fam-row" href="bombas-neumaticas.html">
@@ -287,6 +346,8 @@
 <script defer src="../assets/js/vendor/gsap.min.js"></script>
 <script defer src="../assets/js/vendor/ScrollTrigger.min.js"></script>
 <script defer src="../assets/js/vendor/manifest.js"></script>
+<script src="../assets/js/search-index.js"></script>
+<script defer src="../assets/js/search.js"></script>
 <script defer src="../assets/js/main.js?v=20260707"></script>
 <script type="application/ld+json">
 {

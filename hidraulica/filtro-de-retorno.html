@@ -36,9 +36,17 @@
       <a href="../contacto/" data-key="contacto">Contacto</a>
     </nav>
     <a href="../contacto/#presupuesto" class="nav-cta"><span>Pedir presupuesto</span></a>
+    <button class="search-toggle" data-search-toggle aria-expanded="false" aria-label="Buscar"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.35-4.35"></path></svg></button>
     <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-label="Abrir menú">☰</button>
   </div>
 </header>
+
+<div class="search-panel" data-search-panel>
+  <div class="wrap">
+    <input type="text" class="search-input" data-search-input placeholder="Buscar productos, categorías..." autocomplete="off">
+    <div class="search-results" data-search-results></div>
+  </div>
+</div>
 
 <main id="main">
   <p class="wrap breadcrumb"><a href="../index.html">Inicio</a> / <a href="../hidraulica/">Hidráulica</a> / Filtro de Retorno Hidráulico</p>
@@ -92,6 +100,57 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="section section-tight">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="kicker">Guía técnica</p>
+        <h2>Todo sobre los Filtros de Retorno Hidráulicos</h2>
+      </div>
+      <div class="prod-guide reveal">
+        <p>El filtro de retorno hidráulico es el componente que retiene las partículas e impurezas del aceite justo antes de que este regrese al depósito, evitando que la suciedad generada por el desgaste de bombas, válvulas y actuadores vuelva a circular por el sistema. Se instala en la línea de retorno del circuito y trabaja a baja presión, por lo que su cuerpo suele ser más ligero que el de un filtro de presión. En Sumifluid distinguimos principalmente entre filtros de retorno montados en línea, dentro de la propia tubería, y filtros montados directamente sobre el depósito hidráulico.</p>
+
+        <div class="prod-guide-columns">
+        <div class="prod-guide-block">
+          <h3>Especialistas en filtros de retorno hidráulicos de todo tipo</h3>
+          <p>Somos especialistas en todo tipo de componentes hidráulicos, entre ellos los filtros de retorno. Trabajamos con marcas de referencia en filtración como Donaldson y Mann Filter, lo que nos permite ofrecerle cartuchos y carcasas de calidad contrastada para cualquier tipo de instalación.</p>
+        </div>
+
+        <div class="prod-guide-block">
+          <h3>Tipos de filtros de retorno hidráulicos para cualquier solución</h3>
+          <p>En Sumifluid contamos con todo tipo de suministro industrial y los filtros de retorno no son menos, ya que disponemos de diferentes tipos de alta calidad:</p>
+          <ul class="prod-guide-list">
+            <li>Filtros de retorno en línea, de estructura compacta y fácil sustitución</li>
+            <li>Filtros de retorno montados en el depósito, de mayor tamaño y caudal admisible</li>
+            <li>Cartuchos de papel celulósico para aplicaciones estándar</li>
+            <li>Cartuchos de malla metálica, lavables y reutilizables</li>
+            <li>Cartuchos de fibra sintética para una filtración más fina</li>
+            <li>Filtros con válvula de bypass integrada para proteger el circuito ante colmataciones</li>
+          </ul>
+        </div>
+
+        <div class="prod-guide-block">
+          <h3>Características de los filtros de retorno hidráulicos de Sumifluid</h3>
+          <p>Dentro de nuestro catálogo contamos con filtros de retorno con características diferenciadoras respecto a lo que puede encontrar en el mercado. Estas son las características principales y algunos consejos para nuestros productos:</p>
+          <ul class="prod-guide-list">
+            <li>La precisión de filtración se mide en micras, y debe elegirse según la sensibilidad de los componentes del circuito</li>
+            <li>El medio filtrante puede ser de papel, malla metálica o fibra sintética, según el nivel de limpieza requerido</li>
+            <li>Es recomendable revisar el estado del cartucho de forma periódica y sustituirlo cuando se detecte pérdida de caudal o suciedad visible</li>
+            <li>Un indicador de colmatación, visual o eléctrico, permite anticiparse al cambio de cartucho antes de que el aceite quede sin filtrar</li>
+            <li>La mayoría de averías de un circuito hidráulico tienen su origen en la suciedad del aceite, por lo que un filtro de retorno en buen estado es clave para alargar la vida de bombas y válvulas</li>
+            <li>Utilice siempre cartuchos originales u homologados para no comprometer la eficacia del filtrado</li>
+          </ul>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="prod-guide-cta-band reveal">
+    <div class="wrap">
+      <p>En Sumifluid le ofrecemos todo tipo de filtros de retorno hidráulicos sin necesidad de desplazarse, con la máxima calidad y los precios más competitivos. Operamos en toda España, gestionando su pedido en 24/48 horas. Contacte con nuestro técnico profesional y encuentre la mejor respuesta para su aplicación: rellene el <a href="../contacto/#presupuesto">formulario de presupuesto</a> o llámenos al <a href="tel:+34662264778">662 26 47 78</a> o al <a href="tel:+34966673618">966 673 618</a>.</p>
     </div>
   </section>
 
@@ -364,6 +423,8 @@
 <script defer src="../assets/js/vendor/gsap.min.js"></script>
 <script defer src="../assets/js/vendor/ScrollTrigger.min.js"></script>
 <script defer src="../assets/js/vendor/manifest.js"></script>
+<script src="../assets/js/search-index.js"></script>
+<script defer src="../assets/js/search.js"></script>
 <script defer src="../assets/js/main.js?v=20260707"></script>
 <script type="application/ld+json">
 {

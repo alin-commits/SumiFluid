@@ -36,9 +36,17 @@
       <a href="../contacto/" data-key="contacto">Contacto</a>
     </nav>
     <a href="../contacto/#presupuesto" class="nav-cta"><span>Pedir presupuesto</span></a>
+    <button class="search-toggle" data-search-toggle aria-expanded="false" aria-label="Buscar"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.35-4.35"></path></svg></button>
     <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-label="Abrir menú">☰</button>
   </div>
 </header>
+
+<div class="search-panel" data-search-panel>
+  <div class="wrap">
+    <input type="text" class="search-input" data-search-input placeholder="Buscar productos, categorías..." autocomplete="off">
+    <div class="search-results" data-search-results></div>
+  </div>
+</div>
 
 <main id="main">
   <p class="wrap breadcrumb"><a href="../index.html">Inicio</a> / <a href="../neumatica/">Neumática</a> / Transductores</p>
@@ -98,6 +106,58 @@
   <section class="section section-tight">
     <div class="wrap">
       <div class="section-head reveal">
+        <p class="kicker">Guía técnica</p>
+        <h2>Todo sobre los Transductores</h2>
+      </div>
+      <div class="prod-guide reveal">
+        <p>Un transductor de presión, en el ámbito neumático, es el instrumento que convierte la presión del aire comprimido en una señal eléctrica proporcional, apta para ser leída por un PLC, un variador o cualquier sistema de control. A diferencia de un manómetro, que ofrece una lectura visual local, el transductor permite monitorizar y automatizar la presión de un circuito a distancia, integrándola en la lógica de la máquina. Su principio de funcionamiento se basa en un sensor que traduce la deformación provocada por la presión en una señal eléctrica, normalmente en corriente (4-20 mA) o en tensión. Se emplea en aplicaciones de control de procesos, seguridad de máquinas y monitorización remota de instalaciones neumáticas.</p>
+
+        <div class="prod-guide-columns">
+        <div class="prod-guide-block">
+          <h3>Especialistas en transductores de todo tipo</h3>
+          <p>En Sumifluid disponemos de transductores de presión neumáticos con stock permanente en nuestro almacén de Elche. Nuestro equipo técnico le ayuda a elegir el rango de medida, el tipo de señal de salida y la conexión mecánica más adecuados para integrarlo en su sistema de control.</p>
+        </div>
+
+        <div class="prod-guide-block">
+          <h3>Tipos de transductores para cualquier solución</h3>
+          <p>Los transductores de presión se pueden clasificar según distintos criterios:</p>
+          <ul class="prod-guide-list">
+            <li>Transductores de salida analógica en corriente (4-20 mA), el estándar más habitual en instrumentación industrial</li>
+            <li>Transductores de salida analógica en tensión (0-10 V)</li>
+            <li>Transductores con salida digital, para integración directa en buses de comunicación</li>
+            <li>Transductores de presión relativa, que miden respecto a la presión atmosférica</li>
+            <li>Transductores de presión absoluta, que miden respecto al vacío absoluto</li>
+            <li>Transductores compactos con display integrado, que combinan lectura local y salida eléctrica</li>
+            <li>Transductores programables, con puntos de conmutación configurables por el usuario</li>
+          </ul>
+        </div>
+
+        <div class="prod-guide-block">
+          <h3>Características de los transductores de Sumifluid</h3>
+          <p>Estas son algunas características y consejos técnicos a tener en cuenta al elegir un transductor de presión:</p>
+          <ul class="prod-guide-list">
+            <li>El rango de medida debe ajustarse a la presión de trabajo real de la instalación, para aprovechar toda la resolución del sensor</li>
+            <li>La señal de salida (4-20 mA, 0-10 V o digital) debe ser compatible con la entrada del PLC o autómata al que se conecte</li>
+            <li>La conexión mecánica, rosca y ubicación de la toma de presión, debe coincidir con el punto de medición previsto en el circuito</li>
+            <li>Un transductor mal ubicado, expuesto a vibraciones o golpes de ariete, puede dar lecturas erróneas o degradarse antes de tiempo</li>
+            <li>En aplicaciones con temperaturas extremas, conviene verificar el rango de temperatura de trabajo admitido por el sensor</li>
+            <li>Revise periódicamente la calibración del transductor en aplicaciones donde la presión es un parámetro crítico del proceso</li>
+          </ul>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="prod-guide-cta-band reveal">
+    <div class="wrap">
+      <p>En Sumifluid le ofrecemos todo tipo de transductores sin necesidad de desplazarse, con la máxima calidad y los precios más competitivos. Operamos en toda España, gestionando su pedido en 24/48 horas. Contacte con nuestro técnico profesional y encuentre la mejor respuesta para su aplicación: rellene el <a href="../contacto/#presupuesto">formulario de presupuesto</a> o llámenos al <a href="tel:+34662264778">662 26 47 78</a> o al <a href="tel:+34966673618">966 673 618</a>.</p>
+    </div>
+  </section>
+
+  <section class="section section-tight">
+    <div class="wrap">
+      <div class="section-head reveal">
         <p class="kicker">Otras familias</p>
         <h2>Más categorías de Neumática</h2>
       </div>
@@ -109,7 +169,7 @@
         </a>
         <a class="fam-row" href="valvulas-neumaticas.html">
           <span class="fam-row-arrow">→</span>
-          <span class="fam-row-thumb is-mono"><span>NE</span></span>
+          <span class="fam-row-thumb"><img src="../assets/img/neumatica/valvulas-y-electrovalvulas.png" alt="Válvulas y Electroválvulas" loading="lazy"></span>
           <span class="fam-row-name">Válvulas y Electroválvulas</span>
         </a>
         <a class="fam-row" href="bombas-neumaticas.html">
@@ -287,6 +347,8 @@
 <script defer src="../assets/js/vendor/gsap.min.js"></script>
 <script defer src="../assets/js/vendor/ScrollTrigger.min.js"></script>
 <script defer src="../assets/js/vendor/manifest.js"></script>
+<script src="../assets/js/search-index.js"></script>
+<script defer src="../assets/js/search.js"></script>
 <script defer src="../assets/js/main.js?v=20260707"></script>
 <script type="application/ld+json">
 {

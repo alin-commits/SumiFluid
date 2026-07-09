@@ -36,9 +36,17 @@
       <a href="../contacto/" data-key="contacto">Contacto</a>
     </nav>
     <a href="../contacto/#presupuesto" class="nav-cta"><span>Pedir presupuesto</span></a>
+    <button class="search-toggle" data-search-toggle aria-expanded="false" aria-label="Buscar"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.35-4.35"></path></svg></button>
     <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-label="Abrir menú">☰</button>
   </div>
 </header>
+
+<div class="search-panel" data-search-panel>
+  <div class="wrap">
+    <input type="text" class="search-input" data-search-input placeholder="Buscar productos, categorías..." autocomplete="off">
+    <div class="search-results" data-search-results></div>
+  </div>
+</div>
 
 <main id="main">
   <p class="wrap breadcrumb"><a href="../index.html">Inicio</a> / <a href="../vacio/">Vacío</a> / Ventosas de Vacío</p>
@@ -92,6 +100,57 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="section section-tight">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="kicker">Guía técnica</p>
+        <h2>Todo sobre las Ventosas de Vacío</h2>
+      </div>
+      <div class="prod-guide reveal">
+        <p>Una ventosa de vacío es el elemento final de un sistema de vacío: se conecta a una bomba, un eyector o una turbina y, al generarse la depresión en su interior, permite sujetar y manipular piezas sin necesidad de pinzas mecánicas ni contacto agresivo con la superficie. Su forma y su material determinan la fuerza de sujeción y el tipo de pieza que puede manipular, ya que las superficies planas, curvas, porosas o delicadas requieren geometrías distintas. Los grupos principales son las ventosas planas, para superficies planas o ligeramente curvas; las ventosas de fuelle, con forma de acordeón para adaptarse a superficies irregulares y compensar diferencias de altura; y las ventosas ovaladas, pensadas para piezas alargadas y estrechas.</p>
+
+        <div class="prod-guide-columns">
+        <div class="prod-guide-block">
+          <h3>Especialistas en ventosas de vacío de todo tipo</h3>
+          <p>En Sumifluid distribuimos ventosas de vacío de COVAL, fabricante de referencia en soluciones de manipulación por vacío, con una amplia gama de diámetros, formas y materiales. Le ayudamos a elegir la ventosa adecuada según el peso, la forma y el acabado de la pieza que necesita manipular.</p>
+        </div>
+
+        <div class="prod-guide-block">
+          <h3>Tipos de ventosas de vacío para cualquier solución</h3>
+          <p>En Sumifluid contamos con distintas geometrías de ventosas de vacío de alta calidad:</p>
+          <ul class="prod-guide-list">
+            <li>Ventosas planas: el modelo más habitual, para piezas planas o ligeramente curvadas</li>
+            <li>Ventosas de fuelle: en forma de acordeón, para superficies curvas, irregulares o con desniveles</li>
+            <li>Ventosas ovaladas: indicadas para piezas alargadas y estrechas</li>
+            <li>Ventosas de perfil continuo: en tiras de silicona, para sacos, cartón o superficies rugosas</li>
+            <li>Ventosas de espuma: para superficies muy irregulares o con marcas y relieves profundos</li>
+            <li>Ventosas rectangulares: para piezas estrechas o de bordes definidos</li>
+          </ul>
+        </div>
+
+        <div class="prod-guide-block">
+          <h3>Características de las ventosas de vacío de Sumifluid</h3>
+          <p>Estas son las características principales y algunos consejos técnicos a tener en cuenta:</p>
+          <ul class="prod-guide-list">
+            <li>Disponibles en múltiples diámetros y formas para adaptarse a cualquier pieza o aplicación</li>
+            <li>Fabricadas en distintos materiales técnicos —NBR, silicona, EPDM, poliuretano— según la temperatura, el producto y el sector</li>
+            <li>La silicona y el poliuretano son aptos para aplicaciones alimentarias o de alta temperatura</li>
+            <li>El caucho nitrílico (NBR) ofrece buena resistencia mecánica para uso industrial general</li>
+            <li>Revisar periódicamente el desgaste del labio de la ventosa evita pérdidas de vacío y caídas de piezas</li>
+            <li>El número y el tamaño de las ventosas debe elegirse en función del peso y la superficie de la pieza a manipular</li>
+          </ul>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="prod-guide-cta-band reveal">
+    <div class="wrap">
+      <p>En Sumifluid le ofrecemos todo tipo de ventosas de vacío sin necesidad de desplazarse, con la máxima calidad y los precios más competitivos. Operamos en toda España, gestionando su pedido en 24/48 horas. Contacte con nuestro técnico profesional y encuentre la mejor respuesta para su aplicación: rellene el <a href="../contacto/#presupuesto">formulario de presupuesto</a> o llámenos al <a href="tel:+34662264778">662 26 47 78</a> o al <a href="tel:+34966673618">966 673 618</a>.</p>
     </div>
   </section>
 
@@ -245,6 +304,8 @@
 <script defer src="../assets/js/vendor/gsap.min.js"></script>
 <script defer src="../assets/js/vendor/ScrollTrigger.min.js"></script>
 <script defer src="../assets/js/vendor/manifest.js"></script>
+<script src="../assets/js/search-index.js"></script>
+<script defer src="../assets/js/search.js"></script>
 <script defer src="../assets/js/main.js?v=20260707"></script>
 <script type="application/ld+json">
 {

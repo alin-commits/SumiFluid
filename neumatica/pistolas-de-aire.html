@@ -36,9 +36,17 @@
       <a href="../contacto/" data-key="contacto">Contacto</a>
     </nav>
     <a href="../contacto/#presupuesto" class="nav-cta"><span>Pedir presupuesto</span></a>
+    <button class="search-toggle" data-search-toggle aria-expanded="false" aria-label="Buscar"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.35-4.35"></path></svg></button>
     <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-label="Abrir menú">☰</button>
   </div>
 </header>
+
+<div class="search-panel" data-search-panel>
+  <div class="wrap">
+    <input type="text" class="search-input" data-search-input placeholder="Buscar productos, categorías..." autocomplete="off">
+    <div class="search-results" data-search-results></div>
+  </div>
+</div>
 
 <main id="main">
   <p class="wrap breadcrumb"><a href="../index.html">Inicio</a> / <a href="../neumatica/">Neumática</a> / Pistolas de Aire</p>
@@ -98,6 +106,58 @@
   <section class="section section-tight">
     <div class="wrap">
       <div class="section-head reveal">
+        <p class="kicker">Guía técnica</p>
+        <h2>Todo sobre las Pistolas de Aire</h2>
+      </div>
+      <div class="prod-guide reveal">
+        <p>Una pistola de aire, o pistola de soplado, es una herramienta neumática que dirige un chorro de aire comprimido a través de una boquilla, con un gatillo que regula el paso de aire. Se utiliza para limpiar piezas, secar superficies, retirar virutas y polvo, o refrigerar puntos concretos de una máquina. El caudal y la velocidad de salida del aire dependen del diseño de la boquilla, que también determina el nivel de ruido y la seguridad de la herramienta. Por motivos de seguridad laboral, la normativa limita la presión de salida en las boquillas destinadas a soplado cerca de personas, ya que un chorro de aire comprimido a alta presión puede provocar lesiones graves si entra en contacto con la piel.</p>
+
+        <div class="prod-guide-columns">
+        <div class="prod-guide-block">
+          <h3>Especialistas en pistolas de aire de todo tipo</h3>
+          <p>En Sumifluid disponemos de pistolas de aire y boquillas de repuesto con stock permanente en nuestro almacén de Elche. Nuestro equipo técnico le ayuda a elegir el modelo y la boquilla adecuados según el uso, ya sea limpieza general, soplado de precisión o aplicaciones que requieran boquillas homologadas de seguridad.</p>
+        </div>
+
+        <div class="prod-guide-block">
+          <h3>Tipos de pistolas de aire para cualquier solución</h3>
+          <p>Existen distintos tipos de pistolas y boquillas de aire según la aplicación:</p>
+          <ul class="prod-guide-list">
+            <li>Pistolas estándar, con boquilla recta para uso general de limpieza y soplado</li>
+            <li>Pistolas con boquilla de seguridad, con orificios laterales que limitan la presión de contacto directo</li>
+            <li>Pistolas con boquilla tipo Venturi, que aumentan el caudal de salida arrastrando aire del ambiente</li>
+            <li>Pistolas con boquilla silenciosa, que reducen el nivel de ruido en el puesto de trabajo</li>
+            <li>Pistolas con regulador de presión incorporado, para ajustar el caudal según la aplicación</li>
+            <li>Boquillas extendidas o flexibles, para llegar a zonas de difícil acceso</li>
+            <li>Pistolas con boquilla antiproyección, con protección de goma frente a impactos</li>
+          </ul>
+        </div>
+
+        <div class="prod-guide-block">
+          <h3>Características de las pistolas de aire de Sumifluid</h3>
+          <p>Estas son algunas características y consejos técnicos para trabajar con pistolas de aire de forma segura y eficiente:</p>
+          <ul class="prod-guide-list">
+            <li>Nunca dirija el chorro de aire comprimido hacia personas ni lo utilice para limpiar ropa o piel: puede provocar lesiones graves</li>
+            <li>Las boquillas de seguridad limitan la presión de contacto y reducen el riesgo, cumpliendo la normativa aplicable</li>
+            <li>Un caudal de aire mal regulado incrementa el consumo de aire comprimido y el gasto energético del compresor sin mejorar el resultado</li>
+            <li>Las boquillas Venturi consiguen mayor caudal de soplado con un menor consumo de aire, al arrastrar aire del ambiente</li>
+            <li>Revise periódicamente el gatillo y las juntas internas, ya que las fugas de aire son la principal causa de pérdida de eficiencia</li>
+            <li>Utilice protección auditiva si trabaja de forma prolongada con boquillas de alto caudal no silenciadas</li>
+          </ul>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="prod-guide-cta-band reveal">
+    <div class="wrap">
+      <p>En Sumifluid le ofrecemos todo tipo de pistolas de aire sin necesidad de desplazarse, con la máxima calidad y los precios más competitivos. Operamos en toda España, gestionando su pedido en 24/48 horas. Contacte con nuestro técnico profesional y encuentre la mejor respuesta para su aplicación: rellene el <a href="../contacto/#presupuesto">formulario de presupuesto</a> o llámenos al <a href="tel:+34662264778">662 26 47 78</a> o al <a href="tel:+34966673618">966 673 618</a>.</p>
+    </div>
+  </section>
+
+  <section class="section section-tight">
+    <div class="wrap">
+      <div class="section-head reveal">
         <p class="kicker">Otras familias</p>
         <h2>Más categorías de Neumática</h2>
       </div>
@@ -109,7 +169,7 @@
         </a>
         <a class="fam-row" href="valvulas-neumaticas.html">
           <span class="fam-row-arrow">→</span>
-          <span class="fam-row-thumb is-mono"><span>NE</span></span>
+          <span class="fam-row-thumb"><img src="../assets/img/neumatica/valvulas-y-electrovalvulas.png" alt="Válvulas y Electroválvulas" loading="lazy"></span>
           <span class="fam-row-name">Válvulas y Electroválvulas</span>
         </a>
         <a class="fam-row" href="bombas-neumaticas.html">
@@ -287,6 +347,8 @@
 <script defer src="../assets/js/vendor/gsap.min.js"></script>
 <script defer src="../assets/js/vendor/ScrollTrigger.min.js"></script>
 <script defer src="../assets/js/vendor/manifest.js"></script>
+<script src="../assets/js/search-index.js"></script>
+<script defer src="../assets/js/search.js"></script>
 <script defer src="../assets/js/main.js?v=20260707"></script>
 <script type="application/ld+json">
 {

@@ -36,9 +36,17 @@
       <a href="../contacto/" data-key="contacto">Contacto</a>
     </nav>
     <a href="../contacto/#presupuesto" class="nav-cta"><span>Pedir presupuesto</span></a>
+    <button class="search-toggle" data-search-toggle aria-expanded="false" aria-label="Buscar"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.35-4.35"></path></svg></button>
     <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-label="Abrir menú">☰</button>
   </div>
 </header>
+
+<div class="search-panel" data-search-panel>
+  <div class="wrap">
+    <input type="text" class="search-input" data-search-input placeholder="Buscar productos, categorías..." autocomplete="off">
+    <div class="search-results" data-search-results></div>
+  </div>
+</div>
 
 <main id="main">
   <p class="wrap breadcrumb"><a href="../index.html">Inicio</a> / <a href="../hidraulica/">Hidráulica</a> / Válvulas Limitadoras</p>
@@ -92,6 +100,57 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="section section-tight">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="kicker">Guía técnica</p>
+        <h2>Todo sobre las Válvulas Limitadoras</h2>
+      </div>
+      <div class="prod-guide reveal">
+        <p>La válvula limitadora de presión, también llamada válvula de seguridad o de alivio, es el componente que protege un circuito hidráulico frente a sobrepresiones, derivando el exceso de caudal directamente al depósito en cuanto se alcanza la presión máxima admisible. Se monta siempre en derivación, en paralelo al circuito principal, y es uno de los elementos de seguridad más importantes de cualquier instalación hidráulica. En Sumifluid disponemos de válvulas limitadoras de acción directa y pilotadas (servopilotadas).</p>
+
+        <div class="prod-guide-columns">
+        <div class="prod-guide-block">
+          <h3>Especialistas en válvulas limitadoras de todo tipo</h3>
+          <p>Somos especialistas en todo tipo de componentes hidráulicos, entre ellos las válvulas limitadoras de presión. Le ayudamos a elegir el modelo y el punto de tarado adecuados para proteger su bomba y el resto de componentes del circuito.</p>
+        </div>
+
+        <div class="prod-guide-block">
+          <h3>Tipos de válvulas limitadoras para cualquier solución</h3>
+          <p>En Sumifluid contamos con todo tipo de suministro industrial y las válvulas limitadoras no son menos, ya que disponemos de diferentes tipos de alta calidad:</p>
+          <ul class="prod-guide-list">
+            <li>Válvulas limitadoras de acción directa, de diseño tipo globo con muelle y bola o cono</li>
+            <li>Válvulas limitadoras pilotadas (servopilotadas), para caudales elevados</li>
+            <li>Válvulas limitadoras de ajuste manual por tornillo</li>
+            <li>Válvulas limitadoras con tapón precintable, para evitar manipulaciones no autorizadas</li>
+            <li>Válvulas limitadoras roscadas en línea</li>
+            <li>Válvulas limitadoras integradas en bloque o subplaca</li>
+          </ul>
+        </div>
+
+        <div class="prod-guide-block">
+          <h3>Características de las válvulas limitadoras de Sumifluid</h3>
+          <p>Dentro de nuestro catálogo contamos con válvulas limitadoras con características diferenciadoras respecto a lo que puede encontrar en el mercado. Estas son las características principales y algunos consejos para nuestros productos:</p>
+          <ul class="prod-guide-list">
+            <li>Las válvulas de acción directa son más económicas e insensibles a la suciedad del fluido, por lo que resultan muy fiables en instalaciones exigentes</li>
+            <li>Las versiones pilotadas ofrecen una regulación más precisa y una menor pérdida de carga cuando el caudal a derivar es elevado</li>
+            <li>El punto de tarado debe fijarse siempre por debajo del límite de presión que soportan el resto de componentes del circuito: bomba, mangueras y actuadores</li>
+            <li>Es la válvula de seguridad de referencia en cualquier circuito: sin ella, una sobrepresión puede dañar gravemente la bomba o reventar una manguera</li>
+            <li>Revise periódicamente que el tarado no se haya desajustado por vibración, y precinte el tornillo de ajuste una vez calibrado</li>
+            <li>Si su bloque de válvulas necesita una configuración especial, la desarrollamos en nuestro taller de Elche</li>
+          </ul>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="prod-guide-cta-band reveal">
+    <div class="wrap">
+      <p>En Sumifluid le ofrecemos todo tipo de válvulas limitadoras de presión sin necesidad de desplazarse, con la máxima calidad y los precios más competitivos. Operamos en toda España, gestionando su pedido en 24/48 horas. Contacte con nuestro técnico profesional y encuentre la mejor respuesta para su aplicación: rellene el <a href="../contacto/#presupuesto">formulario de presupuesto</a> o llámenos al <a href="tel:+34662264778">662 26 47 78</a> o al <a href="tel:+34966673618">966 673 618</a>.</p>
     </div>
   </section>
 
@@ -364,6 +423,8 @@
 <script defer src="../assets/js/vendor/gsap.min.js"></script>
 <script defer src="../assets/js/vendor/ScrollTrigger.min.js"></script>
 <script defer src="../assets/js/vendor/manifest.js"></script>
+<script src="../assets/js/search-index.js"></script>
+<script defer src="../assets/js/search.js"></script>
 <script defer src="../assets/js/main.js?v=20260707"></script>
 <script type="application/ld+json">
 {

@@ -36,9 +36,17 @@
       <a href="../contacto/" data-key="contacto">Contacto</a>
     </nav>
     <a href="../contacto/#presupuesto" class="nav-cta"><span>Pedir presupuesto</span></a>
+    <button class="search-toggle" data-search-toggle aria-expanded="false" aria-label="Buscar"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.35-4.35"></path></svg></button>
     <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-label="Abrir menú">☰</button>
   </div>
 </header>
+
+<div class="search-panel" data-search-panel>
+  <div class="wrap">
+    <input type="text" class="search-input" data-search-input placeholder="Buscar productos, categorías..." autocomplete="off">
+    <div class="search-results" data-search-results></div>
+  </div>
+</div>
 
 <main id="main">
   <p class="wrap breadcrumb"><a href="../index.html">Inicio</a> / <a href="../estanqueidad/">Estanqueidad</a> / Juntas Shamban</p>
@@ -92,6 +100,57 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="section section-tight">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="kicker">Guía técnica</p>
+        <h2>Todo sobre las Juntas Shamban</h2>
+      </div>
+      <div class="prod-guide reveal">
+        <p>La junta Shamban es un sistema de sellado compuesto, formado por un anillo de cierre perfilado (habitualmente en PTFE o poliuretano) y una junta tórica interior que actúa como elemento de precarga, empujando el anillo contra la superficie de sellado. Se monta principalmente en pistones de cilindros hidráulicos de doble efecto, aunque también existen versiones para vástago. Es una solución habitual en sistemas de control, máquina herramienta y cilindros de actuación rápida, donde se necesita un arranque suave y un movimiento uniforme incluso a baja velocidad. Al tratarse de una junta de una sola pieza en el pistón, simplifica el montaje frente a soluciones con varios componentes.</p>
+
+        <div class="prod-guide-columns">
+        <div class="prod-guide-block">
+          <h3>Especialistas en juntas Shamban de todo tipo</h3>
+          <p>Somos especialistas en estanqueidad para cilindros hidráulicos, y las juntas Shamban forman parte de las soluciones que recomendamos para pistones de doble efecto en aplicaciones de control y máquina herramienta. Le asesoramos sobre el material del anillo de cierre y de la junta tórica de precarga según la presión y el fluido de su instalación.</p>
+        </div>
+
+        <div class="prod-guide-block">
+          <h3>Tipos de juntas Shamban para cualquier solución</h3>
+          <p>Las juntas Shamban se diferencian según su ubicación en el cilindro y el material del anillo de cierre y la junta tórica de precarga:</p>
+          <ul class="prod-guide-list">
+            <li>Juntas Shamban para pistón, de una sola pieza, con junta tórica de precarga integrada</li>
+            <li>Juntas Shamban para vástago, con el mismo principio de anillo perfilado más junta tórica</li>
+            <li>Anillo de cierre en PTFE virgen, para bajo rozamiento y buena resistencia química</li>
+            <li>Anillo de cierre en PTFE cargado con grafito o carbono, para mayor resistencia mecánica y menor desgaste</li>
+            <li>Anillo de cierre en poliuretano, para presiones medias con buena resistencia a la extrusión</li>
+            <li>Junta tórica de precarga en NBR, EPDM o FKM, según el fluido y la temperatura de trabajo</li>
+          </ul>
+        </div>
+
+        <div class="prod-guide-block">
+          <h3>Características de las juntas Shamban de Sumifluid</h3>
+          <p>Estas son las características principales que hacen de la junta Shamban una solución de referencia en pistones de doble efecto:</p>
+          <ul class="prod-guide-list">
+            <li>Arranque suave y rozamiento dinámico bajo, sin efecto de salto ni siquiera a velocidades reducidas</li>
+            <li>Alta seguridad frente a la extrusión gracias al perfil rígido del anillo de cierre</li>
+            <li>Al ser una junta de una sola pieza, la longitud de montaje en el pistón es más corta que con soluciones multicomponente</li>
+            <li>Recomendada en cilindros de máquina herramienta y sistemas donde el control de posición es crítico</li>
+            <li>La junta tórica interior debe elegirse en función del fluido, ya que es la que soporta el contacto químico directo</li>
+            <li>Las suministramos en referencia estándar o fabricadas a medida cuando el diámetro no es habitual</li>
+          </ul>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="prod-guide-cta-band reveal">
+    <div class="wrap">
+      <p>En Sumifluid le ofrecemos todo tipo de juntas Shamban sin necesidad de desplazarse, con la máxima calidad y los precios más competitivos. Operamos en toda España, gestionando su pedido en 24/48 horas. Contacte con nuestro técnico profesional y encuentre la mejor respuesta para su aplicación: rellene el <a href="../contacto/#presupuesto">formulario de presupuesto</a> o llámenos al <a href="tel:+34662264778">662 26 47 78</a> o al <a href="tel:+34966673618">966 673 618</a>.</p>
     </div>
   </section>
 
@@ -281,6 +340,8 @@
 <script defer src="../assets/js/vendor/gsap.min.js"></script>
 <script defer src="../assets/js/vendor/ScrollTrigger.min.js"></script>
 <script defer src="../assets/js/vendor/manifest.js"></script>
+<script src="../assets/js/search-index.js"></script>
+<script defer src="../assets/js/search.js"></script>
 <script defer src="../assets/js/main.js?v=20260707"></script>
 <script type="application/ld+json">
 {

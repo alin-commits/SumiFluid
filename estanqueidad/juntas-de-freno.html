@@ -36,9 +36,17 @@
       <a href="../contacto/" data-key="contacto">Contacto</a>
     </nav>
     <a href="../contacto/#presupuesto" class="nav-cta"><span>Pedir presupuesto</span></a>
+    <button class="search-toggle" data-search-toggle aria-expanded="false" aria-label="Buscar"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.35-4.35"></path></svg></button>
     <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-label="Abrir menú">☰</button>
   </div>
 </header>
+
+<div class="search-panel" data-search-panel>
+  <div class="wrap">
+    <input type="text" class="search-input" data-search-input placeholder="Buscar productos, categorías..." autocomplete="off">
+    <div class="search-results" data-search-results></div>
+  </div>
+</div>
 
 <main id="main">
   <p class="wrap breadcrumb"><a href="../index.html">Inicio</a> / <a href="../estanqueidad/">Estanqueidad</a> / Juntas de Freno</p>
@@ -92,6 +100,57 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="section section-tight">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="kicker">Guía técnica</p>
+        <h2>Todo sobre las Juntas de Freno</h2>
+      </div>
+      <div class="prod-guide reveal">
+        <p>La junta de freno es el elemento de sellado dinámico que se monta en el pistón de la pinza de freno o del bombín (cilindro maestro), reteniendo el líquido de frenos y permitiendo que el pistón se mueva a medida que se desgasta la pastilla o la zapata. Además de sellar, cumple una función mecánica: al deformarse ligeramente durante el frenado, retrae el pistón unas décimas de milímetro cuando se suelta el pedal, evitando que la pastilla roce continuamente el disco. Se trata de una junta estática en reposo y dinámica cuando el pistón se desplaza. El material debe ser siempre compatible con el tipo de líquido de frenos del vehículo o de la máquina.</p>
+
+        <div class="prod-guide-columns">
+        <div class="prod-guide-block">
+          <h3>Especialistas en juntas de freno de todo tipo</h3>
+          <p>Somos especialistas en estanqueidad, y también suministramos juntas de freno para pinzas y bombines hidráulicos, tanto de vehículos como de maquinaria industrial. Le ayudamos a identificar el material correcto según el tipo de líquido de frenos de su circuito, para evitar averías por incompatibilidad química.</p>
+        </div>
+
+        <div class="prod-guide-block">
+          <h3>Tipos de juntas de freno para cualquier solución</h3>
+          <p>Las juntas de freno se diferencian según su ubicación en el circuito y el material, que debe ser compatible con el líquido de frenos empleado:</p>
+          <ul class="prod-guide-list">
+            <li>Juntas de pistón de pinza de freno, con función de sellado y de retroceso</li>
+            <li>Juntas de bombín o cilindro maestro, para el pistón principal del circuito</li>
+            <li>Guardapolvos o fuelles de protección del pistón, frente al polvo y la humedad</li>
+            <li>Juntas en EPDM, para líquidos de freno DOT (glicólicos)</li>
+            <li>Juntas en HNBR, para circuitos con aceites minerales (LHM)</li>
+            <li>Kits de reparación completos por pinza o bombín, con junta y guardapolvo</li>
+          </ul>
+        </div>
+
+        <div class="prod-guide-block">
+          <h3>Características de las juntas de freno de Sumifluid</h3>
+          <p>Estas son las características principales que debe tener en cuenta a la hora de elegir y montar juntas de freno:</p>
+          <ul class="prod-guide-list">
+            <li>El material debe ser siempre compatible con el líquido de frenos del sistema: EPDM para DOT, HNBR para aceite mineral, nunca al revés</li>
+            <li>La deformación elástica de la junta es la que genera el retroceso del pistón tras cada frenada</li>
+            <li>El envejecimiento o endurecimiento de la junta reduce ese retroceso y puede hacer que la pastilla roce o se pegue</li>
+            <li>El guardapolvos protege la zona expuesta del pistón frente a la corrosión y la suciedad</li>
+            <li>Se recomienda sustituir juntas y guardapolvos cada vez que se desmonta una pinza o un bombín, no reutilizarlos</li>
+            <li>Conviene revisar el estado de la superficie del pistón antes de montar juntas nuevas</li>
+          </ul>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="prod-guide-cta-band reveal">
+    <div class="wrap">
+      <p>En Sumifluid le ofrecemos todo tipo de juntas de freno sin necesidad de desplazarse, con la máxima calidad y los precios más competitivos. Operamos en toda España, gestionando su pedido en 24/48 horas. Contacte con nuestro técnico profesional y encuentre la mejor respuesta para su aplicación: rellene el <a href="../contacto/#presupuesto">formulario de presupuesto</a> o llámenos al <a href="tel:+34662264778">662 26 47 78</a> o al <a href="tel:+34966673618">966 673 618</a>.</p>
     </div>
   </section>
 
@@ -281,6 +340,8 @@
 <script defer src="../assets/js/vendor/gsap.min.js"></script>
 <script defer src="../assets/js/vendor/ScrollTrigger.min.js"></script>
 <script defer src="../assets/js/vendor/manifest.js"></script>
+<script src="../assets/js/search-index.js"></script>
+<script defer src="../assets/js/search.js"></script>
 <script defer src="../assets/js/main.js?v=20260707"></script>
 <script type="application/ld+json">
 {

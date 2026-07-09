@@ -36,9 +36,17 @@
       <a href="../contacto/" data-key="contacto">Contacto</a>
     </nav>
     <a href="../contacto/#presupuesto" class="nav-cta"><span>Pedir presupuesto</span></a>
+    <button class="search-toggle" data-search-toggle aria-expanded="false" aria-label="Buscar"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.35-4.35"></path></svg></button>
     <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-label="Abrir menú">☰</button>
   </div>
 </header>
+
+<div class="search-panel" data-search-panel>
+  <div class="wrap">
+    <input type="text" class="search-input" data-search-input placeholder="Buscar productos, categorías..." autocomplete="off">
+    <div class="search-results" data-search-results></div>
+  </div>
+</div>
 
 <main id="main">
   <p class="wrap breadcrumb"><a href="../index.html">Inicio</a> / <a href="../hidraulica/">Hidráulica</a> / Caudalímetros de Ultrasonidos</p>
@@ -92,6 +100,56 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="section section-tight">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="kicker">Guía técnica</p>
+        <h2>Todo sobre los Caudalímetros de Ultrasonidos</h2>
+      </div>
+      <div class="prod-guide reveal">
+        <p>Un caudalímetro de ultrasonidos es un instrumento que mide el caudal de un fluido sin necesidad de contacto directo con él, o con un contacto mínimo, empleando pulsos de ultrasonido en lugar de piezas mecánicas en movimiento. El método más habitual en aplicaciones industriales es el de tiempo de tránsito diferencial, que compara el tiempo que tardan los pulsos en recorrer la tubería a favor y en contra del caudal para calcular su velocidad. Existe también el método Doppler, que mide el desplazamiento de frecuencia que provocan las partículas o burbujas en suspensión en el fluido, aunque solo funciona si el fluido las contiene. Al no incorporar partes móviles en contacto con el líquido, son especialmente útiles para medir caudal sin cortar la tubería ni interrumpir el proceso.</p>
+
+        <div class="prod-guide-columns">
+        <div class="prod-guide-block">
+          <h3>Especialistas en caudalímetros de ultrasonidos de todo tipo</h3>
+          <p>Somos especialistas en todo tipo de instrumentación para circuitos industriales, entre ella los caudalímetros de ultrasonidos. Con amplia experiencia en el sector, le ayudamos a elegir entre montaje clamp-on, de inserción o en línea según las características de su instalación.</p>
+        </div>
+
+        <div class="prod-guide-block">
+          <h3>Tipos de caudalímetros de ultrasonidos para cualquier solución</h3>
+          <p>En Sumifluid contamos con todo tipo de suministro industrial y los caudalímetros de ultrasonidos no son menos, ya que disponemos de diferentes tipos de caudalímetros de alta calidad:</p>
+          <ul class="prod-guide-list">
+            <li>Caudalímetros ultrasónicos clamp-on o de abrazadera, que se fijan por fuera de la tubería sin necesidad de cortarla ni de parar la instalación</li>
+            <li>Caudalímetros ultrasónicos de inserción, con el sensor en contacto directo con el fluido a través de un racor en la tubería</li>
+            <li>Caudalímetros ultrasónicos en línea, integrados en un tramo de tubería para la máxima precisión</li>
+            <li>Modelos de tiempo de tránsito, para fluidos limpios sin partículas en suspensión</li>
+            <li>Modelos de efecto Doppler, para fluidos con partículas o burbujas que reflejan la señal</li>
+            <li>Versiones portátiles, para diagnósticos puntuales en distintos puntos de una instalación</li>
+          </ul>
+        </div>
+
+        <div class="prod-guide-block">
+          <h3>Características de los caudalímetros de ultrasonidos de Sumifluid</h3>
+          <p>Dentro de nuestro catálogo contamos con caudalímetros de ultrasonidos con características diferenciadoras respecto a lo que puede encontrar en el mercado. Estas son las características principales y algunos consejos para nuestros productos:</p>
+          <ul class="prod-guide-list">
+            <li>No requieren cortar la tubería ni interrumpir el proceso, ya que los modelos clamp-on se instalan por el exterior</li>
+            <li>No incorporan partes móviles en contacto con el fluido, por lo que no sufren desgaste ni generan pérdida de carga</li>
+            <li>La precisión depende de contar con un tramo recto de tubería suficiente antes y después del sensor, y de que la tubería esté siempre llena</li>
+            <li>El método de tiempo de tránsito ofrece la mejor precisión en fluidos limpios, mientras que el Doppler exige partículas o burbujas en el fluido para funcionar</li>
+            <li>Conviene verificar el material y el espesor de la tubería, ya que ambos afectan a la transmisión de la señal ultrasónica</li>
+          </ul>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="prod-guide-cta-band reveal">
+    <div class="wrap">
+      <p>En Sumifluid le ofrecemos todo tipo de caudalímetros de ultrasonidos sin necesidad de desplazarse, con la máxima calidad y los precios más competitivos. Operamos en toda España, gestionando su pedido en 24/48 horas. Contacte con nuestro técnico profesional y encuentre la mejor respuesta para su aplicación: rellene el <a href="../contacto/#presupuesto">formulario de presupuesto</a> o llámenos al <a href="tel:+34662264778">662 26 47 78</a> o al <a href="tel:+34966673618">966 673 618</a>.</p>
     </div>
   </section>
 
@@ -364,6 +422,8 @@
 <script defer src="../assets/js/vendor/gsap.min.js"></script>
 <script defer src="../assets/js/vendor/ScrollTrigger.min.js"></script>
 <script defer src="../assets/js/vendor/manifest.js"></script>
+<script src="../assets/js/search-index.js"></script>
+<script defer src="../assets/js/search.js"></script>
 <script defer src="../assets/js/main.js?v=20260707"></script>
 <script type="application/ld+json">
 {

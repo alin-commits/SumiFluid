@@ -36,9 +36,17 @@
       <a href="../contacto/" data-key="contacto">Contacto</a>
     </nav>
     <a href="../contacto/#presupuesto" class="nav-cta"><span>Pedir presupuesto</span></a>
+    <button class="search-toggle" data-search-toggle aria-expanded="false" aria-label="Buscar"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.35-4.35"></path></svg></button>
     <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-label="Abrir menú">☰</button>
   </div>
 </header>
+
+<div class="search-panel" data-search-panel>
+  <div class="wrap">
+    <input type="text" class="search-input" data-search-input placeholder="Buscar productos, categorías..." autocomplete="off">
+    <div class="search-results" data-search-results></div>
+  </div>
+</div>
 
 <main id="main">
   <p class="wrap breadcrumb"><a href="../index.html">Inicio</a> / <a href="../hidraulica/">Hidráulica</a> / Bombas Hidráulicas</p>
@@ -92,6 +100,57 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="section section-tight">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="kicker">Guía técnica</p>
+        <h2>Todo sobre las Bombas Hidráulicas</h2>
+      </div>
+      <div class="prod-guide reveal">
+        <p>Una bomba hidráulica es el componente que genera caudal en un circuito hidráulico. Mediante este caudal y la presión generada en el circuito, es posible hacer funcionar distintos actuadores (cilindros, motores, etc.) para que puedan realizar cualquier tipo de trabajo. Las bombas hidráulicas que montamos en Sumifluid pueden ser de dos tipos: bombas de aluminio o bombas de fundición.</p>
+
+        <div class="prod-guide-columns">
+        <div class="prod-guide-block">
+          <h3>Especialistas en bombas hidráulicas de todo tipo</h3>
+          <p>Somos especialistas en todo tipo de componentes hidráulicos, entre ellos las bombas hidráulicas. Con una amplia experiencia, le ofrecemos la mejor solución para sus necesidades industriales, trabajando con bombas hidráulicas de diversas marcas: las más destacadas del mercado, como Roquet, Rexroth y Volvo.</p>
+        </div>
+
+        <div class="prod-guide-block">
+          <h3>Tipos de bombas hidráulicas para cualquier solución</h3>
+          <p>En Sumifluid contamos con todo tipo de suministro industrial y las bombas hidráulicas no son menos, ya que disponemos de diferentes tipos de bombas hidráulicas de alta calidad:</p>
+          <ul class="prod-guide-list">
+            <li>Bombas hidráulicas en aluminio: desde 0,33 cc/vuelta hasta 150 cc/vuelta</li>
+            <li>Bombas hidráulicas en fundición: desde 24 cc/vuelta hasta 150 cc/vuelta</li>
+            <li>Bombas de engranaje para maquinaria</li>
+            <li>Bombas de pistones de caudal fijo</li>
+            <li>Bombas de paletas de caudal fijo</li>
+            <li>Bombas manuales</li>
+          </ul>
+        </div>
+
+        <div class="prod-guide-block">
+          <h3>Características de las bombas hidráulicas de Sumifluid</h3>
+          <p>Dentro de nuestro catálogo contamos con bombas hidráulicas con características diferenciadoras respecto a lo que puede encontrar en el mercado. Estas son las características principales y algunos consejos para nuestros productos:</p>
+          <ul class="prod-guide-list">
+            <li>Todas nuestras bombas están equilibradas hidrostáticamente y provistas de reajuste lateral automático</li>
+            <li>Se recomienda el empleo de aceite para instalaciones oleodinámicas con aditivos antiespumantes y de extrema presión</li>
+            <li>Es preciso trabajar entre una viscosidad de 20-80 cSt, según presiones de trabajo, a una temperatura de 50 ºC</li>
+            <li>Gama de temperaturas del fluido hidráulico entre +5 ºC y +80 ºC</li>
+            <li>El filtraje hidráulico es muy importante, ya que la mayoría de averías se deben a la suciedad del aceite</li>
+            <li>La mejor forma de accionamiento es la conexión directa mediante acoplamiento elástico, que permite un movimiento radial y axial mínimo de 0,3 a 0,4 mm, absorbiendo así las vibraciones del motor que perjudican la buena marcha de la bomba</li>
+          </ul>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="prod-guide-cta-band reveal">
+    <div class="wrap">
+      <p>En Sumifluid le ofrecemos todo tipo de bombas hidráulicas sin necesidad de desplazarse, con la máxima calidad y los precios más competitivos. Operamos en toda España, gestionando su pedido en 24/48 horas. Contacte con nuestro técnico profesional y encuentre la mejor respuesta para su aplicación: rellene el <a href="../contacto/#presupuesto">formulario de presupuesto</a> o llámenos al <a href="tel:+34662264778">662 26 47 78</a> o al <a href="tel:+34966673618">966 673 618</a>.</p>
     </div>
   </section>
 
@@ -376,6 +435,8 @@
 <script defer src="../assets/js/vendor/gsap.min.js"></script>
 <script defer src="../assets/js/vendor/ScrollTrigger.min.js"></script>
 <script defer src="../assets/js/vendor/manifest.js"></script>
+<script src="../assets/js/search-index.js"></script>
+<script defer src="../assets/js/search.js"></script>
 <script defer src="../assets/js/main.js?v=20260707"></script>
 <script type="application/ld+json">
 {

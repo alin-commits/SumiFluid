@@ -36,9 +36,17 @@
       <a href="../contacto/" data-key="contacto">Contacto</a>
     </nav>
     <a href="../contacto/#presupuesto" class="nav-cta"><span>Pedir presupuesto</span></a>
+    <button class="search-toggle" data-search-toggle aria-expanded="false" aria-label="Buscar"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.35-4.35"></path></svg></button>
     <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-label="Abrir menú">☰</button>
   </div>
 </header>
+
+<div class="search-panel" data-search-panel>
+  <div class="wrap">
+    <input type="text" class="search-input" data-search-input placeholder="Buscar productos, categorías..." autocomplete="off">
+    <div class="search-results" data-search-results></div>
+  </div>
+</div>
 
 <main id="main">
   <p class="wrap breadcrumb"><a href="../index.html">Inicio</a> / <a href="../estanqueidad/">Estanqueidad</a> / Guías de Bronce</p>
@@ -92,6 +100,57 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="section section-tight">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="kicker">Guía técnica</p>
+        <h2>Todo sobre las Guías de Bronce</h2>
+      </div>
+      <div class="prod-guide reveal">
+        <p>La guía de bronce es un anillo o banda que se monta entre el pistón o el vástago y la camisa del cilindro para absorber las cargas radiales y evitar el contacto directo metal-metal. No es un elemento estanco en sí mismo (esa función la cumplen las juntas de pistón y vástago), pero resulta imprescindible para que esas juntas trabajen centradas y no se desgasten de forma prematura por el rozamiento contra la camisa. Es la solución de guiado tradicional en cilindros hidráulicos, aunque hoy convive con guías en materiales poliméricos como el PTFE cargado o la poliamida. El bronce sigue siendo habitual en aplicaciones de carga elevada y baja velocidad de deslizamiento.</p>
+
+        <div class="prod-guide-columns">
+        <div class="prod-guide-block">
+          <h3>Especialistas en guías de bronce de todo tipo</h3>
+          <p>Somos especialistas en el sellado y el guiado de cilindros hidráulicos, y las guías de bronce son un componente clave para que las juntas de pistón y vástago trabajen de forma centrada. Le asesoramos sobre el material y las tolerancias más adecuadas para la carga radial de su cilindro, tanto en reparación como en fabricación de conjuntos nuevos.</p>
+        </div>
+
+        <div class="prod-guide-block">
+          <h3>Tipos de guías de bronce para cualquier solución</h3>
+          <p>Además del bronce tradicional, existen distintas variantes de guía según la carga y la velocidad de deslizamiento del cilindro:</p>
+          <ul class="prod-guide-list">
+            <li>Guías de bronce mecanizadas en camisa cerrada, para montaje fijo</li>
+            <li>Guías de bronce partidas o con corte, para facilitar el montaje en alojamientos cerrados</li>
+            <li>Guías de bronce al estaño (bronce fosforoso), con buena resistencia al desgaste y a la carga</li>
+            <li>Guías de bronce al aluminio, con mayor dureza y resistencia mecánica</li>
+            <li>Alternativa en PTFE cargado con bronce o grafito, para menor fricción</li>
+            <li>Alternativa en tejido laminado con resina o en poliamida PA, para cargas menores</li>
+          </ul>
+        </div>
+
+        <div class="prod-guide-block">
+          <h3>Características de las guías de bronce de Sumifluid</h3>
+          <p>Estas son las características principales que debe tener en cuenta a la hora de elegir e instalar una guía de bronce:</p>
+          <ul class="prod-guide-list">
+            <li>Absorben la carga radial del vástago o el pistón y evitan el contacto metal-metal con la camisa</li>
+            <li>Protegen las juntas de pistón y vástago de un desgaste irregular o prematuro</li>
+            <li>El bronce ofrece muy buen comportamiento bajo cargas elevadas y a baja velocidad de deslizamiento</li>
+            <li>El grosor y la anchura de la guía se calculan según la carga lateral prevista en el cilindro</li>
+            <li>Se fabrican a medida cuando el diámetro o la anchura no corresponden a una referencia estándar</li>
+            <li>Deben sustituirse si presentan desgaste excesivo, ya que un vástago descentrado acelera el fallo de las juntas</li>
+          </ul>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="prod-guide-cta-band reveal">
+    <div class="wrap">
+      <p>En Sumifluid le ofrecemos todo tipo de guías de bronce sin necesidad de desplazarse, con la máxima calidad y los precios más competitivos. Operamos en toda España, gestionando su pedido en 24/48 horas. Contacte con nuestro técnico profesional y encuentre la mejor respuesta para su aplicación: rellene el <a href="../contacto/#presupuesto">formulario de presupuesto</a> o llámenos al <a href="tel:+34662264778">662 26 47 78</a> o al <a href="tel:+34966673618">966 673 618</a>.</p>
     </div>
   </section>
 
@@ -281,6 +340,8 @@
 <script defer src="../assets/js/vendor/gsap.min.js"></script>
 <script defer src="../assets/js/vendor/ScrollTrigger.min.js"></script>
 <script defer src="../assets/js/vendor/manifest.js"></script>
+<script src="../assets/js/search-index.js"></script>
+<script defer src="../assets/js/search.js"></script>
 <script defer src="../assets/js/main.js?v=20260707"></script>
 <script type="application/ld+json">
 {

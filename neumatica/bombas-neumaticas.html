@@ -36,9 +36,17 @@
       <a href="../contacto/" data-key="contacto">Contacto</a>
     </nav>
     <a href="../contacto/#presupuesto" class="nav-cta"><span>Pedir presupuesto</span></a>
+    <button class="search-toggle" data-search-toggle aria-expanded="false" aria-label="Buscar"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.35-4.35"></path></svg></button>
     <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-label="Abrir menú">☰</button>
   </div>
 </header>
+
+<div class="search-panel" data-search-panel>
+  <div class="wrap">
+    <input type="text" class="search-input" data-search-input placeholder="Buscar productos, categorías..." autocomplete="off">
+    <div class="search-results" data-search-results></div>
+  </div>
+</div>
 
 <main id="main">
   <p class="wrap breadcrumb"><a href="../index.html">Inicio</a> / <a href="../neumatica/">Neumática</a> / Bombas Neumáticas</p>
@@ -98,6 +106,57 @@
   <section class="section section-tight">
     <div class="wrap">
       <div class="section-head reveal">
+        <p class="kicker">Guía técnica</p>
+        <h2>Todo sobre las Bombas Neumáticas</h2>
+      </div>
+      <div class="prod-guide reveal">
+        <p>Una bomba neumática es un equipo de trasiego que utiliza aire comprimido, en lugar de electricidad, como fuente de energía para mover líquidos de un punto a otro de la instalación. Su principio de funcionamiento más habitual es el de doble diafragma: dos membranas flexibles conectadas por un eje central se desplazan alternativamente empujadas por el aire, generando la aspiración y la impulsión del fluido sin sellos dinámicos ni motor eléctrico. Esto las hace especialmente adecuadas para trabajar en ambientes húmedos, con polvo o con riesgo de atmósfera explosiva, y para bombear líquidos viscosos, corrosivos o con partículas en suspensión. Se distinguen principalmente por el material del cuerpo: bombas metálicas para aceites y disolventes, y bombas en plástico técnico para productos químicos agresivos.</p>
+
+        <div class="prod-guide-columns">
+        <div class="prod-guide-block">
+          <h3>Especialistas en bombas neumáticas de todo tipo</h3>
+          <p>En Sumifluid disponemos de bombas neumáticas para el trasiego de aceites, grasas fluidas, refrigerantes y otros líquidos industriales, aptas tanto para talleres como para líneas de producción. Nuestro equipo técnico le ayuda a elegir el caudal, el tamaño de diafragma y el material de juntas más adecuado a su fluido, evitando averías por incompatibilidad química.</p>
+        </div>
+
+        <div class="prod-guide-block">
+          <h3>Tipos de bombas neumáticas para cualquier solución</h3>
+          <p>Dentro de las bombas de doble diafragma existen distintas variantes según el material y la aplicación:</p>
+          <ul class="prod-guide-list">
+            <li>Bombas de cuerpo metálico (aluminio o acero inoxidable), para aceites, combustibles y disolventes</li>
+            <li>Bombas de cuerpo en plástico técnico (polipropileno o PVDF), para ácidos y productos químicos agresivos</li>
+            <li>Bombas sanitarias, para uso en industria alimentaria y farmacéutica</li>
+            <li>Bombas de alta presión, con plato intermedio que multiplica la presión de impulsión</li>
+            <li>Bombas para productos viscosos o con sólidos en suspensión</li>
+            <li>Bombas aptas para atmósferas con riesgo de explosión</li>
+          </ul>
+        </div>
+
+        <div class="prod-guide-block">
+          <h3>Características de las bombas neumáticas de Sumifluid</h3>
+          <p>Estas son algunas características y consejos a tener en cuenta al elegir una bomba neumática:</p>
+          <ul class="prod-guide-list">
+            <li>No requieren motor eléctrico, por lo que pueden trabajar en ambientes húmedos o con riesgo de explosión sin riesgo eléctrico</li>
+            <li>Se autorregulan: se detienen al alcanzar la presión de la línea y reanudan el bombeo en cuanto se abre el consumo, sin sufrir por marcha en vacío</li>
+            <li>El caudal se regula fácilmente variando la presión del aire de alimentación</li>
+            <li>Es imprescindible verificar la compatibilidad química entre el fluido a trasegar y los materiales de diafragmas, bolas y asientos</li>
+            <li>El aire de alimentación debe estar filtrado y, si es necesario, lubricado según las recomendaciones del fabricante, para prolongar la vida de los diafragmas</li>
+            <li>Conviene revisar periódicamente el estado de diafragmas y válvulas de bola, piezas de desgaste que determinan la estanqueidad de la bomba</li>
+          </ul>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="prod-guide-cta-band reveal">
+    <div class="wrap">
+      <p>En Sumifluid le ofrecemos todo tipo de bombas neumáticas sin necesidad de desplazarse, con la máxima calidad y los precios más competitivos. Operamos en toda España, gestionando su pedido en 24/48 horas. Contacte con nuestro técnico profesional y encuentre la mejor respuesta para su aplicación: rellene el <a href="../contacto/#presupuesto">formulario de presupuesto</a> o llámenos al <a href="tel:+34662264778">662 26 47 78</a> o al <a href="tel:+34966673618">966 673 618</a>.</p>
+    </div>
+  </section>
+
+  <section class="section section-tight">
+    <div class="wrap">
+      <div class="section-head reveal">
         <p class="kicker">Otras familias</p>
         <h2>Más categorías de Neumática</h2>
       </div>
@@ -109,7 +168,7 @@
         </a>
         <a class="fam-row" href="valvulas-neumaticas.html">
           <span class="fam-row-arrow">→</span>
-          <span class="fam-row-thumb is-mono"><span>NE</span></span>
+          <span class="fam-row-thumb"><img src="../assets/img/neumatica/valvulas-y-electrovalvulas.png" alt="Válvulas y Electroválvulas" loading="lazy"></span>
           <span class="fam-row-name">Válvulas y Electroválvulas</span>
         </a>
         <a class="fam-row" href="tuberia-neumatica.html">
@@ -287,6 +346,8 @@
 <script defer src="../assets/js/vendor/gsap.min.js"></script>
 <script defer src="../assets/js/vendor/ScrollTrigger.min.js"></script>
 <script defer src="../assets/js/vendor/manifest.js"></script>
+<script src="../assets/js/search-index.js"></script>
+<script defer src="../assets/js/search.js"></script>
 <script defer src="../assets/js/main.js?v=20260707"></script>
 <script type="application/ld+json">
 {

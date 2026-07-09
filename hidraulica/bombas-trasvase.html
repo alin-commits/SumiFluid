@@ -36,9 +36,17 @@
       <a href="../contacto/" data-key="contacto">Contacto</a>
     </nav>
     <a href="../contacto/#presupuesto" class="nav-cta"><span>Pedir presupuesto</span></a>
+    <button class="search-toggle" data-search-toggle aria-expanded="false" aria-label="Buscar"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.35-4.35"></path></svg></button>
     <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-label="Abrir menú">☰</button>
   </div>
 </header>
+
+<div class="search-panel" data-search-panel>
+  <div class="wrap">
+    <input type="text" class="search-input" data-search-input placeholder="Buscar productos, categorías..." autocomplete="off">
+    <div class="search-results" data-search-results></div>
+  </div>
+</div>
 
 <main id="main">
   <p class="wrap breadcrumb"><a href="../index.html">Inicio</a> / <a href="../hidraulica/">Hidráulica</a> / Bombas Trasvase</p>
@@ -92,6 +100,55 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="section section-tight">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="kicker">Guía técnica</p>
+        <h2>Todo sobre las Bombas Trasvase</h2>
+      </div>
+      <div class="prod-guide reveal">
+        <p>Una bomba de trasvase es el equipo que se utiliza para transferir aceites, lubricantes y otros fluidos industriales de un recipiente a otro (bidones, cubas o depósitos) sin necesidad de manipular el envase. Se emplea habitualmente para llenar y vaciar depósitos hidráulicos, repostar maquinaria o retirar el aceite usado durante las tareas de mantenimiento. Existen tres grandes tipos según su forma de accionamiento: bombas manuales, bombas eléctricas y bombas neumáticas, cada una orientada a un volumen y una frecuencia de uso distintos.</p>
+
+        <div class="prod-guide-columns">
+        <div class="prod-guide-block">
+          <h3>Especialistas en bombas trasvase de todo tipo</h3>
+          <p>Somos especialistas en todo tipo de componentes hidráulicos, entre ellos las bombas de trasvase. Con amplia experiencia en el sector, le ayudamos a elegir el modelo adecuado según el tipo de fluido, su viscosidad y el volumen que necesite trasegar en su instalación.</p>
+        </div>
+
+        <div class="prod-guide-block">
+          <h3>Tipos de bombas trasvase para cualquier solución</h3>
+          <p>En Sumifluid contamos con todo tipo de suministro industrial y las bombas de trasvase no son menos, ya que disponemos de diferentes tipos de bombas de alta calidad:</p>
+          <ul class="prod-guide-list">
+            <li>Bombas de trasvase manuales, de pistón o rotativas, para pequeños volúmenes y uso ocasional</li>
+            <li>Bombas de trasvase eléctricas, para trasegar grandes cantidades de forma rápida y continua</li>
+            <li>Bombas de trasvase neumáticas de membrana, indicadas para fluidos viscosos o cuando no conviene usar electricidad cerca del punto de trabajo</li>
+            <li>Bombas para acoplar a taladro, para un uso ligero y ocasional</li>
+            <li>Bombas específicas para bidones y cubas, con tubo de inmersión adaptado a la altura del envase</li>
+          </ul>
+        </div>
+
+        <div class="prod-guide-block">
+          <h3>Características de las bombas trasvase de Sumifluid</h3>
+          <p>Dentro de nuestro catálogo contamos con bombas de trasvase con características diferenciadoras respecto a lo que puede encontrar en el mercado. Estas son las características principales y algunos consejos para nuestros productos:</p>
+          <ul class="prod-guide-list">
+            <li>Antes de elegir la bomba conviene valorar el tipo de fluido y su viscosidad, ya que no todos los materiales de bomba son compatibles con todos los aceites o disolventes</li>
+            <li>La distancia entre el punto de recogida y el de vertido, así como la altura de elevación necesaria, condicionan la potencia de la bomba requerida</li>
+            <li>Las bombas neumáticas de membrana no generan chispa, por lo que resultan más seguras al trasegar productos inflamables</li>
+            <li>Conviene revisar periódicamente las juntas y válvulas de retención para evitar goteos y pérdidas de cebado</li>
+            <li>Un caudal excesivo para el envase de destino puede provocar salpicaduras y derrames, por lo que es recomendable ajustar el caudal a la operación</li>
+          </ul>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="prod-guide-cta-band reveal">
+    <div class="wrap">
+      <p>En Sumifluid le ofrecemos todo tipo de bombas de trasvase sin necesidad de desplazarse, con la máxima calidad y los precios más competitivos. Operamos en toda España, gestionando su pedido en 24/48 horas. Contacte con nuestro técnico profesional y encuentre la mejor respuesta para su aplicación: rellene el <a href="../contacto/#presupuesto">formulario de presupuesto</a> o llámenos al <a href="tel:+34662264778">662 26 47 78</a> o al <a href="tel:+34966673618">966 673 618</a>.</p>
     </div>
   </section>
 
@@ -364,6 +421,8 @@
 <script defer src="../assets/js/vendor/gsap.min.js"></script>
 <script defer src="../assets/js/vendor/ScrollTrigger.min.js"></script>
 <script defer src="../assets/js/vendor/manifest.js"></script>
+<script src="../assets/js/search-index.js"></script>
+<script defer src="../assets/js/search.js"></script>
 <script defer src="../assets/js/main.js?v=20260707"></script>
 <script type="application/ld+json">
 {

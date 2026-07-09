@@ -36,9 +36,17 @@
       <a href="../contacto/" data-key="contacto">Contacto</a>
     </nav>
     <a href="../contacto/#presupuesto" class="nav-cta"><span>Pedir presupuesto</span></a>
+    <button class="search-toggle" data-search-toggle aria-expanded="false" aria-label="Buscar"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.35-4.35"></path></svg></button>
     <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-label="Abrir menú">☰</button>
   </div>
 </header>
+
+<div class="search-panel" data-search-panel>
+  <div class="wrap">
+    <input type="text" class="search-input" data-search-input placeholder="Buscar productos, categorías..." autocomplete="off">
+    <div class="search-results" data-search-results></div>
+  </div>
+</div>
 
 <main id="main">
   <p class="wrap breadcrumb"><a href="../index.html">Inicio</a> / <a href="../hidraulica/">Hidráulica</a> / Campanas Hidráulicas</p>
@@ -92,6 +100,55 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="section section-tight">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="kicker">Guía técnica</p>
+        <h2>Todo sobre las Campanas Hidráulicas</h2>
+      </div>
+      <div class="prod-guide reveal">
+        <p>Una campana hidráulica, también llamada campana de acoplamiento, es el elemento que une la bomba hidráulica al motor eléctrico o de combustión que la acciona. Su función es sujetar ambos elementos perfectamente alineados y alojar en su interior el acoplamiento elástico que transmite el giro del motor al eje de la bomba, absorbiendo vibraciones y pequeños desalineamientos. Se fabrica normalmente en fundición de aluminio, aunque para tamaños o exigencias especiales se recurre al acero soldado. Sus bridas en ambos extremos deben coincidir con la carcasa del motor (habitualmente bajo norma NEMA o IEC) y con la brida de la bomba (habitualmente bajo norma SAE o ISO 3019), por lo que se seleccionan por combinación de tamaños y no como pieza universal.</p>
+
+        <div class="prod-guide-columns">
+        <div class="prod-guide-block">
+          <h3>Especialistas en campanas hidráulicas de todo tipo</h3>
+          <p>Somos especialistas en todo tipo de componentes hidráulicos, entre ellos las campanas de acoplamiento. Con amplia experiencia en el sector, le ayudamos a identificar la combinación exacta de brida de motor y brida de bomba que necesita su instalación, evitando errores de montaje.</p>
+        </div>
+
+        <div class="prod-guide-block">
+          <h3>Tipos de campanas hidráulicas para cualquier solución</h3>
+          <p>En Sumifluid contamos con todo tipo de suministro industrial y las campanas hidráulicas no son menos, ya que disponemos de diferentes tipos de campanas de alta calidad:</p>
+          <ul class="prod-guide-list">
+            <li>Campanas monobloc para acoplamiento directo entre bomba y motor</li>
+            <li>Campanas silenciadas, que reducen el nivel de ruido de la transmisión</li>
+            <li>Campanas en fundición de aluminio, para el uso general en la mayoría de instalaciones</li>
+            <li>Campanas en acero soldado, para tamaños grandes o aplicaciones más exigentes</li>
+            <li>Distintas combinaciones de brida de bomba (SAE o ISO 3019) y brida de motor (NEMA o IEC) según el equipo a acoplar</li>
+          </ul>
+        </div>
+
+        <div class="prod-guide-block">
+          <h3>Características de las campanas hidráulicas de Sumifluid</h3>
+          <p>Dentro de nuestro catálogo contamos con campanas hidráulicas con características diferenciadoras respecto a lo que puede encontrar en el mercado. Estas son las características principales y algunos consejos para nuestros productos:</p>
+          <ul class="prod-guide-list">
+            <li>Alojan en su interior el acoplamiento elástico, que compensa pequeños desalineamientos radiales, angulares y axiales entre los ejes de motor y bomba</li>
+            <li>Una alineación precisa entre motor y bomba reduce el desgaste prematuro de los rodamientos y prolonga la vida útil del conjunto</li>
+            <li>El acoplamiento elástico interior suele fabricarse en NBR o poliuretano, según la aplicación y la exigencia de amortiguación</li>
+            <li>Antes de pedir una campana es imprescindible confirmar la brida y el tamaño de carcasa tanto del motor como de la bomba</li>
+            <li>Conviene revisar periódicamente el estado del acoplamiento elástico, ya que su desgaste es la principal causa de vibraciones y ruido en la transmisión</li>
+          </ul>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="prod-guide-cta-band reveal">
+    <div class="wrap">
+      <p>En Sumifluid le ofrecemos todo tipo de campanas hidráulicas sin necesidad de desplazarse, con la máxima calidad y los precios más competitivos. Operamos en toda España, gestionando su pedido en 24/48 horas. Contacte con nuestro técnico profesional y encuentre la mejor respuesta para su aplicación: rellene el <a href="../contacto/#presupuesto">formulario de presupuesto</a> o llámenos al <a href="tel:+34662264778">662 26 47 78</a> o al <a href="tel:+34966673618">966 673 618</a>.</p>
     </div>
   </section>
 
@@ -364,6 +421,8 @@
 <script defer src="../assets/js/vendor/gsap.min.js"></script>
 <script defer src="../assets/js/vendor/ScrollTrigger.min.js"></script>
 <script defer src="../assets/js/vendor/manifest.js"></script>
+<script src="../assets/js/search-index.js"></script>
+<script defer src="../assets/js/search.js"></script>
 <script defer src="../assets/js/main.js?v=20260707"></script>
 <script type="application/ld+json">
 {

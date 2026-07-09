@@ -36,9 +36,17 @@
       <a href="../contacto/" data-key="contacto">Contacto</a>
     </nav>
     <a href="../contacto/#presupuesto" class="nav-cta"><span>Pedir presupuesto</span></a>
+    <button class="search-toggle" data-search-toggle aria-expanded="false" aria-label="Buscar"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.35-4.35"></path></svg></button>
     <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-label="Abrir menú">☰</button>
   </div>
 </header>
+
+<div class="search-panel" data-search-panel>
+  <div class="wrap">
+    <input type="text" class="search-input" data-search-input placeholder="Buscar productos, categorías..." autocomplete="off">
+    <div class="search-results" data-search-results></div>
+  </div>
+</div>
 
 <main id="main">
   <p class="wrap breadcrumb"><a href="../index.html">Inicio</a> / <a href="../hidraulica/">Hidráulica</a> / Electroválvulas Hidráulicas</p>
@@ -92,6 +100,57 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="section section-tight">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="kicker">Guía técnica</p>
+        <h2>Todo sobre las Electroválvulas Hidráulicas</h2>
+      </div>
+      <div class="prod-guide reveal">
+        <p>Una electroválvula hidráulica es un distribuidor cuyo carrete se acciona mediante una o varias bobinas solenoide en lugar de una palanca manual, lo que permite controlar el sentido del caudal de forma eléctrica y automatizada desde un PLC, un cuadro de mando o cualquier sistema de control remoto. Al aplicar corriente a la bobina se genera un campo magnético que desplaza el núcleo interior, moviendo el carrete y abriendo o cerrando el paso del aceite entre las distintas vías del cuerpo de la válvula; un muelle de retorno devuelve el carrete a su posición inicial al desactivar la bobina. Se emplean en cualquier circuito hidráulico que necesite automatización, desde la activación de un solo cilindro hasta secuencias completas controladas por autómata.</p>
+
+        <div class="prod-guide-columns">
+        <div class="prod-guide-block">
+          <h3>Especialistas en electroválvulas hidráulicas de todo tipo</h3>
+          <p>Somos especialistas en todo tipo de componentes hidráulicos, entre ellos las electroválvulas. Con amplia experiencia en el sector, le ayudamos a elegir el número de vías, el tipo de centro y la tensión de bobina que necesita su instalación.</p>
+        </div>
+
+        <div class="prod-guide-block">
+          <h3>Tipos de electroválvulas hidráulicas para cualquier solución</h3>
+          <p>En Sumifluid contamos con todo tipo de suministro industrial y las electroválvulas hidráulicas no son menos, ya que disponemos de diferentes tipos de electroválvulas de alta calidad:</p>
+          <ul class="prod-guide-list">
+            <li>Electroválvulas de 2/2, 3/2, 4/2 y 4/3 vías, según el número de conexiones y posiciones de control necesarias</li>
+            <li>Electroválvulas monoestables, que vuelven a su posición de reposo por muelle al desactivar la bobina</li>
+            <li>Electroválvulas biestables, que mantienen la última posición seleccionada aunque se corte la alimentación de la bobina</li>
+            <li>Electroválvulas de accionamiento directo, para caudales bajos y respuesta rápida</li>
+            <li>Electroválvulas pilotadas, en las que una pequeña electroválvula acciona la principal para trabajar con caudales elevados</li>
+            <li>Modelos con bobina en corriente continua (12V, 24V) o alterna (110V, 220V), según la instalación eléctrica disponible</li>
+          </ul>
+        </div>
+
+        <div class="prod-guide-block">
+          <h3>Características de las electroválvulas hidráulicas de Sumifluid</h3>
+          <p>Dentro de nuestro catálogo contamos con electroválvulas hidráulicas con características diferenciadoras respecto a lo que puede encontrar en el mercado. Estas son las características principales y algunos consejos para nuestros productos:</p>
+          <ul class="prod-guide-list">
+            <li>El caudal y la presión máxima admisibles deben ajustarse siempre a los del resto del circuito, para no generar pérdidas de carga ni riesgo de sobrepresión</li>
+            <li>El tipo de centro, abierto o cerrado, determina el comportamiento del circuito cuando la electroválvula está desactivada</li>
+            <li>Ofrecen un tiempo de respuesta muy rápido, lo que las hace idóneas para secuencias automatizadas y ciclos repetitivos</li>
+            <li>La tensión y el tipo de corriente de la bobina deben coincidir exactamente con los del cuadro eléctrico de la instalación</li>
+            <li>Conviene revisar periódicamente el estado de la bobina y del carrete, ya que el calentamiento excesivo o el desgaste interno son las causas más habituales de fallo</li>
+            <li>El aceite debe mantenerse limpio, ya que las partículas en suspensión pueden bloquear el carrete en posiciones intermedias</li>
+          </ul>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="prod-guide-cta-band reveal">
+    <div class="wrap">
+      <p>En Sumifluid le ofrecemos todo tipo de electroválvulas hidráulicas sin necesidad de desplazarse, con la máxima calidad y los precios más competitivos. Operamos en toda España, gestionando su pedido en 24/48 horas. Contacte con nuestro técnico profesional y encuentre la mejor respuesta para su aplicación: rellene el <a href="../contacto/#presupuesto">formulario de presupuesto</a> o llámenos al <a href="tel:+34662264778">662 26 47 78</a> o al <a href="tel:+34966673618">966 673 618</a>.</p>
     </div>
   </section>
 
@@ -364,6 +423,8 @@
 <script defer src="../assets/js/vendor/gsap.min.js"></script>
 <script defer src="../assets/js/vendor/ScrollTrigger.min.js"></script>
 <script defer src="../assets/js/vendor/manifest.js"></script>
+<script src="../assets/js/search-index.js"></script>
+<script defer src="../assets/js/search.js"></script>
 <script defer src="../assets/js/main.js?v=20260707"></script>
 <script type="application/ld+json">
 {
