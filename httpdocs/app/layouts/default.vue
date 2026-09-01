@@ -1,6 +1,5 @@
 <template>
   <div>
-    <!-- deploy-test-2026-09-01 -->
     <LayoutHeader />
     <slot />
     <LayoutFooter />

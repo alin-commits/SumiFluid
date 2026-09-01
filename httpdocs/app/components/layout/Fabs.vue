@@ -63,7 +63,7 @@ const whatsappHref = computed(() => {
   transform: scale(0.96);
 }
 .fab-call {
-  background: #f5a623;
+  background: var(--ink);
   color: #fff;
   box-shadow: 0.7px 1px 0.7px rgba(171, 171, 171, 0.4);
 }
