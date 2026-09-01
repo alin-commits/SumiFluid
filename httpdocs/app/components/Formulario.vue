@@ -1,6 +1,13 @@
 <script setup>
 import { contactSchema } from "~~/shared/schemas/contact";
 
+const props = defineProps({
+  producto: {
+    type: String,
+    default: "",
+  },
+});
+
 const asuntos = ref([
   "Necesito una pieza urgente",
   "Tengo una pieza y no sé lo que es",
@@ -16,6 +23,7 @@ const state = reactive({
   telefono: "",
   asunto: asuntos.value[0],
   mensaje: "",
+  producto: props.producto,
   website: "", // Honeypot - debe quedar vacío
 });
 
@@ -67,6 +75,11 @@ async function onSubmit(event) {
   <UForm :schema="contactSchema" :state="state" class="form" @submit="onSubmit">
     <p class="kicker">Formulario</p>
     <h2>Cuéntenos su caso</h2>
+
+    <p v-if="producto" class="producto-contexto">
+      Consulta sobre: <strong>{{ producto }}</strong>
+    </p>
+
     <UFormField label="Motivo de la consulta" name="asunto">
       <USelect v-model="state.asunto" :items="asuntos" class="w-full" />
     </UFormField>
@@ -143,6 +156,18 @@ async function onSubmit(event) {
   gap: 1.3rem;
   background: #fff;
   border: 1px solid var(--line);
+}
+
+.producto-contexto {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  padding: 0.6rem 0.9rem;
+  background: var(--bg);
+  border: 1px solid var(--line);
+
+  & strong {
+    color: var(--ink);
+  }
 }
 
 .form :deep(label) {

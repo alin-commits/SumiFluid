@@ -13,7 +13,7 @@ const props = defineProps({
     required: true,
   },
 });
-const formLink = "/contacto";
+const formLink = "#presupuesto";
 const sectionRef = ref(null);
 useRevealObserver(sectionRef);
 </script>

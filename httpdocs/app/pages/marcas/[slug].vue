@@ -134,7 +134,7 @@ const imgList = computed(() => {
         </UCarousel>
       </div>
     </Section>
-    <Formulario />
+    <Formulario :producto="marca.nombre" />
   </div>
 </template>
 

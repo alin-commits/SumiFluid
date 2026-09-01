@@ -22,6 +22,12 @@ export const contactSchema = z.object({
     .string()
     .min(10, "El mensaje debe tener al menos 10 caracteres")
     .max(500, "El mensaje es demasiado largo"),
+  // Producto/subcategoría desde la que se envió el formulario (opcional, no editable)
+  producto: z
+    .string()
+    .max(120, "El producto es demasiado largo")
+    .refine(sinSaltosDeLinea, "Carácter no permitido")
+    .optional(),
   // Campo honeypot - debe estar vacío
   website: z.string().max(0).optional(),
 });

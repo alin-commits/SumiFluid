@@ -48,7 +48,11 @@ defineProps({
   >
     <template #preview-action>
       <div class="btn-stack btn-stack-left">
-        <Boton label="pedir presupuesto" enlace="/contacto" :flecha="true" />
+        <Boton
+          label="pedir presupuesto"
+          enlace="#presupuesto"
+          :flecha="true"
+        />
         <Boton :btnGhost="true" :label="catTitulo" :enlace="catEnlace" />
       </div>
     </template>

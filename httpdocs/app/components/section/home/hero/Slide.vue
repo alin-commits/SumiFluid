@@ -56,14 +56,14 @@ defineProps({
           <slot name="ctas">
             <Boton
               :btnSecondary="true"
-              :label="`Ver ${nombre}`"
-              :enlace="pagina"
+              label="Pedir presupuesto"
+              enlace="/contacto"
               :flecha="true"
             />
             <Boton
               :btnGhostLight="true"
-              label="Pedir presupuesto"
-              enlace="/contacto"
+              :label="`Ver ${nombre}`"
+              :enlace="pagina"
             />
           </slot>
         </div>

@@ -209,9 +209,14 @@ useSchemaOrg([
       pagina="#catalogo"
     >
       <template #ctas>
-        <Boton label="pedir presupuesto" enlace="/contacto" :flecha="true" />
         <Boton
-          :btnGhost="true"
+          :btnSecondary="true"
+          label="pedir presupuesto"
+          enlace="#presupuesto"
+          :flecha="true"
+        />
+        <Boton
+          :btnGhostLight="true"
           label="ver catálogo completo"
           :enlace="`#catalogo`"
         />
@@ -266,7 +271,7 @@ useSchemaOrg([
         <Boton
           :btnSecondary="true"
           :label="'pedir presupuesto'"
-          :enlace="'/contacto'"
+          :enlace="'#presupuesto'"
           :flecha="true"
         />
         <Boton
@@ -276,6 +281,17 @@ useSchemaOrg([
         />
       </div>
     </Section>
+
+    <!-- Formulario de presupuesto -->
+    <div id="presupuesto">
+      <Section
+        titulo="Presupuesto"
+        :preview="pageCopyBySlug[categoria.slug].section6.preview"
+        :descripcion="pageCopyBySlug[categoria.slug].section6.descripcion"
+      >
+        <Formulario :producto="categoria.nombre" />
+      </Section>
+    </div>
 
     <!-- Sección Marcas -->
     <Section
@@ -295,8 +311,8 @@ useSchemaOrg([
           <Icon name="lucide:arrow-right" />
         </NuxtLink>
       </template>
-      <SectionBrandTrack />
     </Section>
+    <SectionBrandTrack />
   </main>
 </template>
 

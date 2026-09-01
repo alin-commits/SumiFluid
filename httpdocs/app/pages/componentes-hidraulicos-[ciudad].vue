@@ -205,8 +205,8 @@ useSchemaOrg([
           <Icon name="lucide:arrow-right" />
         </NuxtLink>
       </template>
-      <SectionBrandTrack />
     </Section>
+    <SectionBrandTrack />
   </main>
 </template>
 

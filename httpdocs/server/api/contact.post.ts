@@ -84,7 +84,8 @@ export default defineEventHandler(async (event) => {
     });
   }
 
-  const { asunto, nombre, email, telefono, mensaje, website } = result.data;
+  const { asunto, nombre, email, telefono, mensaje, producto, website } =
+    result.data;
 
   // Verificar honeypot - si está lleno, es un bot
   if (website && website.length > 0) {
@@ -99,6 +100,7 @@ export default defineEventHandler(async (event) => {
   const emailSeguro = escaparHtml(email);
   const telefonoSeguro = escaparHtml(telefono);
   const mensajeSeguro = escaparHtml(mensaje).replace(/\n/g, "<br>");
+  const productoSeguro = producto ? escaparHtml(producto) : "";
 
   const { sendMail } = useNodeMailer();
 
@@ -107,8 +109,10 @@ export default defineEventHandler(async (event) => {
       to: process.env.CONTACT_EMAIL,
       from: `"Sumifluid:" <${process.env.CONTACT_EMAIL}>`,
       replyTo: email,
-      subject: `Nuevo mensaje Sumifluid: ${asunto}`,
-      text: `Asunto: ${asunto}
+      subject: producto
+        ? `Nuevo mensaje Sumifluid: ${asunto} — ${producto}`
+        : `Nuevo mensaje Sumifluid: ${asunto}`,
+      text: `Asunto: ${asunto}${producto ? `\nProducto de interés: ${producto}` : ""}
 Nombre: ${nombre}
 Email: ${email}
 Teléfono: ${telefono}
@@ -118,6 +122,7 @@ ${mensaje}`,
       html: `
         <h3>Nuevo mensaje de contacto</h3>
         <p><strong>Asunto:</strong> ${asuntoSeguro}</p>
+        ${productoSeguro ? `<p><strong>Producto de interés:</strong> ${productoSeguro}</p>` : ""}
         <p><strong>Nombre:</strong> ${nombreSeguro}</p>
         <p><strong>Email:</strong> ${emailSeguro}</p>
         <p><strong>Teléfono:</strong> ${telefonoSeguro}</p>

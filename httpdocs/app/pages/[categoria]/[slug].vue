@@ -132,6 +132,17 @@ useSchemaOrg([
       :telefono_principal="telefonoPrincipal"
       :telefono_secundario="telefonoSecundario"
     />
+    <!-- Formulario de presupuesto -->
+    <div id="presupuesto">
+      <Section
+        titulo="Presupuesto"
+        :preview="`Solicite presupuesto para ${subcategoria.nombre}`"
+        descripcion="Cuéntenos su caso y le respondemos con la solución más rápida."
+      >
+        <Formulario :producto="subcategoria.nombre" />
+      </Section>
+    </div>
+
     <!-- Otras familias -->
     <Section
       :id="3"
