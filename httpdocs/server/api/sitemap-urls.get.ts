@@ -152,7 +152,7 @@ export default defineEventHandler(async (event) => {
 
     // Build city landing page URLs
     const ciudadUrls: SitemapUrlItem[] = ciudades.map((ciudad) => ({
-      loc: `/componentes-hidraulicos-neumaticos-${ciudad.slug}`,
+      loc: `/componentes-hidraulicos-${ciudad.slug}`,
       lastmod: now,
       changefreq: "monthly" as const,
       priority: 0.6 as SitemapPriority,
@@ -206,7 +206,7 @@ export default defineEventHandler(async (event) => {
         priority: 0.7 as SitemapPriority,
       },
       ...ciudades.map((ciudad) => ({
-        loc: `/componentes-hidraulicos-neumaticos-${ciudad.slug}`,
+        loc: `/componentes-hidraulicos-${ciudad.slug}`,
         lastmod: now,
         changefreq: "monthly" as const,
         priority: 0.6 as SitemapPriority,

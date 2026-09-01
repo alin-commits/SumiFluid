@@ -88,7 +88,7 @@ useSchemaOrg([
         <NuxtLink
           v-for="ciudad in ciudades"
           :key="ciudad.slug"
-          :to="`/componentes-hidraulicos-neumaticos-${ciudad.slug}`"
+          :to="`/componentes-hidraulicos-${ciudad.slug}`"
           class="ciudad-pill"
         >
           {{ ciudad.nombre }}
