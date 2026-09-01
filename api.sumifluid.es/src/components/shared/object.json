@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_shared_objects",
+  "info": {
+    "displayName": "object",
+    "icon": "grid"
+  },
+  "options": {},
+  "attributes": {
+    "titulo": {
+      "type": "text",
+      "required": false
+    },
+    "contenido": {
+      "type": "text",
+      "required": false,
+      "unique": false
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,20 @@
+# Dependencies
+node_modules/
+
+# Strapi build output/cache
+build/
+dist/
+.cache/
+.strapi/
+
+# Runtime data/temp (includes the local SQLite DB)
+.tmp/
+tmp/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Editor/OS
+.DS_Store

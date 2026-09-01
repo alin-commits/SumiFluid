@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_contacto_direccions",
+  "info": {
+    "displayName": "direccion",
+    "icon": "pinMap"
+  },
+  "options": {},
+  "attributes": {
+    "direccion": {
+      "type": "string",
+      "required": true
+    },
+    "cp": {
+      "type": "string",
+      "regex": "^\\d{5}$"
+    },
+    "municipio": {
+      "type": "string",
+      "required": true
+    },
+    "provincia": {
+      "type": "string"
+    },
+    "infoExtra": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

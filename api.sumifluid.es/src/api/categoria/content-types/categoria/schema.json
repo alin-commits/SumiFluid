@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categorias",
+  "info": {
+    "singularName": "categoria",
+    "pluralName": "categorias",
+    "displayName": "Categoria"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "nombre",
+      "required": true
+    },
+    "imagen": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images", "files"]
+    },
+    "preview": {
+      "type": "blocks",
+      "required": true
+    },
+    "descripcion": {
+      "type": "text"
+    },
+    "productos_breve": {
+      "type": "text"
+    },
+    "subcategorias": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::subcategoria.subcategoria",
+      "mappedBy": "categoria"
+    },
+    "posicion": {
+      "type": "uid",
+      "targetField": "",
+      "required": true,
+      "regex": "/^[1-9]\\d*$/"
+    }
+  }
+}

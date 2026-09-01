@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_shared_tablas",
+  "info": {
+    "displayName": "tabla"
+  },
+  "options": {},
+  "attributes": {
+    "tabla": {
+      "type": "customField",
+      "customField": "plugin::table-field.table"
+    }
+  },
+  "config": {}
+}
