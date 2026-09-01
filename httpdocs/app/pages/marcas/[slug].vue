@@ -94,7 +94,6 @@ const imgList = computed(() => {
 </script>
 
 <template>
-  <Breadcrumbs />
   <SectionMarcaHeader
     v-if="marca"
     :marca="marca.nombre"
@@ -103,6 +102,7 @@ const imgList = computed(() => {
     :banner="getMediaUrl(marca.banner.url ?? `/images/placeholder.png`)"
     :catalogo="marca.catalogo"
   />
+  <Breadcrumbs />
   <div class="container wrap">
     <Section titulo="sobre la compañía" :wider-parragraph="true">
       <div>

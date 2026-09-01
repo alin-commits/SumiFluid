@@ -14,10 +14,8 @@ const { data: postsData } = await get("posts", {
       portada: true,
     },
     sort: ["fecha:desc"],
-    filters: {
-      publishedAt: {
-        $notNull: true,
-      },
+    pagination: {
+      pageSize: 100,
     },
   },
 });

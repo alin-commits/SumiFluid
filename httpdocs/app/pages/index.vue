@@ -187,7 +187,6 @@ useHead(() => ({
       titulo="Quiénes somos"
       preview="Empresa líder de suministros industriales en el Levante"
       descripcion="Más de una década sirviendo a la industria de Alicante, Murcia, Valencia y Albacete. Trazabilidad completa de existencias, certificados de calidad de fábrica y stock permanente para no parar su producción."
-      :split-layout="true"
       :is-dark="true"
       dark-background="var(--panel)"
     >

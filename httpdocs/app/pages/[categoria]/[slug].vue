@@ -98,8 +98,6 @@ useSchemaOrg([
 
 <template>
   <div>
-    <Breadcrumbs />
-
     <!-- Sección Intro -->
     <SectionSubcatHero
       :seccion-id="1"
@@ -112,6 +110,8 @@ useSchemaOrg([
       :cat-enlace="`/${route.params.categoria}`"
     >
     </SectionSubcatHero>
+
+    <Breadcrumbs />
 
     <SectionSubcatPorQueComprar :subcategoria="subcategoria.nombre" />
 

@@ -234,3 +234,42 @@ button {
   text-transform: uppercase;
   letter-spacing: 0.03em;
 }
+
+/* CTA buttons (shared across pages) */
+.btn-stack {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  &.btn-stack-left {
+    justify-content: flex-start;
+  }
+}
+
+.btn-stack-vcenter {
+  width: 100%;
+}
+
+.section-individual-vcenter .section-split-grid .section-content {
+  align-self: center;
+}
+
+.brands-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition:
+    color 0.2s var(--ease),
+    border-color 0.2s var(--ease),
+    transform 0.2s var(--ease);
+}
+
+.brands-link:hover {
+  border-bottom-color: currentColor;
+}

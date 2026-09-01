@@ -11,7 +11,7 @@ const props = defineProps({
 });
 
 const statsRef = ref(null);
-const foundedYear = 2007;
+const foundedYear = 2001;
 const currentYear = useState("current-year", () => new Date().getFullYear());
 
 const items = computed(() => [

@@ -28,6 +28,7 @@ const businessAddress = {
   addressCountry: process.env.NUXT_PUBLIC_ADDRESS_COUNTRY || "ES",
 };
 const businessTelephone = process.env.NUXT_PUBLIC_BUSINESS_TELEPHONE;
+const googleAnalyticsId = process.env.NUXT_PUBLIC_GA_ID || "G-WCW8Z9VZLM";
 
 export default defineNuxtConfig({
   runtimeConfig: {
@@ -129,6 +130,18 @@ export default defineNuxtConfig({
         {
           name: "og:image",
           content: `${siteUrl}/images/logo.png`,
+        },
+      ],
+      script: [
+        {
+          src: `https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`,
+          async: true,
+        },
+        {
+          innerHTML: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${googleAnalyticsId}');`,
         },
       ],
     },

@@ -8,42 +8,47 @@ definePageMeta({
 const route = useRoute();
 const siteConfig = useSiteConfig();
 
-const { get } = useStrapi();
-const { data: empresa } = await get("empresa");
+const { get, getMediaUrl } = useStrapi();
+const [{ data: empresa }, { data: cat }] = await Promise.all([
+  get("empresa"),
+  get("categorias", { query: { populate: "*" } }),
+]);
 const telefono = computed(
   () => empresa.value?.data?.telefonoPrincipalNoSpaces ?? "",
+);
+const categoriasHero = computed(() => cat.value?.data ?? []);
+const processedCategorias = computed(() =>
+  categoriasHero.value.map((categoria, index) => ({
+    ...categoria,
+    id: index + 1,
+    imagenUrl:
+      getMediaUrl(
+        categoria.imagen?.formats?.small?.url ?? categoria.imagen?.url,
+      ) ?? "/images/placeholder.png",
+  })),
 );
 
 const ciudad = computed(() =>
   ciudades.find((c) => c.slug === route.params.ciudad),
 );
 
-const categorias = [
+const trustItems = computed(() => [
   {
-    slug: "hidraulica",
-    nombre: "Hidráulica",
-    descripcion:
-      "Bombas, motores, centrales hidráulicas, cilindros, latiguillos a medida y filtraje.",
+    icono: "lucide:badge-check",
+    titulo: "Certificado de calidad",
+    descripcion: `Cada pieza enviada a ${ciudad.value.nombre} incluye certificado de calidad de fábrica.`,
   },
   {
-    slug: "neumatica",
-    nombre: "Neumática",
-    descripcion:
-      "Cilindros, válvulas, racordaje y automatización bajo normativa ISO 6431 y Unitop.",
+    icono: "lucide:list-checks",
+    titulo: "Trazabilidad completa",
+    descripcion: "Control total de existencias y lote de cada referencia en stock.",
   },
   {
-    slug: "estanqueidad",
-    nombre: "Estanqueidad",
-    descripcion:
-      "Más de 5.000 referencias en juntas tóricas, retenes y collarines (NBR, EPDM, VMQ, FKM, PTFE).",
+    icono: "lucide:refresh-cw",
+    titulo: "Reposición inmediata",
+    descripcion: "¿Referencia dañada? Indíquenos el código y le enviamos la pieza exacta.",
   },
-  {
-    slug: "vacio",
-    nombre: "Vacío",
-    descripcion:
-      "Bombas, eyectores y ventosas junto a fabricantes como COVAL y DVP Vacuum Technology.",
-  },
-];
+]);
 
 // #region SEO
 const pageTitle = computed(
@@ -97,6 +102,8 @@ useSchemaOrg([
 
 <template>
   <main>
+    <SectionHomeHero :categorias="categoriasHero" />
+
     <Breadcrumbs />
 
     <!-- Sección Intro -->
@@ -120,15 +127,15 @@ useSchemaOrg([
       class="section-tight"
     >
       <div class="cat-grid">
-        <NuxtLink
-          v-for="cat in categorias"
-          :key="cat.slug"
-          :to="`/${cat.slug}`"
-          class="cat-tile"
-        >
-          <span class="cat-name">{{ cat.nombre }}</span>
-          <span class="cat-desc">{{ cat.descripcion }}</span>
-        </NuxtLink>
+        <SectionHomeAreasCard
+          v-for="categoria in processedCategorias"
+          :key="categoria.slug"
+          :id="categoria.id"
+          :titulo="categoria.nombre"
+          :productos_breve="categoria.productos_breve"
+          :imagen="categoria.imagenUrl"
+          :slug="categoria.slug"
+        />
       </div>
 
       <p v-if="ciudad.localidadesCercanas?.length" class="localidades">
@@ -139,27 +146,42 @@ useSchemaOrg([
       </p>
     </Section>
 
+    <!-- Sección Recambios (solo ciudades con ciudad.recambios) -->
+    <Section
+      v-if="ciudad.recambios"
+      titulo="recambios"
+      :preview="`Recambios hidráulicos en ${ciudad.nombre}`"
+      :descripcion="`Si su maquinaria hidráulica o neumática necesita una pieza de recambio, en Sumifluid encontrará la referencia exacta o su equivalente compatible. Trabajamos con equipos ya instalados en ${ciudad.nombre}, identificando el componente dañado a partir del código de fábrica o las medidas, con envío rápido desde nuestro almacén en Elche.`"
+      :wider-parragraph="true"
+      class="section-tight"
+    />
+
     <!-- Sección Trazabilidad -->
     <Section
       :id="3"
       titulo="calidad"
       preview="Trazabilidad y calidad garantizada"
-      :descripcion="`Cada pieza que enviamos a ${ciudad.nombre} cuenta con certificado de calidad de fábrica y trazabilidad completa de existencias. Si necesita reponer una referencia dañada, basta con indicarnos el código y le enviamos la pieza exacta.`"
-      :wider-parragraph="true"
-    />
+      class="section-tight"
+    >
+      <div class="trust-grid">
+        <div v-for="item in trustItems" :key="item.titulo" class="trust-tile">
+          <Icon :name="item.icono" size="2rem" class="trust-icon" />
+          <p class="trust-titulo">{{ item.titulo }}</p>
+          <p class="trust-desc">{{ item.descripcion }}</p>
+        </div>
+      </div>
+    </Section>
 
     <!-- Sección Taller propio (CTA final) -->
     <Section
-      class="section-individual-vcenter"
       :id="4"
       titulo="fabricación propia"
       preview="Taller propio en Elche"
       descripcion="Además del suministro de piezas en catálogo, disponemos de taller propio para la fabricación de latiguillos a medida y reparación de maquinaria hidráulica y neumática, con entrega rápida a cualquier punto de la península."
-      :split-layout="true"
       :is-dark="true"
       dark-background="var(--panel)"
     >
-      <div class="btn-stack btn-stack-vcenter">
+      <div class="btn-stack btn-stack-left">
         <Boton
           :btnSecondary="true"
           label="pedir presupuesto"
@@ -196,34 +218,45 @@ useSchemaOrg([
   background: var(--line);
   border: 1px solid var(--line);
 }
-.cat-tile {
-  background: var(--bg-2);
-  padding: 1.4rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  transition: background 0.2s;
-
-  &:hover {
-    background: #fbf2df;
-  }
-}
-.cat-name {
-  font-weight: 700;
-  font-size: 1.05rem;
-}
-.cat-desc {
-  font-size: 0.86rem;
-  color: var(--ink-soft);
-}
 .localidades {
   margin-top: 1.6rem;
   color: var(--ink-soft);
   max-width: 90ch;
 }
-@media (max-width: 820px) {
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+.trust-tile {
+  background: var(--bg-2);
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.trust-icon {
+  color: var(--accent);
+  margin-bottom: 0.4rem;
+}
+.trust-titulo {
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+.trust-desc {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+@media (max-width: 980px) {
   .cat-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 820px) {
+  .trust-grid {
+    grid-template-columns: 1fr;
   }
 }
 @media (max-width: 500px) {

@@ -107,6 +107,14 @@ const categorias = computed(() =>
   })),
 );
 
+const bannerImagen = computed(
+  () =>
+    getMediaUrl(
+      categoria.value?.imagen?.formats?.large?.url ??
+        categoria.value?.imagen?.url,
+    ) ?? "/images/placeholder.png",
+);
+
 const categoria = computed(() => {
   const catSlug = route.params.categoria;
   return categorias.value.find((cat) => cat.slug === catSlug);
@@ -191,24 +199,26 @@ useSchemaOrg([
 
 <template>
   <main>
-    <Breadcrumbs />
-    <!-- Sección Intro -->
-    <Section
-      :id="1"
-      :titulo="categoria.nombre"
+    <!-- Banner de categoría -->
+    <SectionBannerCategoria
+      :nombre="categoria.nombre"
       :preview="categoria.preview"
+      :rich-preview="false"
       :descripcion="categoria.descripcion"
-      :bigger-head="true"
+      :imagen="bannerImagen"
+      pagina="#catalogo"
     >
-      <div class="btn-stack btn-stack-left">
+      <template #ctas>
         <Boton label="pedir presupuesto" enlace="/contacto" :flecha="true" />
         <Boton
           :btnGhost="true"
           label="ver catálogo completo"
           :enlace="`#catalogo`"
         />
-      </div>
-    </Section>
+      </template>
+    </SectionBannerCategoria>
+
+    <Breadcrumbs />
 
     <!-- Sección Productos destacados -->
     <Section
@@ -245,16 +255,14 @@ useSchemaOrg([
 
     <!-- Section Individual -->
     <Section
-      class="section-individual-vcenter"
       :id="4"
       :titulo="pageCopyBySlug[categoria.slug].section4.titulo"
       :preview="pageCopyBySlug[categoria.slug].section4.preview"
       :descripcion="pageCopyBySlug[categoria.slug].section4.descripcion"
-      :split-layout="true"
       :is-dark="true"
       :dark-background="'var(--panel)'"
     >
-      <div class="btn-stack btn-stack-vcenter">
+      <div class="btn-stack btn-stack-left">
         <Boton
           :btnSecondary="true"
           :label="'pedir presupuesto'"
@@ -293,44 +301,6 @@ useSchemaOrg([
 </template>
 
 <style>
-.btn-stack {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-
-  &.btn-stack-left {
-    justify-content: flex-start;
-  }
-}
-
-.btn-stack-vcenter {
-  width: 100%;
-}
-
-.section-individual-vcenter .section-split-grid .section-content {
-  align-self: center;
-}
-
-.brands-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--accent);
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-  transition:
-    color 0.2s var(--ease),
-    border-color 0.2s var(--ease),
-    transform 0.2s var(--ease);
-}
-
-.brands-link:hover {
-  border-bottom-color: currentColor;
-}
-
 .tile-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);

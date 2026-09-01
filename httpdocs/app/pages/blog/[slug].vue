@@ -13,12 +13,10 @@ if (!slug) {
 }
 
 const { get, getMediaUrl } = useStrapi();
-const { data: postData } = await get("posts", {
+const { data: postsData } = await get("posts", {
   query: {
-    filters: {
-      slug: {
-        $eq: slug,
-      },
+    pagination: {
+      pageSize: 100,
     },
     populate: {
       portada: true,
@@ -47,8 +45,8 @@ const { data: postData } = await get("posts", {
 });
 
 const post = computed(() => {
-  const posts = postData.value?.data;
-  return Array.isArray(posts) && posts.length > 0 ? posts[0] : null;
+  const posts = postsData.value?.data ?? [];
+  return posts.find((p) => p.slug === slug) ?? null;
 });
 if (!post.value) {
   throw createError({
