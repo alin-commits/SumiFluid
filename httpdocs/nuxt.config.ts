@@ -7,7 +7,7 @@ const siteName =
 const siteUrl =
   process.env.NUXT_PUBLIC_SITE_URL ||
   process.env.NUXT_SITE_URL ||
-  "http://localhost:3000";
+  "https://sumifluid.es";
 const siteDescription =
   process.env.NUXT_PUBLIC_SITE_DESCRIPTION ||
   "Suministro de productos y soluciones de hidraulica, neumatica y vacio en Elche.";
@@ -128,7 +128,7 @@ export default defineNuxtConfig({
         ...(siteKeywords ? [{ name: "keywords", content: siteKeywords }] : []),
         {
           name: "og:image",
-          content: `${siteUrl}/logo.png`,
+          content: `${siteUrl}/images/logo.png`,
         },
       ],
     },
@@ -142,7 +142,7 @@ export default defineNuxtConfig({
     identity: {
       type: "LocalBusiness",
       name: siteName,
-      logo: `${siteUrl}/logo.png`,
+      logo: `${siteUrl}/images/logo.png`,
       address: businessAddress,
       ...(businessTelephone ? { telephone: businessTelephone } : {}),
       openingHoursSpecification: [
