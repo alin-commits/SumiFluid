@@ -1,3 +1,5 @@
+import { ciudades } from "../../app/data/ciudades";
+
 export default defineEventHandler(async (event) => {
   const config = useRuntimeConfig();
   const strapiUrl = config.public.strapiUrl;
@@ -148,12 +150,21 @@ export default defineEventHandler(async (event) => {
       },
     ];
 
+    // Build city landing page URLs
+    const ciudadUrls: SitemapUrlItem[] = ciudades.map((ciudad) => ({
+      loc: `/componentes-hidraulicos-neumaticos-${ciudad.slug}`,
+      lastmod: now,
+      changefreq: "monthly" as const,
+      priority: 0.6 as SitemapPriority,
+    }));
+
     const allUrls = [
       ...staticUrls,
       ...categoryUrls,
       ...subcategoryUrls,
       ...marcaUrls,
       ...postUrls,
+      ...ciudadUrls,
     ];
     console.log(`[Sitemap] Returning ${allUrls.length} total URLs`);
 
@@ -194,6 +205,12 @@ export default defineEventHandler(async (event) => {
         changefreq: "monthly" as const,
         priority: 0.7 as SitemapPriority,
       },
+      ...ciudades.map((ciudad) => ({
+        loc: `/componentes-hidraulicos-neumaticos-${ciudad.slug}`,
+        lastmod: now,
+        changefreq: "monthly" as const,
+        priority: 0.6 as SitemapPriority,
+      })),
     ];
   }
 });

@@ -1,4 +1,6 @@
 <script setup>
+import { ciudades } from "~/data/ciudades";
+
 const route = useRoute();
 const siteConfig = useSiteConfig();
 
@@ -75,7 +77,45 @@ useSchemaOrg([
       :email="empresa?.emailPrincipal"
       :horario="empresa?.horario"
     ></SectionContacto>
+
+    <Section
+      titulo="Zonas de cobertura"
+      preview="Enviamos a toda España"
+      descripcion="Consulte disponibilidad y plazo de entrega en su ciudad."
+      class="section-tight wrap"
+    >
+      <div class="ciudades-grid">
+        <NuxtLink
+          v-for="ciudad in ciudades"
+          :key="ciudad.slug"
+          :to="`/componentes-hidraulicos-neumaticos-${ciudad.slug}`"
+          class="ciudad-pill"
+        >
+          {{ ciudad.nombre }}
+        </NuxtLink>
+      </div>
+    </Section>
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.ciudades-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+.ciudad-pill {
+  border: 1px solid var(--line);
+  padding: 0.5rem 1rem;
+  font-size: 0.86rem;
+  font-weight: 600;
+  transition:
+    background 0.2s,
+    border-color 0.2s;
+
+  &:hover {
+    background: #fbf2df;
+    border-color: var(--accent);
+  }
+}
+</style>
