@@ -194,6 +194,15 @@ gtag('config', '${googleAnalyticsId}');`,
     "/api/**": {
       robots: false,
     },
+    "/aviso-legal": {
+      robots: "noindex, follow",
+    },
+    "/politica-de-privacidad": {
+      robots: "noindex, follow",
+    },
+    "/politica-de-cookies": {
+      robots: "noindex, follow",
+    },
   },
 
   robots: {

@@ -1,4 +1,5 @@
 import { ciudades } from "../../app/data/ciudades";
+import { calculadoras } from "../../app/data/calculadoras";
 
 export default defineEventHandler(async (event) => {
   const config = useRuntimeConfig();
@@ -148,11 +149,25 @@ export default defineEventHandler(async (event) => {
         changefreq: "monthly",
         priority: 0.7,
       },
+      {
+        loc: "/herramientas-calculo",
+        lastmod: now,
+        changefreq: "monthly",
+        priority: 0.7,
+      },
     ];
 
     // Build city landing page URLs
     const ciudadUrls: SitemapUrlItem[] = ciudades.map((ciudad) => ({
       loc: `/componentes-hidraulicos-${ciudad.slug}`,
+      lastmod: now,
+      changefreq: "monthly" as const,
+      priority: 0.6 as SitemapPriority,
+    }));
+
+    // Build calculator tool page URLs
+    const calculadoraUrls: SitemapUrlItem[] = calculadoras.map((c) => ({
+      loc: `/herramientas-calculo/${c.slug}`,
       lastmod: now,
       changefreq: "monthly" as const,
       priority: 0.6 as SitemapPriority,
@@ -165,6 +180,7 @@ export default defineEventHandler(async (event) => {
       ...marcaUrls,
       ...postUrls,
       ...ciudadUrls,
+      ...calculadoraUrls,
     ];
     console.log(`[Sitemap] Returning ${allUrls.length} total URLs`);
 
@@ -205,8 +221,20 @@ export default defineEventHandler(async (event) => {
         changefreq: "monthly" as const,
         priority: 0.7 as SitemapPriority,
       },
+      {
+        loc: "/herramientas-calculo",
+        lastmod: now,
+        changefreq: "monthly" as const,
+        priority: 0.7 as SitemapPriority,
+      },
       ...ciudades.map((ciudad) => ({
         loc: `/componentes-hidraulicos-${ciudad.slug}`,
+        lastmod: now,
+        changefreq: "monthly" as const,
+        priority: 0.6 as SitemapPriority,
+      })),
+      ...calculadoras.map((c) => ({
+        loc: `/herramientas-calculo/${c.slug}`,
         lastmod: now,
         changefreq: "monthly" as const,
         priority: 0.6 as SitemapPriority,

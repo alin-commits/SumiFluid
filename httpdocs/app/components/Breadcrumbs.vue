@@ -36,15 +36,17 @@ const breadcrumbs = computed(() => {
 </script>
 
 <template>
-  <UBreadcrumb
-    :items="breadcrumbs"
-    class="font-mono text-sm text-[(--ink-mute)] px-4 py-6"
-    :ui="{
-      link: 'hover:!text-[var(--accent)] aria-[current=page]:!font-normal aria-[current=page]:!underline',
-    }"
-  >
-    <template #separator>
-      <span class="mx-2 text-muted">/</span>
-    </template>
-  </UBreadcrumb>
+  <div class="wrap">
+    <UBreadcrumb
+      :items="breadcrumbs"
+      class="font-mono text-xs text-[(--ink-mute)] py-4"
+      :ui="{
+        link: 'hover:!text-[var(--accent)] aria-[current=page]:!font-normal aria-[current=page]:!underline',
+      }"
+    >
+      <template #separator>
+        <span class="mx-2 text-muted">/</span>
+      </template>
+    </UBreadcrumb>
+  </div>
 </template>

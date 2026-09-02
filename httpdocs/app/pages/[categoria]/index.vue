@@ -228,6 +228,7 @@ useSchemaOrg([
     <!-- Sección Productos destacados -->
     <Section
       :id="2"
+      class="section-notop"
       titulo="Destacado"
       :preview="`Lo más solicitado en ${categoria.nombre}`"
       descripcion="Una selección de referencias de alta rotación, pensadas para resolver necesidades habituales de esta familia de producto."
@@ -317,6 +318,10 @@ useSchemaOrg([
 </template>
 
 <style>
+.section-notop {
+  padding-top: 1rem !important;
+}
+
 .tile-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);

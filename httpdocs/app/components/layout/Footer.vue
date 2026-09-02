@@ -16,7 +16,13 @@ const catalogo = [
 ];
 const empresaLinks = [
   { title: "Sobre Nosotros", path: "/about" },
+  { title: "Herramientas de cálculo", path: "/herramientas-calculo" },
   { title: "Contacto", path: "/contacto" },
+];
+const legalLinks = [
+  { title: "Aviso legal", path: "/aviso-legal" },
+  { title: "Política de privacidad", path: "/politica-de-privacidad" },
+  { title: "Política de cookies", path: "/politica-de-cookies" },
 ];
 const currentYear = new Date().getFullYear();
 </script>
@@ -98,6 +104,14 @@ const currentYear = new Date().getFullYear();
           © <span>{{ currentYear }}</span>
           {{ empresa.nombre.toUpperCase() }} Todos los derechos reservados.
         </p>
+        <nav class="foot-legal">
+          <NuxtLink
+            v-for="item in legalLinks"
+            :key="item.path"
+            :to="item.path"
+            >{{ item.title }}</NuxtLink
+          >
+        </nav>
         <div class="foot-social">
           <a
             v-if="empresa.facebook"
@@ -226,6 +240,21 @@ footer {
     color: rgba(255, 255, 255, 0.45);
     font-size: 0.82rem;
     font-family: var(--mono);
+  }
+
+  .foot-legal {
+    display: flex;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+
+    & a {
+      color: rgba(255, 255, 255, 0.45);
+      font-size: 0.82rem;
+      font-family: var(--mono);
+    }
+    & a:hover {
+      color: var(--accent);
+    }
   }
 
   .foot-social {
