@@ -42,10 +42,9 @@
       "mappedBy": "categoria"
     },
     "posicion": {
-      "type": "uid",
-      "targetField": "",
+      "type": "string",
       "required": true,
-      "regex": "/^[1-9]\\d*$/"
+      "regex": "^[1-9]\\d*$"
     }
   }
 }
