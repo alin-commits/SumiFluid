@@ -12,6 +12,7 @@ const catalogo = [
   { title: "Neumática", path: "/neumatica" },
   { title: "Estanqueidad", path: "/estanqueidad" },
   { title: "Vacío", path: "/vacio" },
+  { title: "Productos", path: "/productos" },
   { title: "Marcas", path: "/marcas" },
 ];
 const empresaLinks = [
@@ -25,6 +26,7 @@ const legalLinks = [
   { title: "Política de cookies", path: "/politica-de-cookies" },
 ];
 const currentYear = new Date().getFullYear();
+const { reopen: reopenCookieBanner } = useCookieConsent();
 </script>
 
 <template>
@@ -111,6 +113,9 @@ const currentYear = new Date().getFullYear();
             :to="item.path"
             >{{ item.title }}</NuxtLink
           >
+          <button type="button" @click="reopenCookieBanner">
+            Cambiar preferencias de cookies
+          </button>
         </nav>
         <div class="foot-social">
           <a
@@ -247,12 +252,20 @@ footer {
     gap: 1.2rem;
     flex-wrap: wrap;
 
-    & a {
+    & a,
+    & button {
       color: rgba(255, 255, 255, 0.45);
       font-size: 0.82rem;
       font-family: var(--mono);
     }
-    & a:hover {
+    & button {
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+    }
+    & a:hover,
+    & button:hover {
       color: var(--accent);
     }
   }

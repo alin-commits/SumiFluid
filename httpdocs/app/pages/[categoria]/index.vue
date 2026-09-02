@@ -41,6 +41,11 @@ const categoryCopyBySlug = {
     descripcion:
       "Bombas de vacío, eyectores, turbinas y ventosas. Trabajamos con COVAL y DVP Vacuum Technology para reducir el consumo energético y el ruido de su instalación.",
   },
+  productos: {
+    preview: "El mantenimiento que su instalación necesita.",
+    descripcion:
+      "Aceites, grasas y filtros para el mantenimiento de su instalación hidráulica, neumática o de aire comprimido, con stock permanente en Elche.",
+  },
 };
 
 const pageCopyBySlug = {
@@ -96,6 +101,19 @@ const pageCopyBySlug = {
       preview: "¿Necesita una solución de vacío que encaje con su aplicación?",
       descripcion:
         "Le ayudamos a dimensionar la instalación y a escoger equipos con disponibilidad real y soporte técnico desde el primer contacto.",
+    },
+  },
+  productos: {
+    section4: {
+      titulo: "Mantenimiento sin sorpresas",
+      preview: "El lubricante y el filtro correctos, siempre en stock",
+      descripcion:
+        "Aceites, grasas y filtros compatibles con su equipo, para que el mantenimiento programado no dependa de encontrar la referencia a tiempo.",
+    },
+    section6: {
+      preview: "¿Necesita un aceite, grasa o filtro concreto para su equipo?",
+      descripcion:
+        "Indíquenos la marca y el modelo de su máquina y le confirmamos la referencia correcta y su disponibilidad.",
     },
   },
 };

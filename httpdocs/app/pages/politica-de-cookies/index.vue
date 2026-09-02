@@ -92,13 +92,19 @@ useSchemaOrg([
           de terceros más allá de la analítica indicada.
         </p>
 
-        <h2>3. Aceptación de la política de cookies</h2>
+        <h2>3. Consentimiento</h2>
         <p>
-          Al navegar y continuar en este sitio web, usted acepta el uso de
-          las cookies descritas en esta política. Si no está de acuerdo con
-          su uso, puede desactivarlas o eliminarlas en cualquier momento
-          siguiendo las instrucciones de su navegador, tal y como se explica
-          en el siguiente apartado.
+          En su primera visita, este sitio web le muestra un aviso con las
+          opciones "Aceptar" y "Rechazar". Las cookies analíticas de Google
+          Analytics descritas en el apartado anterior solo se instalan si
+          usted pulsa "Aceptar"; si pulsa "Rechazar", no se activan. Solo se
+          utilizan cookies técnicas, exentas de consentimiento por ser
+          necesarias para el funcionamiento del sitio.
+        </p>
+        <p>
+          Puede cambiar su decisión en cualquier momento desde el enlace
+          "Cambiar preferencias de cookies" disponible en el pie de página de
+          cualquier sección del sitio.
         </p>
 
         <h2>4. Cómo desactivar o eliminar las cookies</h2>

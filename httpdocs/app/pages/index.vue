@@ -220,11 +220,23 @@ useHead(() => ({
 }
 
 .cat-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   gap: 1px;
   background: var(--line);
   border: 1px solid var(--line);
+
+  & > * {
+    flex: 1 1 calc(33.333% - 1px);
+  }
+
+  /* 5 tarjetas en 3 columnas: la última fila queda con 2 tarjetas al 50%
+     de ancho. Compensamos su aspect-ratio para que la altura coincida con
+     la fila de arriba (33% de ancho), en vez de crecer con el ancho. */
+  & > :deep(.cat-card):nth-child(4),
+  & > :deep(.cat-card):nth-child(5) {
+    aspect-ratio: 6 / 5;
+  }
 }
 
 .svc-grid {
@@ -253,8 +265,17 @@ useHead(() => ({
 }
 
 @media (max-width: 980px) {
-  .cat-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .cat-grid > * {
+    flex-basis: calc(50% - 1px);
+  }
+  /* En 2 columnas, la fila 2 (items 3-4) va completa al 50%: aspect-ratio
+     por defecto. Solo el item 5, solo en su fila al 100%, necesita
+     compensarse para mantener la misma altura. */
+  .cat-grid > :deep(.cat-card):nth-child(4) {
+    aspect-ratio: 4 / 5;
+  }
+  .cat-grid > :deep(.cat-card):nth-child(5) {
+    aspect-ratio: 8 / 5;
   }
   .tile-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -280,8 +301,12 @@ useHead(() => ({
   }
 }
 @media (max-width: 560px) {
-  .cat-grid {
-    grid-template-columns: 1fr;
+  .cat-grid > * {
+    flex-basis: 100%;
+  }
+  .cat-grid > :deep(.cat-card):nth-child(4),
+  .cat-grid > :deep(.cat-card):nth-child(5) {
+    aspect-ratio: 4 / 5;
   }
   .sector-grid {
     grid-template-columns: repeat(2, 1fr);

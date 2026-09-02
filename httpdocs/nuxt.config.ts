@@ -40,6 +40,7 @@ export default defineNuxtConfig({
       siteKeywords,
       businessAddress,
       businessTelephone,
+      googleAnalyticsId,
     },
   },
   compatibilityDate: "2025-07-15",
@@ -130,18 +131,6 @@ export default defineNuxtConfig({
         {
           name: "og:image",
           content: `${siteUrl}/images/logo.png`,
-        },
-      ],
-      script: [
-        {
-          src: `https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`,
-          async: true,
-        },
-        {
-          innerHTML: `window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', '${googleAnalyticsId}');`,
         },
       ],
     },

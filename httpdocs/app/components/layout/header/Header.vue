@@ -10,7 +10,7 @@ function toggleSearch() {
   <UHeader
     :ui="{
       root: 'sticky top-0 z-[100] h-(--nav-h) bg-[rgba(244,245,243,0.92)] backdrop-blur-md border-b border-[color:var(--line)]',
-      left: 'flex-shrink-0',
+      left: 'flex-shrink-0 me-6 lg:me-12',
     }"
   >
     <template #left>

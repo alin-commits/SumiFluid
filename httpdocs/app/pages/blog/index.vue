@@ -186,15 +186,15 @@ useSchemaOrg([
   text-transform: uppercase;
   letter-spacing: 0.03em;
   background: transparent;
-  border: 1px solid var(--line);
-  color: var(--ink-soft);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #fff;
   cursor: pointer;
   transition: all 0.25s ease;
 
   &:hover {
-    background: var(--line-soft);
-    border-color: var(--ink-soft);
-    color: var(--line);
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--ink);
   }
 }
 
