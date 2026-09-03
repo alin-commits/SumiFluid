@@ -98,8 +98,8 @@ const imgList = computed(() => {
     v-if="marca"
     :marca="marca.nombre"
     :preview="marca.preview"
-    :imagen="getMediaUrl(marca.logo.url ?? `/images/placeholder.png`)"
-    :banner="getMediaUrl(marca.banner.url ?? `/images/placeholder.png`)"
+    :imagen="getMediaUrl(marca.logo?.url) ?? '/images/placeholder.png'"
+    :banner="getMediaUrl(marca.banner?.url) ?? '/images/placeholder.png'"
     :catalogo="marca.catalogo"
   />
   <Breadcrumbs />
