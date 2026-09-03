@@ -28,7 +28,6 @@ const businessAddress = {
   addressCountry: process.env.NUXT_PUBLIC_ADDRESS_COUNTRY || "ES",
 };
 const businessTelephone = process.env.NUXT_PUBLIC_BUSINESS_TELEPHONE;
-const googleAnalyticsId = process.env.NUXT_PUBLIC_GA_ID || "G-WCW8Z9VZLM";
 const googleTagManagerId = process.env.NUXT_PUBLIC_GTM_ID || "GTM-W5KLSDG2";
 
 export default defineNuxtConfig({
@@ -52,7 +51,6 @@ export default defineNuxtConfig({
       siteKeywords,
       businessAddress,
       businessTelephone,
-      googleAnalyticsId,
       googleTagManagerId,
       // Feature flag: la sección de presupuesto (tabla de referencias, carrito,
       // botones y página /presupuesto) queda oculta hasta que se cargue el
