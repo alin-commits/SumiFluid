@@ -35,6 +35,12 @@
     "productoSugerido": {
       "type": "boolean",
       "default": false
+    },
+    "tokensEntrada": {
+      "type": "integer"
+    },
+    "tokensSalida": {
+      "type": "integer"
     }
   }
 }

@@ -49,7 +49,11 @@ export function createGeminiProvider(
         );
       }
 
-      return text;
+      return {
+        text,
+        tokensEntrada: json?.usageMetadata?.promptTokenCount,
+        tokensSalida: json?.usageMetadata?.candidatesTokenCount,
+      };
     },
   };
 }

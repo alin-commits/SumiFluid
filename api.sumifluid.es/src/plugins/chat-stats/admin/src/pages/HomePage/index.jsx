@@ -61,7 +61,31 @@ const HomePage = () => {
       .reverse();
     const maxDia = Math.max(1, ...ultimosDias.map(([, count]) => count));
 
-    return { total, exitos, conProducto, duracionMedia, ultimosDias, maxDia };
+    const tokensDe = (l) => (l.tokensEntrada || 0) + (l.tokensSalida || 0);
+    const ahora = new Date();
+    const hoyStr = ahora.toISOString().slice(0, 10);
+    const mesStr = ahora.toISOString().slice(0, 7);
+
+    const logsHoy = logs.filter((l) => (l.createdAt || '').slice(0, 10) === hoyStr);
+    const logsMes = logs.filter((l) => (l.createdAt || '').slice(0, 7) === mesStr);
+
+    const peticionesHoy = logsHoy.length;
+    const peticionesMes = logsMes.length;
+    const tokensHoy = logsHoy.reduce((sum, l) => sum + tokensDe(l), 0);
+    const tokensMes = logsMes.reduce((sum, l) => sum + tokensDe(l), 0);
+
+    return {
+      total,
+      exitos,
+      conProducto,
+      duracionMedia,
+      ultimosDias,
+      maxDia,
+      peticionesHoy,
+      peticionesMes,
+      tokensHoy,
+      tokensMes,
+    };
   }, [logs]);
 
   return (
@@ -107,6 +131,48 @@ const HomePage = () => {
                 />
               </Grid.Item>
             </Grid.Root>
+
+            <Box paddingTop={8}>
+              <Typography variant="beta" tag="h2">
+                Uso frente al nivel gratuito
+              </Typography>
+              <Box paddingTop={4}>
+                <Grid.Root gap={4}>
+                  <Grid.Item col={3} s={6} xs={12}>
+                    <StatCard label="Peticiones hoy" value={stats.peticionesHoy} />
+                  </Grid.Item>
+                  <Grid.Item col={3} s={6} xs={12}>
+                    <StatCard label="Peticiones este mes" value={stats.peticionesMes} />
+                  </Grid.Item>
+                  <Grid.Item col={3} s={6} xs={12}>
+                    <StatCard
+                      label="Tokens hoy"
+                      value={stats.tokensHoy ? stats.tokensHoy.toLocaleString('es-ES') : '—'}
+                    />
+                  </Grid.Item>
+                  <Grid.Item col={3} s={6} xs={12}>
+                    <StatCard
+                      label="Tokens este mes"
+                      value={stats.tokensMes ? stats.tokensMes.toLocaleString('es-ES') : '—'}
+                    />
+                  </Grid.Item>
+                </Grid.Root>
+                <Box paddingTop={3}>
+                  <Typography variant="pi" textColor="neutral600">
+                    Google no publica límites fijos del nivel gratuito (varían por cuenta y
+                    cambian con el tiempo): compara estas cifras con tu límite real y actual en{' '}
+                    <a
+                      href="https://aistudio.google.com/rate-limit"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Google AI Studio → Rate limits
+                    </a>
+                    .
+                  </Typography>
+                </Box>
+              </Box>
+            </Box>
 
             <Box paddingTop={8}>
               <Typography variant="beta" tag="h2">

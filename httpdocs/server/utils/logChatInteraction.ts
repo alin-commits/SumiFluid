@@ -6,6 +6,8 @@ interface ChatLogData {
   modelo?: string;
   duracionMs?: number;
   productoSugerido?: boolean;
+  tokensEntrada?: number;
+  tokensSalida?: number;
 }
 
 /**

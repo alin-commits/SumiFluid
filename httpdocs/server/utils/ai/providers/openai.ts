@@ -37,7 +37,11 @@ export function createOpenAiProvider(
         throw new Error("OpenAI returned no text");
       }
 
-      return text;
+      return {
+        text,
+        tokensEntrada: json?.usage?.prompt_tokens,
+        tokensSalida: json?.usage?.completion_tokens,
+      };
     },
   };
 }

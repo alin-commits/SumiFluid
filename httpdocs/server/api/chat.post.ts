@@ -123,7 +123,10 @@ export default defineEventHandler(async (event) => {
     }
 
     const provider = getAiProvider();
-    const reply = await provider.chat(result.data.messages, systemPrompt);
+    const { text: reply, tokensEntrada, tokensSalida } = await provider.chat(
+      result.data.messages,
+      systemPrompt,
+    );
 
     logChatInteraction({
       mensajes: result.data.messages.length,
@@ -132,6 +135,8 @@ export default defineEventHandler(async (event) => {
       modelo: config.aiProvider === "openai" ? config.openaiModel : config.geminiModel,
       duracionMs: Date.now() - startedAt,
       productoSugerido: reply.includes("{{producto:"),
+      tokensEntrada,
+      tokensSalida,
     });
 
     return { reply };
