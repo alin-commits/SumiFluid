@@ -12,6 +12,20 @@ export default defineEventHandler(async () => {
     geminiKeyPreview: gaId
       ? `${gaId.slice(0, 6)}...${gaId.slice(-4)}`
       : null,
+    rawEnvAiProvider: process.env.AI_PROVIDER ?? null,
+    rawEnvGeminiKeyPresent: !!process.env.GEMINI_API_KEY,
+    rawEnvGeminiKeyLength: process.env.GEMINI_API_KEY
+      ? process.env.GEMINI_API_KEY.length
+      : 0,
+    rawEnvGeminiModel: process.env.GEMINI_MODEL ?? null,
+    allEnvKeysContainingGemini: Object.keys(process.env).filter((k) =>
+      k.toUpperCase().includes("GEMINI"),
+    ),
+    allEnvKeysContainingAi: Object.keys(process.env).filter((k) =>
+      k.toUpperCase().includes("AI_"),
+    ),
+    totalEnvKeys: Object.keys(process.env).length,
+    sampleEnvKeys: Object.keys(process.env).slice(0, 40),
   };
 
   try {
