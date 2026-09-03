@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "chat_logs",
+  "info": {
+    "singularName": "chat-log",
+    "pluralName": "chat-logs",
+    "displayName": "Chat Log"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "mensajes": {
+      "type": "integer",
+      "required": true
+    },
+    "exito": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    },
+    "errorMensaje": {
+      "type": "string"
+    },
+    "proveedor": {
+      "type": "string"
+    },
+    "modelo": {
+      "type": "string"
+    },
+    "duracionMs": {
+      "type": "integer"
+    },
+    "productoSugerido": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

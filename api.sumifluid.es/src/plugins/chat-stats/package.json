@@ -1,0 +1,11 @@
+{
+  "name": "chat-stats",
+  "version": "0.0.1",
+  "private": true,
+  "strapi": {
+    "displayName": "Estadísticas IA",
+    "name": "chat-stats",
+    "description": "Panel de estadísticas de uso del asistente de IA del sitio.",
+    "kind": "plugin"
+  }
+}

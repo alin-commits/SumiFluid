@@ -21,6 +21,10 @@ const deniedExecutableTypes = [
 ];
 
 module.exports = () => ({
+  "chat-stats": {
+    enabled: true,
+    resolve: "./src/plugins/chat-stats",
+  },
   "users-permissions": {
     config: {
       jwtManagement: "refresh",
