@@ -39,6 +39,10 @@ export default defineNuxtConfig({
     geminiModel: process.env.GEMINI_MODEL || "gemini-flash-lite-latest",
     openaiApiKey: process.env.OPENAI_API_KEY || "",
     openaiModel: process.env.OPENAI_MODEL || "gpt-4o-mini",
+    // Token de Strapi con permiso único de "create" sobre chat-log, usado para
+    // alimentar el panel de estadísticas del asistente. Sin él, el registro
+    // simplemente se desactiva (no afecta al funcionamiento del chat).
+    strapiChatLogToken: process.env.STRAPI_CHAT_LOG_TOKEN || "",
     public: {
       strapiUrl: process.env.STRAPI_URL || "http://localhost:1337",
       siteName,

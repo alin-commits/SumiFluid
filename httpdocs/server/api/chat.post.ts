@@ -1,6 +1,7 @@
 import { chatRequestSchema } from "~~/shared/schemas/chat";
 import { getAiProvider } from "../utils/ai";
 import { buscarProductosRelevantes } from "../utils/buscarProductos";
+import { logChatInteraction } from "../utils/logChatInteraction";
 
 // Rate limiting - Map para almacenar intentos por IP
 const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
@@ -96,13 +97,15 @@ export default defineEventHandler(async (event) => {
     });
   }
 
+  const startedAt = Date.now();
+  const config = useRuntimeConfig();
+
   try {
     const ultimoMensaje = [...result.data.messages]
       .reverse()
       .find((m) => m.role === "user");
 
     let systemPrompt = SYSTEM_PROMPT;
-    const config = useRuntimeConfig();
     if (ultimoMensaje && config.public.presupuestoEnabled) {
       const productos = await buscarProductosRelevantes(
         config.public.strapiUrl,
@@ -121,9 +124,28 @@ export default defineEventHandler(async (event) => {
 
     const provider = getAiProvider();
     const reply = await provider.chat(result.data.messages, systemPrompt);
+
+    logChatInteraction({
+      mensajes: result.data.messages.length,
+      exito: true,
+      proveedor: config.aiProvider,
+      modelo: config.aiProvider === "openai" ? config.openaiModel : config.geminiModel,
+      duracionMs: Date.now() - startedAt,
+      productoSugerido: reply.includes("{{producto:"),
+    });
+
     return { reply };
   } catch (error: unknown) {
     console.error("Error en chat AI:", error);
+
+    logChatInteraction({
+      mensajes: result.data.messages.length,
+      exito: false,
+      errorMensaje: error instanceof Error ? error.message.slice(0, 200) : "Error desconocido",
+      proveedor: config.aiProvider,
+      duracionMs: Date.now() - startedAt,
+    });
+
     throw createError({
       statusCode: 500,
       message: "No se pudo obtener respuesta del asistente.",
