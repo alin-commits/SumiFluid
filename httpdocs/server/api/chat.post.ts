@@ -1,5 +1,6 @@
 import { chatRequestSchema } from "~~/shared/schemas/chat";
 import { getAiProvider } from "../utils/ai";
+import { buscarProductosRelevantes } from "../utils/buscarProductos";
 
 // Rate limiting - Map para almacenar intentos por IP
 const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
@@ -55,11 +56,13 @@ Formato de tus respuestas:
 - Responde siempre en español, de forma breve, clara y profesional.
 - Puedes usar **negrita** para destacar términos clave, __subrayado__ para remarcar avisos importantes, y enlaces con la sintaxis [texto del enlace](/ruta-interna) cuando tenga sentido dirigir al usuario a una página del sitio.
 - Cuando la respuesta implique una acción clara (pedir presupuesto, ver catálogo, usar una calculadora), incluye un enlace a la página correspondiente en vez de solo mencionarla.
+- Si en el mensaje del sistema recibes un bloque "PRODUCTOS ENCONTRADOS EN EL CATÁLOGO", y alguno coincide claramente con lo que pregunta el usuario, incluye su marcador {{producto:codigo|nombre|enlace}} exactamente tal cual aparece (no lo reescribas ni lo expliques): se convierte automáticamente en una tarjeta con enlace y botón para añadirlo al presupuesto. No inventes marcadores de producto que no estén en ese bloque.
 - No uses otro tipo de formato (títulos, listas numeradas, tablas, cursiva).
 
 Instrucciones:
 - Puedes explicar qué es un componente, para qué sirve y en qué familia del catálogo se encuadra.
 - NUNCA inventes precios, disponibilidad de stock exacta, plazos de entrega concretos ni especificaciones técnicas precisas (presiones, medidas, tolerancias) de una referencia concreta: son datos que solo puede confirmar el equipo técnico. Si te preguntan por ello, indica que deben solicitar presupuesto o contactar directamente, con el enlace correspondiente.
+- Solo menciona códigos de producto concretos si aparecen en el bloque "PRODUCTOS ENCONTRADOS EN EL CATÁLOGO" de ese turno; nunca inventes un código de referencia.
 - Para presupuestos, pedidos o dudas técnicas concretas, dirige siempre al usuario al formulario de [pedir presupuesto](/contacto).
 - Si preguntan algo sin relación con la empresa o sus productos, indícalo amablemente y redirige la conversación hacia en qué puedes ayudar.
 - No des consejos de seguridad ni de instalación que puedan ser críticos sin remitir también a un técnico cualificado.`;
@@ -94,8 +97,30 @@ export default defineEventHandler(async (event) => {
   }
 
   try {
+    const ultimoMensaje = [...result.data.messages]
+      .reverse()
+      .find((m) => m.role === "user");
+
+    let systemPrompt = SYSTEM_PROMPT;
+    const config = useRuntimeConfig();
+    if (ultimoMensaje && config.public.presupuestoEnabled) {
+      const productos = await buscarProductosRelevantes(
+        config.public.strapiUrl,
+        ultimoMensaje.content,
+      );
+      if (productos.length) {
+        const bloque = productos
+          .map(
+            (p) =>
+              `- Código: ${p.codigo} | Nombre: ${p.nombre} | Marcador: {{producto:${p.codigo}|${p.nombre}|${p.enlace}}}`,
+          )
+          .join("\n");
+        systemPrompt += `\n\nPRODUCTOS ENCONTRADOS EN EL CATÁLOGO (relevantes para el último mensaje del usuario):\n${bloque}`;
+      }
+    }
+
     const provider = getAiProvider();
-    const reply = await provider.chat(result.data.messages, SYSTEM_PROMPT);
+    const reply = await provider.chat(result.data.messages, systemPrompt);
     return { reply };
   } catch (error: unknown) {
     console.error("Error en chat AI:", error);

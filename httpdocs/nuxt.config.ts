@@ -48,6 +48,10 @@ export default defineNuxtConfig({
       businessAddress,
       businessTelephone,
       googleAnalyticsId,
+      // Feature flag: la sección de presupuesto (tabla de referencias, carrito,
+      // botones y página /presupuesto) queda oculta hasta que se cargue el
+      // catálogo real de productos. Activar con NUXT_PUBLIC_PRESUPUESTO_ENABLED=true.
+      presupuestoEnabled: process.env.NUXT_PUBLIC_PRESUPUESTO_ENABLED === "true",
     },
   },
   compatibilityDate: "2025-07-15",

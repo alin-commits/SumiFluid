@@ -17,6 +17,7 @@ const { data: subcat } = await get("subcategorias", {
       preguntas: true,
       caracteristicas: true,
       tipos: true,
+      productos: { populate: { imagen: true } },
       categoria: {
         populate: {
           subcategorias: { populate: { imagen: true } },
@@ -112,6 +113,8 @@ useSchemaOrg([
     </SectionSubcatHero>
 
     <Breadcrumbs />
+
+    <SectionSubcatReferencias :productos="subcategoria.productos ?? []" />
 
     <SectionSubcatPorQueComprar :subcategoria="subcategoria.nombre" />
 

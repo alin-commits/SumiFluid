@@ -1,12 +1,14 @@
 /**
  * Parses a constrained markup subset used by chat replies:
- * **bold**, __underline__ and [label](url) links.
- * Returns an array of {type: 'text'|'bold'|'underline'|'link', text, url?}
+ * **bold**, __underline__, [label](url) links and {{producto:codigo|nombre|enlace}}
+ * product cards. Returns an array of
+ * {type: 'text'|'bold'|'underline'|'link'|'producto', text, url?, codigo?, nombre?, enlace?}
  * for safe Vue rendering — never raw HTML/v-html.
  */
 export function parseChatMarkup(input) {
   const text = input ?? "";
-  const pattern = /\*\*(.+?)\*\*|__(.+?)__|\[([^\]]+)\]\(([^)]+)\)/g;
+  const pattern =
+    /\*\*(.+?)\*\*|__(.+?)__|\[([^\]]+)\]\(([^)]+)\)|\{\{producto:([^|}]+)\|([^|}]+)\|([^}]+)\}\}/g;
   const nodes = [];
   let lastIndex = 0;
   let match;
@@ -22,6 +24,13 @@ export function parseChatMarkup(input) {
       nodes.push({ type: "underline", text: match[2] });
     } else if (match[3] !== undefined) {
       nodes.push({ type: "link", text: match[3], url: match[4] });
+    } else if (match[5] !== undefined) {
+      nodes.push({
+        type: "producto",
+        codigo: match[5].trim(),
+        nombre: match[6].trim(),
+        enlace: match[7].trim(),
+      });
     }
 
     lastIndex = pattern.lastIndex;

@@ -200,6 +200,7 @@ const baseLinkClasses =
   transition: color 0.2s;
   padding-block: 0.25rem;
   position: relative;
+  white-space: nowrap;
 
   &::after {
     content: "";

@@ -11,10 +11,27 @@ const whatsappHref = computed(() => {
 });
 
 const { isOpen: chatOpen, toggle: toggleChat } = useChat();
+const {
+  isOpen: presupuestoOpen,
+  count: presupuestoCount,
+  toggle: togglePresupuesto,
+} = usePresupuesto();
+const { public: publicConfig } = useRuntimeConfig();
 </script>
 
 <template>
   <div class="fab-stack">
+    <button
+      v-if="publicConfig.presupuestoEnabled"
+      type="button"
+      class="fab fab-presupuesto"
+      :aria-label="presupuestoOpen ? 'Cerrar presupuesto' : 'Ver presupuesto'"
+      @click="togglePresupuesto"
+    >
+      <span v-if="presupuestoCount > 0" class="fab-badge">{{ presupuestoCount }}</span>
+      <Icon :name="presupuestoOpen ? 'lucide:x' : 'lucide:file-text'" size="2rem" />
+      <span class="fab-label">{{ presupuestoOpen ? "Cerrar" : "Presupuesto" }}</span>
+    </button>
     <a
       :href="whatsappHref"
       class="fab fab-whatsapp"
@@ -89,6 +106,29 @@ const { isOpen: chatOpen, toggle: toggleChat } = useChat();
   background: #25d366;
   color: #fff;
 }
+.fab-presupuesto {
+  background: var(--ink);
+  color: #fff;
+  cursor: pointer;
+}
+.fab-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 4px;
+  border-radius: 10px;
+  background: var(--accent);
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #fff;
+}
 .fab-label {
   position: absolute;
   right: calc(100% + 0.7rem);
@@ -153,6 +193,11 @@ const { isOpen: chatOpen, toggle: toggleChat } = useChat();
   }
   .fab-label {
     display: none;
+  }
+  .fab-badge {
+    min-width: 17px;
+    height: 17px;
+    font-size: 0.62rem;
   }
 }
 </style>

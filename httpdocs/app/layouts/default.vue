@@ -1,3 +1,7 @@
+<script setup>
+const { public: publicConfig } = useRuntimeConfig();
+</script>
+
 <template>
   <div>
     <LayoutHeader />
@@ -5,7 +9,9 @@
     <LayoutFooter />
     <LayoutFabs class="fab-stack" />
     <LayoutChatPanel />
+    <LayoutPresupuestoPanel v-if="publicConfig.presupuestoEnabled" />
     <LayoutCookieBanner />
+    <LayoutImageLightbox />
   </div>
 </template>
 

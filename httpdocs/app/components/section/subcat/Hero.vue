@@ -119,5 +119,18 @@ defineProps({
       aspect-ratio: 16 / 10;
     }
   }
+
+  /* En mobile el CTA de "pedir presupuesto" ya está disponible en el menú
+     desplegable del header: aquí solo queda el botón de categoría, a ancho completo. */
+  .btn-stack {
+    width: 100%;
+  }
+  .btn-stack > *:first-child {
+    display: none;
+  }
+  .btn-stack > *,
+  .btn-stack :deep(.btn) {
+    width: 100%;
+  }
 }
 </style>

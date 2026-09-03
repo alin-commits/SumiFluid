@@ -34,7 +34,10 @@ const { rightPos, bodyPos } = defineProps({
   margin-top: 1.5rem;
   padding-block: 0.75rem;
 }
-@media (width < 520px) {
+/* Se oculta en la barra superior en cuanto el header pasa a modo menú
+   desplegable (mismo breakpoint que la navegación, 2xl = 1536px): a partir
+   de ahí solo vive dentro del propio menú, no duplicado también arriba. */
+@media (width < 1536px) {
   .rightPos {
     display: none;
   }

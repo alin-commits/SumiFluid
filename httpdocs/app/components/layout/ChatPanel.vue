@@ -2,9 +2,19 @@
 import { parseChatMarkup } from "~/utils/chatMarkup";
 
 const { isOpen, messages, isSending, error, toggle, sendMessage } = useChat();
+const { addItem } = usePresupuesto();
 
 const draft = ref("");
 const listRef = ref(null);
+const productosAnadidos = reactive({});
+
+function handleAnadirProducto(node) {
+  addItem(
+    { codigo: node.codigo, nombre: node.nombre, enlace: node.enlace },
+    1,
+  );
+  productosAnadidos[node.codigo] = true;
+}
 
 const quickReplies = [
   { label: "Pedir presupuesto", text: "Quiero pedir un presupuesto" },
@@ -20,8 +30,6 @@ async function handleSend(text) {
   const value = text ?? draft.value;
   draft.value = "";
   await sendMessage(value);
-  await nextTick();
-  scrollToBottom();
 }
 
 function scrollToBottom() {
@@ -29,6 +37,19 @@ function scrollToBottom() {
     listRef.value.scrollTop = listRef.value.scrollHeight;
   }
 }
+
+// Solo hace autoscroll cuando el USUARIO envía un mensaje propio (para que vea
+// lo que acaba de escribir). Cuando llega la respuesta del asistente, el
+// scroll se queda donde estaba: es el usuario quien decide bajar a leerla.
+watch(
+  () => messages.value.length,
+  () => {
+    const ultimo = messages.value[messages.value.length - 1];
+    if (ultimo?.role === "user") {
+      nextTick(scrollToBottom);
+    }
+  },
+);
 
 watch(isOpen, (open) => {
   if (open) nextTick(scrollToBottom);
@@ -78,6 +99,23 @@ watch(isOpen, (open) => {
                 class="chat-link"
                 >{{ node.text }}</NuxtLink
               >
+              <div v-else-if="node.type === 'producto'" class="chat-producto-card">
+                <div class="chat-producto-info">
+                  <p class="chat-producto-nombre">{{ node.nombre }}</p>
+                  <p class="chat-producto-codigo">{{ node.codigo }}</p>
+                </div>
+                <div class="chat-producto-actions">
+                  <NuxtLink :to="node.enlace" class="chat-producto-ver">Ver producto</NuxtLink>
+                  <button
+                    type="button"
+                    class="chat-producto-anadir"
+                    :class="{ anadido: productosAnadidos[node.codigo] }"
+                    @click="handleAnadirProducto(node)"
+                  >
+                    {{ productosAnadidos[node.codigo] ? "Añadido" : "Añadir al presupuesto" }}
+                  </button>
+                </div>
+              </div>
               <template v-else>{{ node.text }}</template>
             </template>
           </template>
@@ -257,6 +295,61 @@ watch(isOpen, (open) => {
 }
 .chat-link:hover {
   background: var(--ink);
+  color: #fff;
+}
+
+.chat-producto-card {
+  display: block;
+  margin: 0.5rem 0;
+  padding: 0.7rem 0.8rem;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+.chat-producto-nombre {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+.chat-producto-codigo {
+  font-size: 0.72rem;
+  font-family: var(--mono);
+  color: var(--ink-mute);
+  margin-bottom: 0.5rem;
+}
+.chat-producto-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.chat-producto-ver,
+.chat-producto-anadir {
+  padding: 0.4rem 0.7rem;
+  border-radius: 16px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--ink);
+}
+.chat-producto-ver:hover {
+  border-color: var(--ink);
+}
+.chat-producto-anadir {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--ink);
+}
+.chat-producto-anadir:hover {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
+}
+.chat-producto-anadir.anadido {
+  background: #16a34a;
+  border-color: #16a34a;
   color: #fff;
 }
 
