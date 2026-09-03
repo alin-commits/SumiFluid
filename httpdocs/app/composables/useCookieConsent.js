@@ -53,28 +53,23 @@ const consent = ref(null); // null = todavía sin decidir; si no, objeto de pref
 const dismissedThisSession = ref(false);
 let initialized = false;
 
-function loadGoogleAnalytics() {
+function loadGoogleTagManager() {
   const config = useRuntimeConfig();
-  const gaId = config.public.googleAnalyticsId;
-  if (!gaId || document.querySelector(`script[data-ga-id="${gaId}"]`)) return;
+  const gtmId = config.public.googleTagManagerId;
+  if (!gtmId || document.querySelector(`script[data-gtm-id="${gtmId}"]`)) return;
+
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
 
   const loader = document.createElement("script");
   loader.async = true;
-  loader.src = `https://www.googletagmanager.com/gtag/js?id=${gaId}`;
-  loader.setAttribute("data-ga-id", gaId);
+  loader.src = `https://www.googletagmanager.com/gtm.js?id=${gtmId}`;
+  loader.setAttribute("data-gtm-id", gtmId);
   document.head.appendChild(loader);
-
-  window.dataLayer = window.dataLayer || [];
-  function gtag() {
-    window.dataLayer.push(arguments);
-  }
-  window.gtag = gtag;
-  gtag("js", new Date());
-  gtag("config", gaId);
 }
 
 function applyConsent(prefs) {
-  if (prefs.rendimiento) loadGoogleAnalytics();
+  if (prefs.rendimiento) loadGoogleTagManager();
 }
 
 export function useCookieConsent() {
