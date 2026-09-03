@@ -13,6 +13,7 @@ const enviando = ref(false);
 const exitoso = ref(false);
 const error = ref(null);
 const toast = useToast();
+const { trackEvent } = useAnalytics();
 
 async function onSubmit() {
   error.value = null;
@@ -34,6 +35,11 @@ async function onSubmit() {
       title: "Solicitud enviada",
       description: "Nos pondremos en contacto lo antes posible.",
       color: "success",
+    });
+
+    trackEvent("generate_lead", {
+      form_location: "presupuesto",
+      items_count: items.value.length,
     });
 
     clear();

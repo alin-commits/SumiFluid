@@ -17,6 +17,7 @@ const {
   toggle: togglePresupuesto,
 } = usePresupuesto();
 const { public: publicConfig } = useRuntimeConfig();
+const { trackEvent } = useAnalytics();
 </script>
 
 <template>
@@ -38,6 +39,7 @@ const { public: publicConfig } = useRuntimeConfig();
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Escribir por WhatsApp"
+      @click="trackEvent('whatsapp_click', { location: 'fab' })"
     >
       <Icon name="ic:outline-whatsapp" size="2rem" />
       <span class="fab-label">WhatsApp</span>
@@ -46,6 +48,7 @@ const { public: publicConfig } = useRuntimeConfig();
       :href="`tel:+34${telNoSpaces}`"
       class="fab fab-call"
       aria-label="Llamar por teléfono"
+      @click="trackEvent('phone_click', { location: 'fab' })"
     >
       <Icon name="lucide:phone" size="2rem" />
       <span class="fab-label">Llamar</span>

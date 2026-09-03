@@ -30,6 +30,7 @@ const state = reactive({
 const enviando = ref(false);
 const exitoso = ref(false);
 const toast = useToast();
+const { trackEvent } = useAnalytics();
 
 async function onSubmit(event) {
   enviando.value = true;
@@ -44,6 +45,10 @@ async function onSubmit(event) {
       title: "Mensaje enviado",
       description: "Nos pondremos en contacto lo antes posible.",
       color: "success",
+    });
+
+    trackEvent("generate_lead", {
+      form_location: props.producto || "formulario_general",
     });
 
     // Limpiar formulario

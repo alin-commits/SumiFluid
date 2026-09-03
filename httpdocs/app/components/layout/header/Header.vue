@@ -11,6 +11,7 @@ const telNoSpaces = computed(
   () => empresa.value?.data.telefonoPrincipalNoSpaces,
 );
 const { public: publicConfig } = useRuntimeConfig();
+const { trackEvent } = useAnalytics();
 </script>
 
 <template>
@@ -54,7 +55,12 @@ const { public: publicConfig } = useRuntimeConfig();
     <template #body>
       <LayoutHeaderNavigation />
 
-      <a v-if="telNoSpaces" :href="`tel:+34${telNoSpaces}`" class="header-mobile-call">
+      <a
+        v-if="telNoSpaces"
+        :href="`tel:+34${telNoSpaces}`"
+        class="header-mobile-call"
+        @click="trackEvent('phone_click', { location: 'header_menu' })"
+      >
         <Icon name="lucide:phone" />
         Llamar por teléfono
       </a>
