@@ -9,6 +9,8 @@ const telNoSpaces = computed(() => data.value?.data.telefonoPrincipalNoSpaces);
 const whatsappHref = computed(() => {
   return `https://wa.me/34${telNoSpaces.value}?text=Hola%20${nombreEmpresa.value}%2C%20quer%C3%ADa%20hacer%20una%20consulta`;
 });
+
+const { isOpen: chatOpen, toggle: toggleChat } = useChat();
 </script>
 
 <template>
@@ -20,7 +22,6 @@ const whatsappHref = computed(() => {
       rel="noopener noreferrer"
       aria-label="Escribir por WhatsApp"
     >
-      <span class="fab-pulse" aria-hidden="true"></span>
       <Icon name="ic:outline-whatsapp" size="2rem" />
       <span class="fab-label">WhatsApp</span>
     </a>
@@ -32,6 +33,16 @@ const whatsappHref = computed(() => {
       <Icon name="lucide:phone" size="2rem" />
       <span class="fab-label">Llamar</span>
     </a>
+    <button
+      type="button"
+      class="fab fab-chat"
+      :aria-label="chatOpen ? 'Cerrar chat' : 'Abrir chat'"
+      @click="toggleChat"
+    >
+      <span v-if="!chatOpen" class="fab-pulse fab-pulse-chat" aria-hidden="true"></span>
+      <Icon :name="chatOpen ? 'lucide:x' : 'lucide:headphones'" size="2rem" />
+      <span class="fab-label">{{ chatOpen ? "Cerrar" : "Chat" }}</span>
+    </button>
   </div>
 </template>
 
@@ -68,6 +79,12 @@ const whatsappHref = computed(() => {
   box-shadow: 0.7px 1px 0.7px rgba(171, 171, 171, 0.4);
 }
 
+.fab-chat {
+  background: var(--accent);
+  color: var(--ink);
+  cursor: pointer;
+}
+
 .fab-whatsapp {
   background: #25d366;
   color: #fff;
@@ -100,6 +117,9 @@ const whatsappHref = computed(() => {
   border-radius: 50%;
   background: #25d366;
   animation: fabPulse 2.4s ease-out infinite;
+}
+.fab-pulse-chat {
+  background: var(--accent);
 }
 @keyframes fabPulse {
   0% {

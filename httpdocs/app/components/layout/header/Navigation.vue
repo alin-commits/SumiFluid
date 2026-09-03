@@ -25,7 +25,7 @@ const categoryItems = computed(() =>
   [...categorias.value]
     .sort((a, b) => Number(a.posicion) - Number(b.posicion))
     .map((cat) => ({
-      label: cat.nombre,
+      label: cat.slug === "productos" ? "+ Productos" : cat.nombre,
       to: `/${cat.slug}`,
       active: route.path === `/${cat.slug}`,
       subcategorias: [...(cat.subcategorias ?? [])].sort((a, b) =>

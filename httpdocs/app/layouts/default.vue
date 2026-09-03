@@ -4,6 +4,7 @@
     <slot />
     <LayoutFooter />
     <LayoutFabs class="fab-stack" />
+    <LayoutChatPanel />
     <LayoutCookieBanner />
   </div>
 </template>

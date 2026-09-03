@@ -32,6 +32,13 @@ const googleAnalyticsId = process.env.NUXT_PUBLIC_GA_ID || "G-WCW8Z9VZLM";
 
 export default defineNuxtConfig({
   runtimeConfig: {
+    // Server-only: never exposed to the client. Swap providers by changing
+    // AI_PROVIDER + the matching API key env var — no code changes needed.
+    aiProvider: process.env.AI_PROVIDER || "gemini",
+    geminiApiKey: process.env.GEMINI_API_KEY || "",
+    geminiModel: process.env.GEMINI_MODEL || "gemini-flash-lite-latest",
+    openaiApiKey: process.env.OPENAI_API_KEY || "",
+    openaiModel: process.env.OPENAI_MODEL || "gpt-4o-mini",
     public: {
       strapiUrl: process.env.STRAPI_URL || "http://localhost:1337",
       siteName,
