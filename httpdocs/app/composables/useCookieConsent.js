@@ -53,25 +53,6 @@ const consent = ref(null); // null = todavía sin decidir; si no, objeto de pref
 const dismissedThisSession = ref(false);
 let initialized = false;
 
-function loadGoogleTagManager() {
-  const config = useRuntimeConfig();
-  const gtmId = config.public.googleTagManagerId;
-  if (!gtmId || document.querySelector(`script[data-gtm-id="${gtmId}"]`)) return;
-
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-
-  const loader = document.createElement("script");
-  loader.async = true;
-  loader.src = `https://www.googletagmanager.com/gtm.js?id=${gtmId}`;
-  loader.setAttribute("data-gtm-id", gtmId);
-  document.head.appendChild(loader);
-}
-
-function applyConsent(prefs) {
-  if (prefs.rendimiento) loadGoogleTagManager();
-}
-
 export function useCookieConsent() {
   if (!initialized && import.meta.client) {
     initialized = true;
@@ -80,7 +61,6 @@ export function useCookieConsent() {
       try {
         const parsed = JSON.parse(stored);
         consent.value = { ...defaultPrefs(), ...parsed, necesarias: true };
-        applyConsent(consent.value);
       } catch {
         consent.value = null;
       }
@@ -91,7 +71,6 @@ export function useCookieConsent() {
     const full = { ...defaultPrefs(), ...prefs, necesarias: true };
     consent.value = full;
     window.localStorage.setItem(STORAGE_KEY, JSON.stringify(full));
-    applyConsent(full);
   }
 
   function acceptAll() {
