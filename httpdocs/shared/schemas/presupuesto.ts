@@ -18,6 +18,12 @@ export const presupuestoSchema = z.object({
     .min(2, "El nombre debe tener al menos 2 caracteres")
     .max(80, "El nombre es demasiado largo")
     .refine(sinSaltosDeLinea, "Carácter no permitido"),
+  empresa: z
+    .string()
+    .max(80, "El nombre de la empresa es demasiado largo")
+    .refine(sinSaltosDeLinea, "Carácter no permitido")
+    .optional()
+    .or(z.literal("")),
   email: z
     .email("Correo electrónico no válido")
     .max(50, "El correo es demasiado largo")

@@ -73,7 +73,7 @@ export default defineEventHandler(async (event) => {
     });
   }
 
-  const { nombre, email, telefono, notas, items, website } = result.data;
+  const { nombre, empresa, email, telefono, notas, items, website } = result.data;
 
   // Verificar honeypot - si está lleno, es un bot
   if (website && website.length > 0) {
@@ -82,6 +82,7 @@ export default defineEventHandler(async (event) => {
   }
 
   const nombreSeguro = escaparHtml(nombre);
+  const empresaSeguro = empresa ? escaparHtml(empresa) : "";
   const emailSeguro = escaparHtml(email);
   const telefonoSeguro = escaparHtml(telefono);
   const notasSeguro = notas ? escaparHtml(notas) : "";
@@ -96,17 +97,18 @@ export default defineEventHandler(async (event) => {
   const { sendMail } = useNodeMailer();
 
   try {
-    const pdfBuffer = await buildPresupuestoPdf({ nombre, email, telefono, notas, items });
+    const pdfBuffer = await buildPresupuestoPdf({ nombre, empresa, email, telefono, notas, items });
 
     const resultado = await sendMail({
       to: process.env.CONTACT_EMAIL,
       from: `"Sumifluid:" <${process.env.CONTACT_EMAIL}>`,
       replyTo: email,
       subject: `Nueva solicitud de presupuesto: ${nombre}`,
-      text: `Nombre: ${nombre}\nEmail: ${email}\nTeléfono: ${telefono}${notas ? `\nNotas: ${notas}` : ""}\n\nProductos:\n${items.map((i) => `- ${i.codigo} — ${i.nombre} (x${i.cantidad})`).join("\n")}`,
+      text: `Nombre: ${nombre}${empresa ? `\nEmpresa: ${empresa}` : ""}\nEmail: ${email}\nTeléfono: ${telefono}${notas ? `\nNotas: ${notas}` : ""}\n\nProductos:\n${items.map((i) => `- ${i.codigo} — ${i.nombre} (x${i.cantidad})`).join("\n")}`,
       html: `
         <h3>Nueva solicitud de presupuesto</h3>
         <p><strong>Nombre:</strong> ${nombreSeguro}</p>
+        ${empresaSeguro ? `<p><strong>Empresa:</strong> ${empresaSeguro}</p>` : ""}
         <p><strong>Email:</strong> ${emailSeguro}</p>
         <p><strong>Teléfono:</strong> ${telefonoSeguro}</p>
         ${notasSeguro ? `<p><strong>Notas:</strong> ${notasSeguro}</p>` : ""}

@@ -19,6 +19,7 @@ const asuntos = ref([
 ]);
 const state = reactive({
   nombre: "",
+  empresa: "",
   email: "",
   telefono: "",
   asunto: asuntos.value[0],
@@ -53,6 +54,7 @@ async function onSubmit(event) {
 
     // Limpiar formulario
     state.nombre = "";
+    state.empresa = "";
     state.email = "";
     state.telefono = "";
     state.mensaje = "";
@@ -102,10 +104,18 @@ async function onSubmit(event) {
       />
     </div>
 
-    <UFormField label="Nombre y Empresa" name="nombre" required>
+    <UFormField label="Nombre" name="nombre" required>
       <UInput
         v-model="state.nombre"
-        placeholder="Nombre y Empresa"
+        placeholder="Su nombre"
+        class="w-full"
+      />
+    </UFormField>
+
+    <UFormField label="Empresa (opcional)" name="empresa">
+      <UInput
+        v-model="state.empresa"
+        placeholder="Nombre de su empresa"
         class="w-full"
       />
     </UFormField>

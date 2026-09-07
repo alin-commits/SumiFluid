@@ -3,6 +3,7 @@ const { items, clear } = usePresupuesto();
 
 const state = reactive({
   nombre: "",
+  empresa: "",
   email: "",
   telefono: "",
   notas: "",
@@ -44,6 +45,7 @@ async function onSubmit() {
 
     clear();
     state.nombre = "";
+    state.empresa = "";
     state.email = "";
     state.telefono = "";
     state.notas = "";
@@ -82,8 +84,12 @@ defineExpose({ onSubmit });
         />
       </div>
       <label>
-        Nombre y Empresa
+        Nombre
         <input v-model="state.nombre" type="text" required />
+      </label>
+      <label>
+        Empresa (opcional)
+        <input v-model="state.empresa" type="text" />
       </label>
       <label>
         Correo electrónico

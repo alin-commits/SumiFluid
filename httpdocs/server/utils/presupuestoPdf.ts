@@ -11,6 +11,7 @@ export interface PresupuestoPdfItem {
 export interface PresupuestoPdfData {
   items: PresupuestoPdfItem[];
   nombre?: string;
+  empresa?: string;
   email?: string;
   telefono?: string;
   notas?: string;
@@ -49,7 +50,8 @@ export function buildPresupuestoPdf(data: PresupuestoPdfData): Promise<Buffer> {
     const tieneContacto = data.nombre || data.email || data.telefono;
     if (tieneContacto) {
       doc.fillColor("#000").fontSize(11);
-      if (data.nombre) doc.text(`Nombre y empresa: ${data.nombre}`);
+      if (data.nombre) doc.text(`Nombre: ${data.nombre}`);
+      if (data.empresa) doc.text(`Empresa: ${data.empresa}`);
       if (data.email) doc.text(`Email: ${data.email}`);
       if (data.telefono) doc.text(`Teléfono: ${data.telefono}`);
       if (data.notas) doc.text(`Notas: ${data.notas}`);

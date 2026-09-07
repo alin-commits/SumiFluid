@@ -84,7 +84,7 @@ export default defineEventHandler(async (event) => {
     });
   }
 
-  const { asunto, nombre, email, telefono, mensaje, producto, website } =
+  const { asunto, nombre, empresa, email, telefono, mensaje, producto, website } =
     result.data;
 
   // Verificar honeypot - si está lleno, es un bot
@@ -97,6 +97,7 @@ export default defineEventHandler(async (event) => {
 
   const asuntoSeguro = escaparHtml(asunto);
   const nombreSeguro = escaparHtml(nombre);
+  const empresaSeguro = empresa ? escaparHtml(empresa) : "";
   const emailSeguro = escaparHtml(email);
   const telefonoSeguro = escaparHtml(telefono);
   const mensajeSeguro = escaparHtml(mensaje).replace(/\n/g, "<br>");
@@ -113,7 +114,7 @@ export default defineEventHandler(async (event) => {
         ? `Nuevo mensaje Sumifluid: ${asunto} — ${producto}`
         : `Nuevo mensaje Sumifluid: ${asunto}`,
       text: `Asunto: ${asunto}${producto ? `\nProducto de interés: ${producto}` : ""}
-Nombre: ${nombre}
+Nombre: ${nombre}${empresa ? `\nEmpresa: ${empresa}` : ""}
 Email: ${email}
 Teléfono: ${telefono}
 
@@ -124,6 +125,7 @@ ${mensaje}`,
         <p><strong>Asunto:</strong> ${asuntoSeguro}</p>
         ${productoSeguro ? `<p><strong>Producto de interés:</strong> ${productoSeguro}</p>` : ""}
         <p><strong>Nombre:</strong> ${nombreSeguro}</p>
+        ${empresaSeguro ? `<p><strong>Empresa:</strong> ${empresaSeguro}</p>` : ""}
         <p><strong>Email:</strong> ${emailSeguro}</p>
         <p><strong>Teléfono:</strong> ${telefonoSeguro}</p>
         <p><strong>Mensaje:</strong></p>
