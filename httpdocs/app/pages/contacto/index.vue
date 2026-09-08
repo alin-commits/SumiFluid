@@ -73,7 +73,7 @@ useSchemaOrg([
       :nombre-empresa="empresa?.nombre"
       :direccion="empresa?.direccion"
       :telefono_principal="empresa?.telefonoPrincipalNoSpaces"
-      :telefono_secundario="empresa?.telefonoSecundariolNoSpaces"
+      :telefono_secundario="empresa?.telefonoSecundarioNoSpaces"
       :email="empresa?.emailPrincipal"
       :horario="empresa?.horario"
     ></SectionContacto>
