@@ -121,10 +121,10 @@ export default defineNuxtConfig({
           sizes: "180x180",
           href: "/apple-touch-icon.png",
         },
-        {
-          rel: "canonical",
-          href: siteUrl,
-        },
+        // Aquí NO va un canonical global. Un canonical fijo a siteUrl hace que
+        // cualquier página sin su propio useHead canonicalice a la home y quede
+        // fuera del índice: es lo que dejaba las 59 páginas de marca sin
+        // indexar. Cada página declara su propio canonical autorreferencial.
       ],
       script: [
         {
@@ -201,6 +201,13 @@ export default defineNuxtConfig({
       priority: 0.8,
     },
     sources: ["/api/sitemap-urls"],
+    // /presupuesto redirige a / mientras presupuestoEnabled esté desactivada,
+    // y una URL que redirige no debe anunciarse en el sitemap. Al activar la
+    // flag vuelve a entrar sola.
+    exclude:
+      process.env.NUXT_PUBLIC_PRESUPUESTO_ENABLED === "true"
+        ? []
+        : ["/presupuesto"],
   },
   // nitro: {
   //   prerender: {

@@ -35,7 +35,27 @@ const subcategoria = computed(() => {
   return subcategorias.value.find((subcat) => subcat.slug === subcatSlug);
 });
 
-const categoria = computed(() => subcategoria.value?.categoria);
+const categoria = computed(() => subcategoria.value?.categoria ?? null);
+
+// Dos motivos para esta guarda:
+//  1. Sin ella, breadcrumbItems accedía a categoria.value.nombre y lanzaba un
+//     TypeError para slugs inexistentes: Nitro respondía 500 en lugar de 404.
+//  2. La subcategoría se busca solo por slug, así que /vacio/cilindros-
+//     hidraulicos servía la página de hidráulica con un canonical apuntándose a
+//     sí misma. Eso son 5 categorías x 72 subcategorías = 360 URLs servidas,
+//     288 de ellas duplicados indexables. Exigir que la categoría de la URL
+//     coincida con la real deja una sola URL válida por subcategoría.
+if (
+  !subcategoria.value ||
+  !categoria.value ||
+  categoria.value.slug !== route.params.categoria
+) {
+  throw createError({
+    statusCode: 404,
+    message: "Subcategoría no encontrada",
+  });
+}
+
 const catalogoSubcategorias = computed(
   () => categoria.value?.subcategorias ?? [],
 );

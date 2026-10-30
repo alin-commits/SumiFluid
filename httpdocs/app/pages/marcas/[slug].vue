@@ -20,8 +20,15 @@ const marcas = computed(() => data.value?.data ?? []);
 
 const marca = computed(() => {
   const marcaSlug = route.params.slug;
-  return marcas.value.find((marca) => marca.slug === marcaSlug);
+  return marcas.value.find((marca) => marca.slug === marcaSlug) ?? null;
 });
+
+if (!marca.value) {
+  throw createError({
+    statusCode: 404,
+    message: "Marca no encontrada",
+  });
+}
 
 const VISIBLE_ITEMS = 3;
 const MIN_MULTIPLIER = 4;
@@ -37,59 +44,69 @@ const imgList = computed(() => {
 });
 
 // #region SEO
-// const nombreMarca = marca.value?.nombre ?? "Marca";
-// const pageTitle = computed(
-//   () => `${nombreMarca} | Marca industrial en Sumifluid`,
-// );
+const nombreMarca = computed(() => marca.value?.nombre ?? "Marca");
 
-// const pageDescription = computed(
-//   () =>
-//     `${marca.value?.preview || ""}. Distribución y asesoramiento técnico de ${nombreMarca} en Elche, Alicante, con envío rápido a toda España.`,
-// );
+// "Distribuidor en España" captura la intención comercial de la consulta
+// ("distribuidor <marca> españa"). Con nombres largos se recorta la variante
+// para no pasar de 60 caracteres y evitar el truncado en la SERP.
+const pageTitle = computed(() => {
+  const completo = `${nombreMarca.value} — Distribuidor en España | Sumifluid`;
+  return completo.length <= 60
+    ? completo
+    : `${nombreMarca.value} — Distribuidor | Sumifluid`;
+});
 
-// const canonicalUrl = computed(() => siteConfig.url + (route.path || "/"));
-// const ogImageUrl = computed(() => {
-//   const imagen = marca.value?.logo.url ?? "";
-//   const path = imagen.startsWith("/") ? imagen : `/${imagen}`;
-//   return siteConfig.url + path;
-// });
-// useSeoMeta({
-//   title: pageTitle,
-//   description: pageDescription,
-//   ogTitle: pageTitle,
-//   ogDescription: pageDescription,
-//   ogUrl: canonicalUrl,
-//   ogImage: ogImageUrl,
-// });
+const pageDescription = computed(() => {
+  const preview = marca.value?.preview?.trim();
+  return preview
+    ? `${preview.replace(/\.$/, "")}. Distribución y asesoramiento técnico de ${nombreMarca.value} en Elche, con envío rápido a toda España.`
+    : `Distribuidor de ${nombreMarca.value} en España. Stock permanente en Elche, asesoramiento técnico y envío rápido. Pida presupuesto.`;
+});
 
-// useHead(() => ({
-//   link: [
-//     {
-//       rel: "canonical",
-//       href: canonicalUrl.value,
-//     },
-//   ],
-// }));
+const canonicalUrl = computed(() => siteConfig.url + (route.path || "/"));
+const ogImageUrl = computed(() => {
+  const imagenUrl = getMediaUrl(marca.value?.logo?.url);
+  return imagenUrl ?? `${siteConfig.url}/images/og-default.jpg`;
+});
 
-// const breadcrumbItems = computed(() => [
-//   { label: "Inicio", to: "/" },
-//   { label: marca.value.nombre, to: route.path },
-// ]);
+useSeoMeta({
+  title: pageTitle,
+  description: pageDescription,
+  ogTitle: pageTitle,
+  ogDescription: pageDescription,
+  ogUrl: canonicalUrl,
+  ogImage: ogImageUrl,
+});
 
-// useSchemaOrg([
-//   defineWebPage({
-//     "@type": "ItemPage",
-//     name: pageTitle,
-//     description: pageDescription,
-//   }),
-//   defineBreadcrumb({
-//     itemListElement: () =>
-//       breadcrumbItems.value.map((item) => ({
-//         name: item.label,
-//         item: item.to,
-//       })),
-//   }),
-// ]);
+useHead(() => ({
+  link: [
+    {
+      rel: "canonical",
+      href: canonicalUrl.value,
+    },
+  ],
+}));
+
+const breadcrumbItems = computed(() => [
+  { label: "Inicio", to: "/" },
+  { label: "Marcas", to: "/marcas" },
+  { label: nombreMarca.value, to: route.path },
+]);
+
+useSchemaOrg([
+  defineWebPage({
+    "@type": "ItemPage",
+    name: pageTitle,
+    description: pageDescription,
+  }),
+  defineBreadcrumb({
+    itemListElement: () =>
+      breadcrumbItems.value.map((item) => ({
+        name: item.label,
+        item: item.to,
+      })),
+  }),
+]);
 // #endregion
 </script>
 

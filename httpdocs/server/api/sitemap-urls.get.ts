@@ -92,10 +92,14 @@ export default defineEventHandler(async (event) => {
     }));
 
     // Build subcategory URLs
+    // Strapi v5 devuelve la relación plana (sub.categoria.slug), igual que la
+    // usan las páginas. La forma anidada de v4 (sub.categoria.data.slug) era
+    // siempre undefined, así que el filter descartaba las 72 subcategorías y
+    // ninguna llegaba nunca al sitemap.
     const subcategoryUrls: SitemapUrlItem[] = subcategorias
-      .filter((sub: any) => sub.categoria?.data?.slug) // Ensure category exists
+      .filter((sub: any) => sub.categoria?.slug) // Ensure category exists
       .map((sub: any) => ({
-        loc: `/${sub.categoria.data.slug}/${sub.slug}`,
+        loc: `/${sub.categoria.slug}/${sub.slug}`,
         lastmod: now,
         changefreq: "monthly" as const,
         priority: 0.7 as SitemapPriority,
