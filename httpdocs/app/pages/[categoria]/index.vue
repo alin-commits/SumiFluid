@@ -135,10 +135,20 @@ const bannerImagen = computed(
 
 const categoria = computed(() => {
   const catSlug = route.params.categoria;
-  return categorias.value.find((cat) => cat.slug === catSlug);
+  return categorias.value.find((cat) => cat.slug === catSlug) ?? null;
 });
 
-const subcategorias = computed(() => categoria.value.subcategorias);
+// Esta ruta es el catch-all de primer nivel: cualquier URL inexistente
+// (/no-existe) acaba aquí. Sin esta guarda, los accesos a categoria.value de
+// más abajo lanzaban un TypeError y Nitro respondía 500 en lugar de 404.
+if (!categoria.value) {
+  throw createError({
+    statusCode: 404,
+    message: "Categoría no encontrada",
+  });
+}
+
+const subcategorias = computed(() => categoria.value?.subcategorias ?? []);
 const processedSubcategorias = computed(() => {
   if (!categoria.value?.subcategorias) return [];
 
