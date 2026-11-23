@@ -80,6 +80,7 @@ useSchemaOrg([
         :titulo="calculadora.seoTitulo"
         :parrafos="calculadora.seoParrafos"
         :faqs="calculadora.seoFaqs"
+        :enlaces="calculadora.enlaces"
       />
     </Section>
 

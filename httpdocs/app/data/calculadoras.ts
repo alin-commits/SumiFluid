@@ -2,6 +2,10 @@ export interface CampoCalculadora {
   key: string;
   label: string;
   unidad: string;
+  /** Si es true, el campo puede quedar vacío y se omite de calcular() */
+  opcional?: boolean;
+  /** Texto de ayuda bajo el label, útil para explicar campos opcionales */
+  ayuda?: string;
 }
 
 export interface ResultadoCalculadora {
@@ -13,6 +17,11 @@ export interface ResultadoCalculadora {
 export interface FaqCalculadora {
   pregunta: string;
   respuesta: string;
+}
+
+export interface EnlaceCalculadora {
+  to: string;
+  label: string;
 }
 
 export interface Calculadora {
@@ -29,39 +38,76 @@ export interface Calculadora {
   seoTitulo: string;
   seoParrafos: string[];
   seoFaqs?: FaqCalculadora[];
+  /** Enlaces de salida (p. ej. a la categoría de producto correspondiente) */
+  enlaces?: EnlaceCalculadora[];
 }
 
 export const calculadoras: Calculadora[] = [
   {
     slug: "area-cilindro",
     titulo: "Área de un cilindro",
-    metaTitulo: "Calcular Área de un Cilindro Online | Sumifluid",
+    metaTitulo: "Área de un Cilindro: Calculadora Online | Sumifluid",
     metaDescripcion:
-      "Calculadora online para hallar el área de la sección de un cilindro hidráulico o neumático a partir de su diámetro. Resultado inmediato en cm².",
+      "Calcula el área total de un cilindro (bases + superficie lateral) o solo el área de su sección transversal, a partir del diámetro y, si la necesita, la altura. Resultado al instante con ejemplo resuelto.",
     descripcion:
-      "El área de la sección de un cilindro es la base para calcular su capacidad, la fuerza que puede ejercer o su velocidad de avance. Introduzca el diámetro del émbolo para obtener el área en centímetros cuadrados.",
-    formulaTexto: "Área = π × (Diámetro / 2)²",
-    campos: [{ key: "diametro", label: "Diámetro", unidad: "cm" }],
-    resultados: [{ key: "area", label: "Área", unidad: "cm²" }],
+      "«Área de un cilindro» puede referirse a dos cosas distintas: el área total de su superficie (las dos bases más el lateral) o solo el área de la sección transversal, el dato que se usa para calcular la fuerza o la capacidad de un cilindro hidráulico o neumático. Introduzca el diámetro para obtener la sección; añada también la altura si necesita el área total.",
+    formulaTexto: "Área total = 2π·r·(r+h) · Sección = π·r²",
+    campos: [
+      { key: "diametro", label: "Diámetro", unidad: "cm" },
+      {
+        key: "altura",
+        label: "Altura / longitud",
+        unidad: "cm",
+        opcional: true,
+        ayuda: "Opcional: solo si necesita el área total, no solo la sección",
+      },
+    ],
+    resultados: [
+      {
+        key: "areaSeccion",
+        label: "Área de la sección transversal",
+        unidad: "cm²",
+      },
+      { key: "areaTotal", label: "Área total (bases + lateral)", unidad: "cm²" },
+    ],
     calcular: (v) => {
       const radio = v.diametro / 2;
-      return { area: Math.PI * radio * radio };
+      const resultado: Record<string, number> = {
+        areaSeccion: Math.PI * radio * radio,
+      };
+      if (v.altura && v.altura > 0) {
+        resultado.areaTotal = 2 * Math.PI * radio * (radio + v.altura);
+      }
+      return resultado;
     },
-    seoTitulo: "¿Por qué es importante el área de un cilindro?",
+    seoTitulo: "Área total y área de la sección: dos cálculos distintos",
     seoParrafos: [
-      "El área efectiva de la sección de un cilindro hidráulico o neumático es el dato de partida para casi cualquier otro cálculo del circuito: a partir de ella se determina la capacidad, la fuerza que puede desarrollar y la velocidad de avance para un caudal dado. Un pequeño error al medir el diámetro tiene un impacto cuadrático en el resultado, por lo que conviene verificarlo con precisión antes de dimensionar el resto de la instalación.",
-      "En cilindros de doble efecto conviene recordar que el área de la cámara del lado del vástago es menor que la del lado ciego, ya que hay que descontar la sección del propio vástago. Esta calculadora ofrece el área de la sección completa (lado ciego); para el lado del vástago, reste el área del vástago al resultado obtenido.",
+      "«Área de un cilindro» puede significar dos cosas, y conviene no confundirlas. El área total es la superficie completa de la pieza: las dos bases circulares más la superficie lateral, y se calcula como 2π×r×(r+h), donde r es el radio y h la altura. Es el dato habitual en geometría, para pintar, forrar o fabricar una pieza cilíndrica.",
+      "El área de la sección transversal, en cambio, es solo el círculo de la base (π×r²), sin contar la altura. Es el dato que se usa en hidráulica y neumática: a partir de ella se calcula la fuerza que ejerce un cilindro, su capacidad o su velocidad de avance, multiplicándola por la presión o por la carrera.",
+      "Ejemplo: para un cilindro de 10 cm de diámetro (radio 5 cm) y 20 cm de altura, la sección transversal es π×5² ≈ 78,54 cm², y el área total es 2π×5×(5+20) ≈ 785,40 cm². Si lo que necesita es calcular la fuerza o la capacidad de un cilindro hidráulico, el dato que le interesa es la sección (78,54 cm²), no el área total.",
     ],
     seoFaqs: [
       {
+        pregunta:
+          "¿Qué área debo usar para calcular la fuerza de un cilindro hidráulico?",
+        respuesta:
+          "La fuerza se calcula con el área de la sección transversal (π×r²), no con el área total. El área total incluye la superficie lateral y las bases, que no intervienen en el cálculo de fuerza, capacidad o velocidad.",
+      },
+      {
         pregunta: "¿Qué diferencia hay entre área y capacidad de un cilindro?",
         respuesta:
-          "El área es la sección transversal del cilindro, en cm². La capacidad es el volumen total que hay que llenar de aceite para completar el recorrido, y se calcula multiplicando esa área por la carrera.",
+          "El área de la sección es la superficie del círculo de la base, en cm². La capacidad es el volumen que hay que llenar de aceite para completar el recorrido, y se calcula multiplicando esa área por la carrera.",
       },
       {
         pregunta: "¿Cómo afecta el diámetro del vástago al área efectiva?",
         respuesta:
-          "En la cámara del lado del vástago, el área efectiva es el área total del cilindro menos el área de la sección del vástago, por lo que a igual presión esa cámara desarrolla algo menos de fuerza y algo más de velocidad.",
+          "En la cámara del lado del vástago, el área efectiva es el área de la sección total del cilindro menos el área de la sección del vástago, por lo que a igual presión esa cámara desarrolla algo menos de fuerza y algo más de velocidad.",
+      },
+    ],
+    enlaces: [
+      {
+        to: "/hidraulica/cilindros-hidraulicos",
+        label: "Ver cilindros hidráulicos disponibles",
       },
     ],
   },
