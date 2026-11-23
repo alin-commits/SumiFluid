@@ -46,9 +46,9 @@ export const calculadoras: Calculadora[] = [
   {
     slug: "area-cilindro",
     titulo: "Área de un cilindro",
-    metaTitulo: "Área de un Cilindro: Calculadora Online | Sumifluid",
+    metaTitulo: "Calculadora del Área de un Cilindro al Instante",
     metaDescripcion:
-      "Calcula el área total de un cilindro (bases + superficie lateral) o solo el área de su sección transversal, a partir del diámetro y, si la necesita, la altura. Resultado al instante con ejemplo resuelto.",
+      "Calcule el área total o la sección de un cilindro al instante, en cm², a partir del diámetro. Con fórmula, ejemplo resuelto y enlace para comprar.",
     descripcion:
       "«Área de un cilindro» puede referirse a dos cosas distintas: el área total de su superficie (las dos bases más el lateral) o solo el área de la sección transversal, el dato que se usa para calcular la fuerza o la capacidad de un cilindro hidráulico o neumático. Introduzca el diámetro para obtener la sección; añada también la altura si necesita el área total.",
     formulaTexto: "Área total = 2π·r·(r+h) · Sección = π·r²",
@@ -209,9 +209,9 @@ export const calculadoras: Calculadora[] = [
   {
     slug: "potencia-bomba-hidraulica",
     titulo: "Potencia de una bomba hidráulica",
-    metaTitulo: "Calcular Potencia de una Bomba Hidráulica Online | Sumifluid",
+    metaTitulo: "Potencia de Bomba Hidráulica en CV: Caudal y Presión",
     metaDescripcion:
-      "Calculadora online para hallar la potencia necesaria para mover una bomba hidráulica según su caudal y la presión de trabajo. Resultado en CV.",
+      "Calcule al instante la potencia en CV de una bomba hidráulica a partir del caudal (l/min) y la presión de trabajo (bar). Con la fórmula aplicada.",
     descripcion:
       "La potencia hidráulica necesaria para mover una bomba depende del caudal que suministra y de la presión de trabajo del circuito. Introduzca ambos valores para obtener la potencia en CV.",
     formulaTexto: "Potencia (CV) = Caudal (l/min) × Presión (bar) / 450",
@@ -231,6 +231,12 @@ export const calculadoras: Calculadora[] = [
         pregunta: "¿Qué motor eléctrico necesito para mi bomba?",
         respuesta:
           "Como referencia orientativa, elija un motor cuya potencia nominal sea igual o superior a la potencia hidráulica calculada más un margen de seguridad. Consulte siempre la curva de rendimiento del fabricante de la bomba para un dimensionado exacto.",
+      },
+    ],
+    enlaces: [
+      {
+        to: "/hidraulica/bombas-hidraulicas",
+        label: "Ver bombas hidráulicas disponibles",
       },
     ],
   },
