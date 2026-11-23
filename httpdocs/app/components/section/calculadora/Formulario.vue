@@ -22,6 +22,12 @@ function calcular() {
 
   for (const campo of props.calculadora.campos) {
     const raw = valores[campo.key];
+
+    if (campo.opcional && (raw === "" || raw === null)) {
+      errores[campo.key] = "";
+      continue;
+    }
+
     const num = Number(raw);
 
     if (raw === "" || raw === null || Number.isNaN(num)) {
@@ -40,11 +46,22 @@ function calcular() {
 
   if (!valido) return;
 
-  const entrada = Object.fromEntries(
-    props.calculadora.campos.map((c) => [c.key, Number(valores[c.key])]),
-  );
+  const entrada = {};
+  for (const campo of props.calculadora.campos) {
+    const raw = valores[campo.key];
+    if (campo.opcional && (raw === "" || raw === null)) continue;
+    entrada[campo.key] = Number(raw);
+  }
   resultado.value = props.calculadora.calcular(entrada);
 }
+
+const resultadosVisibles = computed(() => {
+  if (!resultado.value) return [];
+  return props.calculadora.resultados.filter((res) => {
+    const valor = resultado.value[res.key];
+    return valor !== undefined && !Number.isNaN(valor);
+  });
+});
 </script>
 
 <template>
@@ -57,6 +74,7 @@ function calcular() {
           {{ campo.label }}
           <span class="calc-unidad">({{ campo.unidad }})</span>
         </label>
+        <p v-if="campo.ayuda" class="calc-ayuda">{{ campo.ayuda }}</p>
         <input
           :id="`campo-${campo.key}`"
           v-model="valores[campo.key]"
@@ -78,7 +96,7 @@ function calcular() {
 
     <div v-if="resultado" class="calc-resultado">
       <div
-        v-for="res in calculadora.resultados"
+        v-for="res in resultadosVisibles"
         :key="res.key"
         class="calc-resultado-item"
       >
@@ -132,6 +150,13 @@ function calcular() {
     color: var(--ink-soft);
     text-transform: none;
     letter-spacing: 0;
+  }
+
+  & .calc-ayuda {
+    font-size: 0.78rem;
+    text-transform: none;
+    letter-spacing: 0;
+    color: var(--ink-soft);
   }
 
   & input {
